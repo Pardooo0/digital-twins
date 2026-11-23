@@ -1,0 +1,16 @@
+# Entornos y cachés de Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Datos pesados (fotos, salidas de ODM, sesiones descargadas)
+gemelo/datos/fotos/**
+gemelo/datos/odm/**
+gemelo/datos/cajanegra/**
+gemelo/salidas/**
+!**/.gitkeep
+
+# Datos generados al probar la caja negra con --simular
+caja-negra/datos/

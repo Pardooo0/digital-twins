@@ -1,0 +1,4 @@
+# Todo con LF: los .sh, .py y .service corren en la Pi
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.svg text eol=lf

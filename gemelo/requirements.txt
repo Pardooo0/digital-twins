@@ -1,0 +1,13 @@
+# Dependencias del gemelo digital (PC con Windows)
+numpy
+pandas
+geopandas
+shapely
+pyproj
+rasterio
+laspy
+scipy
+plotly
+folium
+pyyaml
+pytest

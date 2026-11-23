@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1200" viewBox="0 0 1500 1200" font-family="Arial, Helvetica, sans-serif">
+<rect width="1500" height="1200" fill="#ffffff"/>
+<text x="40" y="52" font-size="30" font-weight="bold" fill="#14344d">Mapa de pines · Caja negra (Raspberry Pi 3 Model B)</text>
+<text x="40" y="82" font-size="16" fill="#555">GPS Shield Duinopeak · Sensor AM2302 (DHT22) · LED RGB (KY-016) · Botón (KY-004). Vista superior, conector GPIO de 40 pines.</text>
+<rect x="560" y="100" width="200" height="760" rx="14" fill="#0b6e3a"/>
+<text x="660" y="128" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">GPIO (pin 1 arriba)</text>
+<rect x="592" y="134" width="136" height="678" rx="6" fill="#1b1b1b"/>
+<rect x="607" y="137" width="26" height="26" rx="3" fill="#f77f00" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="155" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+<text x="550" y="155" font-size="13" fill="#111" text-anchor="end" font-weight="bold">3.3V</text>
+<line x1="460" y1="150" x2="554" y2="150" stroke="#f77f00" stroke-width="4" opacity="0"/>
+<line x1="450" y1="150" x2="472" y2="150" stroke="#f77f00" stroke-width="4"/>
+<rect x="321.4" y="136" width="128.6" height="28" rx="14" fill="#f77f00"/>
+<text x="385.7" y="155" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">DHT22 VCC (+)</text>
+<rect x="687" y="137" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="155" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">2</text>
+<text x="770" y="155" font-size="13" fill="#999" font-weight="normal">5V</text>
+<rect x="607" y="171" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="189" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">3</text>
+<text x="550" y="189" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO2</text>
+<rect x="687" y="171" width="26" height="26" rx="13" fill="#d62828" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="189" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">4</text>
+<text x="770" y="189" font-size="13" fill="#111" font-weight="bold">5V</text>
+<line x1="858" y1="184" x2="880" y2="184" stroke="#d62828" stroke-width="4"/>
+<rect x="880" y="170" width="71.19999999999999" height="28" rx="14" fill="#d62828"/>
+<text x="915.6" y="189" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">GPS 5V</text>
+<rect x="607" y="205" width="26" height="26" rx="13" fill="#8338ec" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="223" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">5</text>
+<text x="550" y="223" font-size="13" fill="#111" text-anchor="end" font-weight="bold">GPIO3</text>
+<line x1="460" y1="218" x2="554" y2="218" stroke="#8338ec" stroke-width="4" opacity="0"/>
+<line x1="450" y1="218" x2="472" y2="218" stroke="#8338ec" stroke-width="4"/>
+<rect x="370.6" y="204" width="79.39999999999999" height="28" rx="14" fill="#8338ec"/>
+<text x="410.3" y="223" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">Botón S</text>
+<rect x="687" y="205" width="26" height="26" rx="13" fill="#222222" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="223" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">6</text>
+<text x="770" y="223" font-size="13" fill="#111" font-weight="bold">GND</text>
+<line x1="858" y1="218" x2="880" y2="218" stroke="#222222" stroke-width="4"/>
+<rect x="880" y="204" width="79.39999999999999" height="28" rx="14" fill="#222222"/>
+<text x="919.7" y="223" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">GPS GND</text>
+<rect x="607" y="239" width="26" height="26" rx="13" fill="#c9a000" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="257" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">7</text>
+<text x="550" y="257" font-size="13" fill="#111" text-anchor="end" font-weight="bold">GPIO4</text>
+<line x1="460" y1="252" x2="554" y2="252" stroke="#c9a000" stroke-width="4" opacity="0"/>
+<line x1="450" y1="252" x2="472" y2="252" stroke="#c9a000" stroke-width="4"/>
+<rect x="346.0" y="238" width="104.0" height="28" rx="14" fill="#c9a000"/>
+<text x="398.0" y="257" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">DHT22 DATA</text>
+<rect x="687" y="239" width="26" height="26" rx="13" fill="#3a86ff" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="257" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">8</text>
+<text x="770" y="257" font-size="13" fill="#111" font-weight="bold">GPIO14 TXD</text>
+<line x1="858" y1="252" x2="880" y2="252" stroke="#3a86ff" stroke-width="4"/>
+<rect x="880" y="238" width="161.39999999999998" height="28" rx="14" fill="#3a86ff"/>
+<text x="960.7" y="257" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">GPS RX (opcional)</text>
+<rect x="607" y="273" width="26" height="26" rx="13" fill="#222222" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="291" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">9</text>
+<text x="550" y="291" font-size="13" fill="#111" text-anchor="end" font-weight="bold">GND</text>
+<line x1="460" y1="286" x2="554" y2="286" stroke="#222222" stroke-width="4" opacity="0"/>
+<line x1="450" y1="286" x2="472" y2="286" stroke="#222222" stroke-width="4"/>
+<rect x="370.6" y="272" width="79.39999999999999" height="28" rx="14" fill="#222222"/>
+<text x="410.3" y="291" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">Botón −</text>
+<rect x="687" y="273" width="26" height="26" rx="13" fill="#2a9d8f" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="291" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">10</text>
+<text x="770" y="291" font-size="13" fill="#111" font-weight="bold">GPIO15 RXD</text>
+<line x1="858" y1="286" x2="880" y2="286" stroke="#2a9d8f" stroke-width="4"/>
+<rect x="880" y="272" width="186.0" height="28" rx="14" fill="#2a9d8f"/>
+<text x="973.0" y="291" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">GPS TX (vía divisor)</text>
+<rect x="607" y="307" width="26" height="26" rx="13" fill="#e63946" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="325" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">11</text>
+<text x="550" y="325" font-size="13" fill="#111" text-anchor="end" font-weight="bold">GPIO17</text>
+<line x1="460" y1="320" x2="554" y2="320" stroke="#e63946" stroke-width="4" opacity="0"/>
+<line x1="450" y1="320" x2="472" y2="320" stroke="#e63946" stroke-width="4"/>
+<rect x="387.0" y="306" width="63.0" height="28" rx="14" fill="#e63946"/>
+<text x="418.5" y="325" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">LED R</text>
+<rect x="687" y="307" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="325" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">12</text>
+<text x="770" y="325" font-size="13" fill="#999" font-weight="normal">GPIO18</text>
+<rect x="607" y="341" width="26" height="26" rx="13" fill="#2b9348" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="359" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">13</text>
+<text x="550" y="359" font-size="13" fill="#111" text-anchor="end" font-weight="bold">GPIO27</text>
+<line x1="460" y1="354" x2="554" y2="354" stroke="#2b9348" stroke-width="4" opacity="0"/>
+<line x1="450" y1="354" x2="472" y2="354" stroke="#2b9348" stroke-width="4"/>
+<rect x="387.0" y="340" width="63.0" height="28" rx="14" fill="#2b9348"/>
+<text x="418.5" y="359" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">LED G</text>
+<rect x="687" y="341" width="26" height="26" rx="13" fill="#222222" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="359" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">14</text>
+<text x="770" y="359" font-size="13" fill="#111" font-weight="bold">GND</text>
+<line x1="858" y1="354" x2="880" y2="354" stroke="#222222" stroke-width="4"/>
+<rect x="880" y="340" width="63.0" height="28" rx="14" fill="#222222"/>
+<text x="911.5" y="359" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">LED −</text>
+<rect x="607" y="375" width="26" height="26" rx="13" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="393" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">15</text>
+<text x="550" y="393" font-size="13" fill="#111" text-anchor="end" font-weight="bold">GPIO22</text>
+<line x1="460" y1="388" x2="554" y2="388" stroke="#1d4ed8" stroke-width="4" opacity="0"/>
+<line x1="450" y1="388" x2="472" y2="388" stroke="#1d4ed8" stroke-width="4"/>
+<rect x="387.0" y="374" width="63.0" height="28" rx="14" fill="#1d4ed8"/>
+<text x="418.5" y="393" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">LED B</text>
+<rect x="687" y="375" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="393" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">16</text>
+<text x="770" y="393" font-size="13" fill="#999" font-weight="normal">GPIO23</text>
+<rect x="607" y="409" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="427" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">17</text>
+<text x="550" y="427" font-size="13" fill="#999" text-anchor="end" font-weight="normal">3.3V</text>
+<rect x="687" y="409" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="427" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">18</text>
+<text x="770" y="427" font-size="13" fill="#999" font-weight="normal">GPIO24</text>
+<rect x="607" y="443" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="461" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">19</text>
+<text x="550" y="461" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO10</text>
+<rect x="687" y="443" width="26" height="26" rx="13" fill="#222222" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="461" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">20</text>
+<text x="770" y="461" font-size="13" fill="#111" font-weight="bold">GND</text>
+<line x1="858" y1="456" x2="880" y2="456" stroke="#222222" stroke-width="4"/>
+<rect x="880" y="442" width="128.6" height="28" rx="14" fill="#222222"/>
+<text x="944.3" y="461" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">DHT22 GND (−)</text>
+<rect x="607" y="477" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="495" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">21</text>
+<text x="550" y="495" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO9</text>
+<rect x="687" y="477" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="495" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">22</text>
+<text x="770" y="495" font-size="13" fill="#999" font-weight="normal">GPIO25</text>
+<rect x="607" y="511" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="529" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">23</text>
+<text x="550" y="529" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO11</text>
+<rect x="687" y="511" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="529" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">24</text>
+<text x="770" y="529" font-size="13" fill="#999" font-weight="normal">GPIO8</text>
+<rect x="607" y="545" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="563" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">25</text>
+<text x="550" y="563" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GND</text>
+<rect x="687" y="545" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="563" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">26</text>
+<text x="770" y="563" font-size="13" fill="#999" font-weight="normal">GPIO7</text>
+<rect x="607" y="579" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="597" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">27</text>
+<text x="550" y="597" font-size="13" fill="#999" text-anchor="end" font-weight="normal">ID_SD</text>
+<rect x="687" y="579" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="597" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">28</text>
+<text x="770" y="597" font-size="13" fill="#999" font-weight="normal">ID_SC</text>
+<rect x="607" y="613" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="631" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">29</text>
+<text x="550" y="631" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO5</text>
+<rect x="687" y="613" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="631" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">30</text>
+<text x="770" y="631" font-size="13" fill="#999" font-weight="normal">GND</text>
+<rect x="607" y="647" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="665" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">31</text>
+<text x="550" y="665" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO6</text>
+<rect x="687" y="647" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="665" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">32</text>
+<text x="770" y="665" font-size="13" fill="#999" font-weight="normal">GPIO12</text>
+<rect x="607" y="681" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="699" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">33</text>
+<text x="550" y="699" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO13</text>
+<rect x="687" y="681" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="699" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">34</text>
+<text x="770" y="699" font-size="13" fill="#999" font-weight="normal">GND</text>
+<rect x="607" y="715" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="733" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">35</text>
+<text x="550" y="733" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO19</text>
+<rect x="687" y="715" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="733" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">36</text>
+<text x="770" y="733" font-size="13" fill="#999" font-weight="normal">GPIO16</text>
+<rect x="607" y="749" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="767" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">37</text>
+<text x="550" y="767" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GPIO26</text>
+<rect x="687" y="749" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="767" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">38</text>
+<text x="770" y="767" font-size="13" fill="#999" font-weight="normal">GPIO20</text>
+<rect x="607" y="783" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="620" y="801" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">39</text>
+<text x="550" y="801" font-size="13" fill="#999" text-anchor="end" font-weight="normal">GND</text>
+<rect x="687" y="783" width="26" height="26" rx="13" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="700" y="801" font-size="12" font-weight="bold" fill="#333" text-anchor="middle">40</text>
+<text x="770" y="801" font-size="13" fill="#999" font-weight="normal">GPIO21</text>
+<rect x="1110" y="120" width="360" height="330" rx="12" fill="#f4f8fb" stroke="#c9d6e2"/>
+<text x="1130" y="152" font-size="18" font-weight="bold" fill="#14344d">Divisor de voltaje (GPS TX)</text>
+<text x="1130" y="176" font-size="13" fill="#555">Solo si el TX del shield mide 5 V.</text>
+<text x="1130" y="194" font-size="13" fill="#555">Si mide 3.3 V, conexión directa al pin 10.</text>
+<text x="1130" y="255" font-size="14" font-weight="bold" fill="#2a9d8f">GPS TX</text>
+<line x1="1190" y1="250" x2="1220" y2="250" stroke="#333" stroke-width="3"/>
+<rect x="1220" y="238" width="70" height="24" fill="#fff" stroke="#333" stroke-width="3"/><text x="1255" y="255" font-size="13" text-anchor="middle" font-weight="bold">1 kΩ</text>
+<line x1="1290" y1="250" x2="1360" y2="250" stroke="#333" stroke-width="3"/><circle cx="1330" cy="250" r="5" fill="#333"/>
+<text x="1366" y="244" font-size="14" font-weight="bold" fill="#2a9d8f">Pin 10</text><text x="1366" y="262" font-size="12" fill="#555">GPIO15 RXD</text>
+<line x1="1330" y1="250" x2="1330" y2="290" stroke="#333" stroke-width="3"/>
+<rect x="1318" y="290" width="24" height="70" fill="#fff" stroke="#333" stroke-width="3"/><text x="1354" y="330" font-size="13" font-weight="bold">2 kΩ</text>
+<line x1="1330" y1="360" x2="1330" y2="390" stroke="#333" stroke-width="3"/>
+<line x1="1312.0" y1="390" x2="1348.0" y2="390" stroke="#333" stroke-width="3"/>
+<line x1="1318.0" y1="397" x2="1342.0" y2="397" stroke="#333" stroke-width="3"/>
+<line x1="1324.0" y1="404" x2="1336.0" y2="404" stroke="#333" stroke-width="3"/>
+<text x="1354" y="400" font-size="13" fill="#333">GND (pin 6)</text>
+<text x="1130" y="438" font-size="13" fill="#333">5 V × 2k / (1k + 2k) ≈ 3.3 V</text>
+<rect x="1110" y="480" width="360" height="340" rx="12" fill="#fff8ef" stroke="#f0d9b5"/>
+<text x="1130" y="512" font-size="18" font-weight="bold" fill="#14344d">Antes de encender</text>
+<text x="1130" y="544" font-size="14" fill="#333">Todo con la Raspberry apagada.</text>
+<text x="1130" y="570" font-size="14" fill="#333">Mide el TX del GPS con multímetro.</text>
+<text x="1130" y="596" font-size="14" fill="#333">Los GPIO toleran máximo 3.3 V.</text>
+<text x="1130" y="622" font-size="14" fill="#333">DHT22 y LED van a 3.3 V, no a 5 V.</text>
+<text x="1130" y="648" font-size="14" fill="#333">El botón en GPIO3 apaga y también</text>
+<text x="1130" y="674" font-size="14" fill="#333">enciende la Raspberry.</text>
+<text x="1130" y="700" font-size="14" fill="#333">KY-004: verifica que al presionar</text>
+<text x="1130" y="726" font-size="14" fill="#333">se unan S y − (continuidad).</text>
+<text x="1130" y="752" font-size="14" fill="#333">LED sin resistencias en la placa:</text>
+<text x="1130" y="778" font-size="14" fill="#333">agrega 220 Ω en R, G y B.</text>
+<text x="60" y="480" font-size="16" font-weight="bold" fill="#14344d">Colores</text>
+<rect x="60" y="498" width="16" height="16" rx="4" fill="#d62828"/><text x="84" y="511" font-size="14" fill="#333">5 V</text>
+<rect x="60" y="528" width="16" height="16" rx="4" fill="#f77f00"/><text x="84" y="541" font-size="14" fill="#333">3.3 V</text>
+<rect x="60" y="558" width="16" height="16" rx="4" fill="#222222"/><text x="84" y="571" font-size="14" fill="#333">GND</text>
+<rect x="60" y="588" width="16" height="16" rx="4" fill="#c9a000"/><text x="84" y="601" font-size="14" fill="#333">Datos DHT22</text>
+<rect x="60" y="618" width="16" height="16" rx="4" fill="#2a9d8f"/><text x="84" y="631" font-size="14" fill="#333">GPS TX → Pi</text>
+<rect x="60" y="648" width="16" height="16" rx="4" fill="#3a86ff"/><text x="84" y="661" font-size="14" fill="#333">Pi → GPS RX</text>
+<rect x="60" y="678" width="16" height="16" rx="4" fill="#8338ec"/><text x="84" y="691" font-size="14" fill="#333">Botón</text>
+<rect x="40" y="880" width="345" height="300" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<text x="58" y="914" font-size="18" font-weight="bold" fill="#14344d">GPS Shield Duinopeak</text>
+<rect x="58" y="939" width="104" height="30" rx="6" fill="#fff" stroke="#d62828" stroke-width="2.5"/>
+<text x="110" y="959" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">5V</text>
+<line x1="164" y1="954" x2="190" y2="954" stroke="#d62828" stroke-width="4"/>
+<text x="196" y="959" font-size="14" fill="#d62828" font-weight="bold">pin 4</text>
+<rect x="58" y="983" width="104" height="30" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="110" y="1003" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
+<line x1="164" y1="998" x2="190" y2="998" stroke="#222222" stroke-width="4"/>
+<text x="196" y="1003" font-size="14" fill="#222222" font-weight="bold">pin 6</text>
+<rect x="58" y="1027" width="104" height="30" rx="6" fill="#fff" stroke="#2a9d8f" stroke-width="2.5"/>
+<text x="110" y="1047" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">TX del GPS</text>
+<line x1="164" y1="1042" x2="190" y2="1042" stroke="#2a9d8f" stroke-width="4"/>
+<text x="196" y="1047" font-size="14" fill="#2a9d8f" font-weight="bold">divisor → pin 10</text>
+<rect x="58" y="1071" width="104" height="30" rx="6" fill="#fff" stroke="#3a86ff" stroke-width="2.5"/>
+<text x="110" y="1091" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">RX del GPS</text>
+<line x1="164" y1="1086" x2="190" y2="1086" stroke="#3a86ff" stroke-width="4"/>
+<text x="196" y="1091" font-size="14" fill="#3a86ff" font-weight="bold">pin 8 (opcional)</text>
+<text x="58" y="1134" font-size="13" fill="#555">Usa los pines TX/RX que salen del módulo</text>
+<text x="58" y="1154" font-size="13" fill="#555">GPS (revisa jumpers del shield).</text>
+<rect x="400" y="880" width="345" height="300" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<text x="418" y="914" font-size="18" font-weight="bold" fill="#14344d">AM2302 / DHT22</text>
+<rect x="418" y="939" width="104" height="30" rx="6" fill="#fff" stroke="#f77f00" stroke-width="2.5"/>
+<text x="470" y="959" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">+ (VCC)</text>
+<line x1="524" y1="954" x2="550" y2="954" stroke="#f77f00" stroke-width="4"/>
+<text x="556" y="959" font-size="14" fill="#f77f00" font-weight="bold">pin 1 · 3.3 V</text>
+<rect x="418" y="983" width="104" height="30" rx="6" fill="#fff" stroke="#c9a000" stroke-width="2.5"/>
+<text x="470" y="1003" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">OUT (DATA)</text>
+<line x1="524" y1="998" x2="550" y2="998" stroke="#c9a000" stroke-width="4"/>
+<text x="556" y="1003" font-size="14" fill="#c9a000" font-weight="bold">pin 7 · GPIO4</text>
+<rect x="418" y="1027" width="104" height="30" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="470" y="1047" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">− (GND)</text>
+<line x1="524" y1="1042" x2="550" y2="1042" stroke="#222222" stroke-width="4"/>
+<text x="556" y="1047" font-size="14" fill="#222222" font-weight="bold">pin 20</text>
+<text x="418" y="1134" font-size="13" fill="#555">El módulo de 3 pines ya trae resistencia</text>
+<text x="418" y="1154" font-size="13" fill="#555">pull-up.</text>
+<rect x="760" y="880" width="345" height="300" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<text x="778" y="914" font-size="18" font-weight="bold" fill="#14344d">LED RGB (KY-016)</text>
+<rect x="778" y="939" width="104" height="30" rx="6" fill="#fff" stroke="#e63946" stroke-width="2.5"/>
+<text x="830" y="959" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">R</text>
+<line x1="884" y1="954" x2="910" y2="954" stroke="#e63946" stroke-width="4"/>
+<text x="916" y="959" font-size="14" fill="#e63946" font-weight="bold">pin 11 · GPIO17</text>
+<rect x="778" y="983" width="104" height="30" rx="6" fill="#fff" stroke="#2b9348" stroke-width="2.5"/>
+<text x="830" y="1003" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">G</text>
+<line x1="884" y1="998" x2="910" y2="998" stroke="#2b9348" stroke-width="4"/>
+<text x="916" y="1003" font-size="14" fill="#2b9348" font-weight="bold">pin 13 · GPIO27</text>
+<rect x="778" y="1027" width="104" height="30" rx="6" fill="#fff" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="830" y="1047" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">B</text>
+<line x1="884" y1="1042" x2="910" y2="1042" stroke="#1d4ed8" stroke-width="4"/>
+<text x="916" y="1047" font-size="14" fill="#1d4ed8" font-weight="bold">pin 15 · GPIO22</text>
+<rect x="778" y="1071" width="104" height="30" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="830" y="1091" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">−</text>
+<line x1="884" y1="1086" x2="910" y2="1086" stroke="#222222" stroke-width="4"/>
+<text x="916" y="1091" font-size="14" fill="#222222" font-weight="bold">pin 14 · GND</text>
+<text x="778" y="1134" font-size="13" fill="#555">Cátodo común (pin −).</text>
+<rect x="1120" y="880" width="345" height="300" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<text x="1138" y="914" font-size="18" font-weight="bold" fill="#14344d">Botón (KY-004)</text>
+<rect x="1138" y="939" width="104" height="30" rx="6" fill="#fff" stroke="#8338ec" stroke-width="2.5"/>
+<text x="1190" y="959" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">S</text>
+<line x1="1244" y1="954" x2="1270" y2="954" stroke="#8338ec" stroke-width="4"/>
+<text x="1276" y="959" font-size="14" fill="#8338ec" font-weight="bold">pin 5 · GPIO3</text>
+<rect x="1138" y="983" width="104" height="30" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="1190" y="1003" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">−</text>
+<line x1="1244" y1="998" x2="1270" y2="998" stroke="#222222" stroke-width="4"/>
+<text x="1276" y="1003" font-size="14" fill="#222222" font-weight="bold">pin 9 · GND</text>
+<rect x="1138" y="1027" width="104" height="30" rx="6" fill="#fff" stroke="#aaaaaa" stroke-width="2.5"/>
+<text x="1190" y="1047" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">+ (medio)</text>
+<line x1="1244" y1="1042" x2="1270" y2="1042" stroke="#aaaaaa" stroke-width="4"/>
+<text x="1276" y="1047" font-size="14" fill="#888" font-weight="bold">sin conectar</text>
+<text x="1138" y="1134" font-size="13" fill="#555">Apagado seguro con dtoverlay</text>
+<text x="1138" y="1154" font-size="13" fill="#555">gpio-shutdown.</text>
+</svg>

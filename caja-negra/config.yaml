@@ -1,0 +1,9 @@
+# Configuración de la caja negra (ver CLAUDE.md, sección 7)
+puerto_gps: /dev/serial0
+baudios_gps: 9600
+periodo_registro_s: 1.0
+periodo_dht_s: 3.0
+dht_max_edad_s: 10.0
+ruta_iio_dht: /sys/bus/iio/devices/iio:device0
+carpeta_datos: datos   # relativa a este archivo: ~/cajanegra/datos en la Pi
+led: {r: 17, g: 27, b: 22}

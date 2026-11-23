@@ -1,0 +1,4 @@
+# Dependencias de la caja negra (Raspberry Pi 3, 1 GB).
+# gpiozero viene del sistema (python3-gpiozero); el venv se crea con --system-site-packages.
+pyserial>=3.5
+pyyaml>=6.0

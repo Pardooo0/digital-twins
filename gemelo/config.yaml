@@ -1,0 +1,13 @@
+# Configuración del gemelo digital (PC con Windows). Rutas relativas a este archivo.
+proyecto: estructura1
+carpeta_fotos: datos/fotos
+carpeta_odm: datos/odm          # salida de ODM: datos/odm/<proyecto>/odm_dem/dsm.tif, etc.
+carpeta_cajanegra: datos/cajanegra
+carpeta_salidas: salidas
+crs_defecto: EPSG:32614         # UTM 14N (Uriangato); se usa el CRS del ráster de ODM si existe
+hdop_max: 5.0
+humectacion:
+  hr_min_pct: 80.0              # ISO 9223: húmedo si HR > 80 %
+  temp_min_c: 0.0               # ... y T > 0 °C
+  tam_zona_m: 5.0               # lado de la celda (zona) en metros
+  max_dt_s: 5.0                 # una lectura no representa más de esto (huecos y cortes)
