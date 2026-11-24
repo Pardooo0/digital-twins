@@ -1,0 +1,34 @@
+Verificación de la sesión 27 de la caja negra (prueba de campo, 2026-11-24)
+
+== tests/verificar_sesion.py
+sesion_0027.csv: 1891 filas válidas, OK, 4 avisos
+  aviso  línea 8: salto de reloj de +2258 s (gps); las filas anteriores pueden tener mal utc
+  aviso  línea 1275: salto de reloj de -2256 s (sistema); las filas anteriores pueden tener mal utc
+  aviso  línea 1278: salto de reloj de +2256 s (gps); las filas anteriores pueden tener mal utc
+  aviso  sesion_0027.json: sesión sin cerrar (apagado sin aviso o sigue grabando)
+
+Total: 1 sesiones, 1891 filas, 0 errores
+
+== Línea de tiempo
+Hora local de la sesión: 14:26:45 -> 14:58:15  (1891 filas)
+Área recorrida: 54 m (E-O) x 51 m (N-S)
+Distancia recorrida aprox.: 268 m
+
+Segmentos (>= 20 s):
+  14:27:03-14:27:27 quieta       24 s  centro (  -0.7,   -0.1) m  T 25.0-25.0 C  HR 58-74 %  HDOP 4.29
+  14:27:38-14:48:01 quieta     1223 s  centro (  +4.1,   +6.5) m  T 23.6-24.7 C  HR 51-60 %  HDOP 1.82
+  14:48:24-14:52:11 quieta      227 s  centro ( -13.8,   +1.0) m  T 24.2-25.7 C  HR 49-53 %  HDOP 1.0
+  14:52:15-14:54:17 quieta      122 s  centro ( -25.6,  -29.7) m  T 25.2-25.6 C  HR 48-50 %  HDOP 0.98
+  14:54:19-14:54:50 quieta       31 s  centro ( -10.2,  -37.0) m  T 25.6-25.7 C  HR 48-49 %  HDOP 0.76
+  14:55:11-14:56:34 quieta       83 s  centro (  +9.6,  -27.0) m  T 25.0-25.6 C  HR 48-50 %  HDOP 0.8
+  14:57:23-14:57:44 quieta       21 s  centro (  +7.8,   -1.4) m  T 24.3-24.5 C  HR 50-50 %  HDOP 1.41
+
+== Precisión estática y paradas (puntos de control)
+Caja quieta 14:28:00-14:47:55 (1196 lecturas): radio 50% = 2.2 m, radio 95% = 5.0 m, máx = 5.7 m, sats prom 6.9, HDOP prom 1.41
+Caminata 14:48:04-14:58:15: 610 s, ~209 m recorridos, velocidad media 0.34 m/s
+Paradas de >= 20 s detectadas: 5
+  P1: 14:48:15-14:49:50 (96 s)  pos (-2.9, +8.0) m  lat 20.139096 lon -101.150823  HDOP 1.04
+  P2: 14:49:56-14:50:22 (27 s)  pos (-12.6, +6.6) m  lat 20.139084 lon -101.150915  HDOP 1.22
+  P3: 14:50:26-14:52:02 (97 s)  pos (-22.1, -6.1) m  lat 20.138969 lon -101.151007  HDOP 1.51
+  P4: 14:52:18-14:53:37 (80 s)  pos (-29.4, -27.0) m  lat 20.138780 lon -101.151076  HDOP 0.91
+  P5: 14:54:09-14:54:48 (40 s)  pos (-11.1, -37.5) m  lat 20.138684 lon -101.150901  HDOP 0.79

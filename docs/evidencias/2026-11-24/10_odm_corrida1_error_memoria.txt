@@ -1,0 +1,49 @@
+﻿Corrida 1 de OpenDroneMap (2026-11-24): falla por memoria en odm_meshing.
+Causa: puntos lejanos (horizonte) en la nube; extensión de millones de metros.
+Solución: --auto-boundary y --rerun-from odm_filterpoints.
+
+21:28:49 [App     ] OS: Linux 6.18.58.1-microsoft-standard-WSL2 (x86_64)
+21:28:49 [App     ] Disk: 
+21:28:49 [App     ] SSE & AVX compatible CPU & OS detected
+21:28:49 [App     ] Command line: ReconstructMesh -i /datasets/estructura1/odm_meshing/odm_mesh.dirty.ply -o /datasets/estructura1/odm_meshing/odm_mesh.ply --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0
+21:28:49 [App     ] MEMORYINFO: {
+21:28:49 [App     ] 	VmPeak:	   64824 kB
+21:28:49 [App     ] 	VmSize:	   63488 kB
+21:28:49 [App     ] } ENDINFO
+[INFO]    Writing ODM 2.5D Mesh file in: /datasets/estructura1/odm_meshing/odm_25dmesh.ply
+[INFO]    ODM 2.5D DSM resolution: 0.01
+[INFO]    Created temporary directory: /datasets/estructura1/odm_meshing/tmp
+[INFO]    Creating DSM for 2.5D mesh
+[INFO]    running renderdem "/datasets/estructura1/odm_filterpoints/point_cloud.ply" --outdir "/datasets/estructura1/odm_meshing/tmp" --output-type max --radiuses 0.015707963267948967,0.022214414690791835,0.03141592653589794 --resolution 0.01 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force 
+Reading 3186559 points
+Point cloud bounds are [minx: -5416219, maxx: 7964350, miny: -8022652.5, maxy: 13817301]
+DEM resolution is (1338056900, 2147483648), max tile size is 4096, will split DEM generation into 3768057856 tiles
+Killed
+
+===== Dumping Info for Geeks (developers need this to fix bugs) =====
+Child returned 137
+Traceback (most recent call last):
+  File "/code/stages/odm_app.py", line 82, in execute
+    self.first_stage.run()
+  File "/code/opendm/types.py", line 465, in run
+    self.next_stage.run(outputs)
+  File "/code/opendm/types.py", line 465, in run
+    self.next_stage.run(outputs)
+  File "/code/opendm/types.py", line 465, in run
+    self.next_stage.run(outputs)
+  [Previous line repeated 3 more times]
+  File "/code/opendm/types.py", line 444, in run
+    self.process(self.args, outputs)
+  File "/code/stages/odm_meshing.py", line 54, in process
+    mesh.create_25dmesh(tree.filtered_point_cloud, tree.odm_25dmesh,
+  File "/code/opendm/mesh.py", line 25, in create_25dmesh
+    commands.create_dem(
+  File "/code/opendm/dem/commands.py", line 86, in create_dem
+    system.run('renderdem "{input}" '
+  File "/code/opendm/system.py", line 112, in run
+    raise SubprocessException("Child returned {}".format(retcode), retcode)
+opendm.system.SubprocessException: Child returned 137
+
+===== Done, human-readable information to follow... =====
+
+[ERROR]   Whoops! You ran out of memory! Add more RAM to your computer, if you're using docker configure it to use more memory, for WSL2 make use of .wslconfig (https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig), resize your images, lower the quality settings or process the images using a cloud provider.

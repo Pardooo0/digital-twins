@@ -1,0 +1,1056 @@
+﻿[INFO]    Initializing ODM 3.6.2 - Tue Nov 24 21:37:45  2026
+[INFO]    ==============
+[INFO]    3d_tiles: False
+[INFO]    align: None
+[INFO]    auto_boundary: True
+[INFO]    auto_boundary_distance: 0
+[INFO]    bg_removal: False
+[INFO]    boundary: {}
+[INFO]    build_overviews: False
+[INFO]    camera_lens: auto
+[INFO]    cameras: {}
+[INFO]    cog: False
+[INFO]    copy_to: None
+[INFO]    crop: 3
+[INFO]    dem_decimation: 1
+[INFO]    dem_euclidean_map: False
+[INFO]    dem_gapfill_steps: 3
+[INFO]    dem_resolution: 5
+[INFO]    dsm: True
+[INFO]    dtm: False
+[INFO]    end_with: odm_postprocess
+[INFO]    fast_orthophoto: False
+[INFO]    feature_quality: high
+[INFO]    feature_type: dspsift
+[INFO]    force_gps: False
+[INFO]    gcp: None
+[INFO]    geo: None
+[INFO]    gltf: False
+[INFO]    gps_accuracy: 3
+[INFO]    gps_z_offset: 0
+[INFO]    ignore_gsd: False
+[INFO]    matcher_neighbors: 0
+[INFO]    matcher_order: 0
+[INFO]    matcher_type: flann
+[INFO]    max_concurrency: 8
+[INFO]    merge: all
+[INFO]    merge_skip_blending: False
+[INFO]    mesh_octree_depth: 11
+[INFO]    mesh_size: 200000
+[INFO]    min_num_features: 10000
+[INFO]    name: estructura1
+[INFO]    no_gpu: False
+[INFO]    optimize_disk_space: False
+[INFO]    orthophoto_compression: DEFLATE
+[INFO]    orthophoto_cutline: False
+[INFO]    orthophoto_kmz: False
+[INFO]    orthophoto_no_tiled: False
+[INFO]    orthophoto_png: False
+[INFO]    orthophoto_resolution: 2.0
+[INFO]    pc_classify: False
+[INFO]    pc_copc: False
+[INFO]    pc_csv: False
+[INFO]    pc_ept: False
+[INFO]    pc_filter: 5
+[INFO]    pc_las: False
+[INFO]    pc_quality: medium
+[INFO]    pc_rectify: False
+[INFO]    pc_sample: 0
+[INFO]    pc_skip_geometric: False
+[INFO]    primary_band: auto
+[INFO]    project_path: /datasets/estructura1
+[INFO]    radiometric_calibration: none
+[INFO]    rerun: None
+[INFO]    rerun_all: False
+[INFO]    rerun_from: ['odm_filterpoints', 'odm_meshing', 'mvs_texturing', 'odm_georeferencing', 'odm_dem', 'odm_orthophoto', 'odm_report', 'odm_postprocess']
+[INFO]    rolling_shutter: False
+[INFO]    rolling_shutter_readout: 0
+[INFO]    sfm_algorithm: incremental
+[INFO]    sfm_no_partial: False
+[INFO]    skip_3dmodel: False
+[INFO]    skip_band_alignment: False
+[INFO]    skip_orthophoto: False
+[INFO]    skip_report: False
+[INFO]    sky_removal: False
+[INFO]    sm_cluster: None
+[INFO]    sm_no_align: False
+[INFO]    smrf_scalar: 1.25
+[INFO]    smrf_slope: 0.15
+[INFO]    smrf_threshold: 0.5
+[INFO]    smrf_window: 18.0
+[INFO]    split: 999999
+[INFO]    split_image_groups: None
+[INFO]    split_overlap: 150
+[INFO]    texturing_keep_unseen_faces: False
+[INFO]    texturing_single_material: False
+[INFO]    texturing_skip_global_seam_leveling: False
+[INFO]    tiles: False
+[INFO]    use_3dmesh: False
+[INFO]    use_exif: False
+[INFO]    use_fixed_camera_params: False
+[INFO]    use_hybrid_bundle_adjustment: False
+[INFO]    video_limit: 500
+[INFO]    video_resolution: 4000
+[INFO]    ==============
+[INFO]    Running dataset stage
+[INFO]    Loading dataset from: /datasets/estructura1/images
+[INFO]    Loading images database: /datasets/estructura1/images.json
+[INFO]    Found 94 usable images
+[INFO]    Coordinates file already exist: /datasets/estructura1/odm_georeferencing/coords.txt
+[INFO]    Model geo file already exist: /datasets/estructura1/odm_georeferencing/odm_georeferencing_model_geo.txt
+[INFO]    Finished dataset stage
+[INFO]    Running split stage
+[INFO]    Normal dataset, will process all at once.
+[INFO]    Finished split stage
+[INFO]    Running merge stage
+[INFO]    Normal dataset, nothing to merge.
+[INFO]    Finished merge stage
+[INFO]    Running opensfm stage
+[WARNING] /datasets/estructura1/opensfm/image_list.txt already exists, not rerunning OpenSfM setup
+[WARNING] /datasets/estructura1/opensfm/exif already exists, not rerunning photo to metadata
+[WARNING] Detect features already done: /datasets/estructura1/opensfm/features exists
+[WARNING] Match features already done: /datasets/estructura1/opensfm/matches exists
+[WARNING] Found a valid OpenSfM tracks file in: /datasets/estructura1/opensfm/tracks.csv
+[WARNING] Found a valid OpenSfM reconstruction file in: /datasets/estructura1/opensfm/reconstruction.json
+[INFO]    Already extracted cameras
+[INFO]    Export reconstruction stats
+[WARNING] Found existing reconstruction stats /datasets/estructura1/opensfm/stats/stats.json
+[WARNING] Will skip exporting /datasets/estructura1/opensfm/reconstruction.geocoords.json
+[INFO]    Undistorting /datasets/estructura1/opensfm ...
+[WARNING] Already undistorted (nominal)
+[WARNING] Found a valid OpenSfM NVM reconstruction file in: /datasets/estructura1/opensfm/undistorted/reconstruction.nvm
+[INFO]    Finished opensfm stage
+[INFO]    Running openmvs stage
+[WARNING] Found a valid OpenMVS reconstruction file in: /datasets/estructura1/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply
+[INFO]    Finished openmvs stage
+[INFO]    Running odm_filterpoints stage
+[INFO]    Filtering /datasets/estructura1/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply (statistical, meanK 16, standard deviation 5)
+[INFO]    Boundary [(-3.120680980151519, -56.54842691635713), (-4.527963401400484, -56.613950106315315), (-5.936750816064887, -56.606525694485754), (-7.343264463939704, -56.5261735948734), (-8.743731683760416, -56.37310933414847), (-10.134396032430232, -56.147743473760784), (-11.511527360824402, -55.85068050771952), (-12.87143181922147, -55.48271724116057), (-14.21046176517848, -55.04484065389261), (-15.525025547482073, -54.538225253578275), (-16.811597139923833, -53.96422992320731), (-18.066725599230267, -53.324394278693944), (-19.965271615772508, -52.293769429437816), (-21.19618951866869, -51.58332057809457), (-22.3883208813495, -50.809551059268415), (-23.5384114299668, -49.97457310510799), (-24.64332165347878, -49.08066603401676), (-28.24496059754165, -46.00773847615346), (-28.324068732967135, -45.93998107267544), (-44.12299753376283, -32.35541717382148), (-45.137331058154814, -31.437902958597988), (-46.10426351672504, -30.47056307317689), (-47.021350340684876, -29.455843116622418), (-47.88627297920175, -28.39630847191438), (-48.69684476155089, -27.294637823011726), (-49.45101642503869, -26.153616379015148), (-50.146881296124775, -24.976128835696727), (-51.35346015053801, -22.812015967909247), (-52.029815323941875, -21.51848453609273), (-52.63580938446103, -20.190534580964595), (-53.16969736391911, -18.83198995143175), (-53.629941924940795, -17.446762594860047), (-54.01521778712049, -16.038841291796416), (-54.32441554352408, -14.612280170433223), (-54.556644855067134, -13.171187032479793), (-54.71123701444594, -11.719711524900049), (-55.114285566145554, -6.646063698921353), (-55.19254320388427, -5.116422367747873), (-55.25541296263691, -2.3785895369946957), (-55.2496134674293, -0.9142409358173609), (-55.165020706132054, 0.5476737418211997), (-55.001879827468656, 2.0029178839176893), (-54.76066361187259, 3.447274210397154), (-54.44207110116258, 4.876556992530823), (-54.047025572741404, 6.286624186206609), (-53.576671863906085, 7.673389432486147), (-53.032373054360505, 9.032833902165294), (-52.41570651560323, 10.361017940565944), (-51.72845934028737, 11.654092486016452), (-50.97262316261185, 12.90831022290513), (-50.15038838709006, 14.120036443695426), (-29.181446410890203, 43.29944873414934), (-28.30518284725258, 44.45273715257645), (-27.368774257949553, 45.557748900260776), (-26.374875575769693, 46.61135101597756), (-25.32630473113386, 47.6105562960729), (-24.226034662511665, 48.55253176577389), (-23.077184887602925, 49.43460670765489), (-21.883012658625375, 50.25428023794666), (-20.64690372737823, 51.0092283943668), (-19.372362745692953, 51.69731072569266), (-18.063003329269122, 52.31657636119053), (-16.72253781190375, 52.865269540809095), (-15.354766720382031, 53.34183459402993), (-13.963567998900544, 53.744920349214226), (-12.552886014629621, 54.073383966460824), (-1.5228110624011606, 56.33384971227497), (-0.11187126574805006, 56.58447172259912), (1.310309094376862, 56.760441962163895), (2.7397830510744825, 56.861272061709315), (4.17258339561522, 56.88668218860403), (5.60473368759267, 56.83660182217136), (7.0322592906304635, 56.71116995019838), (8.451198403199669, 56.51073468243703), (9.857613053987734, 56.235852285753936), (11.247600030445028, 55.88728563906625), (12.617301711812615, 55.46600211691111), (13.962916775024496, 54.97317090490833), (15.89559313794598, 54.207009359728545), (17.10250070632901, 53.694567162077874), (18.283312533341814, 53.12456162367016), (19.435285063344054, 52.498317123390734), (20.555741747491993, 51.81728870701045), (21.64207926223753, 51.083058710210025), (22.691773558151908, 50.29733307752758), (38.309995645075105, 38.008368759881705), (39.36287428095238, 37.13620814634487), (40.370601303409785, 36.212247213348746), (41.33063103357563, 35.23882003361359), (42.24053828348406, 34.21838563866913), (43.098024482431356, 33.15352180879563), (43.90092348365579, 32.0469185593538), (46.283360713452566, 28.58340995432809), (46.34101958962856, 28.49924983549863), (47.60482808534289, 26.647128901444376), (47.778316864802036, 26.38973772805184), (49.59736875310773, 23.657451268751174), (50.318903117091395, 22.51296583050862), (50.982639246911276, 21.334020069800317), (51.58693520643283, 20.123530437704176), (52.13029610121157, 18.88449141709134), (52.61137777683325, 17.619968116283417), (53.02899014361901, 16.333088685758412), (53.38210012105992, 15.02703658118844), (53.669834193307906, 13.705042685382068), (53.89148056996055, 12.370377318933606), (54.04649094690103, 11.02634214842692), (54.31428634963231, 8.057338637299836), (54.40669962379616, 6.591169196180999), (54.419824403419625, 5.122148847673088), (54.35362240753602, 3.6545622777193785), (54.20828672731295, 2.1926899906247854), (53.98424126266036, 0.7407958232797682), (53.682139486132655, -0.6968854907900095), (53.30286253680242, -2.1161606716923416), (52.84751665015938, -3.5128901256248355), (52.31742993177613, -4.883000017143786), (51.714148483471945, -6.222494152374566), (51.039431893790606, -7.527465633582324), (50.2952481060056, -8.794108256697655), (49.483767677797005, -10.018727608956397), (25.297829325078055, -44.46075475541875), (24.453090498922393, -45.59941314999014), (23.550171300943475, -46.692511290777475), (22.591524593590293, -47.737079677172005), (21.579754628124647, -48.730280643794686), (20.517609970003832, -49.669416069984436), (19.40797603194369, -50.551934708375484), (18.25386723590782, -51.375439116265625), (17.05841882369714, -52.13769216975197), (15.824878339946736, -52.83662313781679), (14.556596809939947, -53.47033331170678), (13.257019636163022, -54.03710115887225), (11.929677238571458, -54.53538700379431), (10.578175463888329, -54.96383720636368), (9.206185789895244, -55.32128784386441), (7.817435351840686, -55.606767867691815), (6.415696816868149, -55.819501746445894), (5.004778135684319, -55.95891156839207), (-3.120680980151519, -56.54842691635713)]
+[INFO]    running "/code/SuperBuild/install/bin/FPCFilter" --input "/datasets/estructura1/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply" --output "/datasets/estructura1/odm_filterpoints/point_cloud.ply" --concurrency 8 --meank 16 --std 5 --stats "/datasets/estructura1/odm_filterpoints/point_cloud_stats.json" --boundary "/tmp/tmp8yf2_083.boundary.json"
+ *** FPCFilter - v0.2 ***
+
+?> Parameters:
+	input = /datasets/estructura1/opensfm/undistorted/openmvs/scene_dense_dense_filtered.ply
+	output = /datasets/estructura1/odm_filterpoints/point_cloud.ply
+	stats = /datasets/estructura1/odm_filterpoints/point_cloud_stats.json
+	std = 5
+	meanK = 16
+	boundary = 140 polygon vertexes
+	concurrency = 8
+	verbose = no
+
+ -> Setting num_threads to 8
+
+ -> Cropping
+
+ -> Done cropping in 6.678s
+
+ ?> Skipping sampling
+
+ -> Statistical filtering
+
+ -> Spacing estimation completed (0.01 meters)
+
+ ?> Done in 7.392s
+
+ -> Writing output
+
+ ?> Done in 10.09s
+
+ ?> Pipeline done in 24.16s
+
+[INFO]    Finished odm_filterpoints stage
+[INFO]    Running odm_meshing stage
+[INFO]    Writing ODM Mesh file in: /datasets/estructura1/odm_meshing/odm_mesh.ply
+[INFO]    running "/code/SuperBuild/install/bin/PoissonRecon" --in "/datasets/estructura1/odm_filterpoints/point_cloud.ply" --out "/datasets/estructura1/odm_meshing/odm_mesh.dirty.ply" --depth 11 --pointWeight 4.0 --samplesPerNode 1.0 --threads 7 --bType 2 --linearFit 
+[INFO]    running "/code/SuperBuild/install/bin/ReconstructMesh" -i "/datasets/estructura1/odm_meshing/odm_mesh.dirty.ply" -o "/datasets/estructura1/odm_meshing/odm_mesh.ply" --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0
+21:42:27 [App     ] OpenMVS x64 v2.2.0
+21:42:27 [App     ] Build date: Aug 21 2026, 13:51:51
+21:42:27 [App     ] CPU: Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz (8 cores)
+21:42:27 [App     ] RAM: 15.53GB Physical Memory 4.00GB Virtual Memory
+21:42:27 [App     ] OS: Linux 6.18.58.1-microsoft-standard-WSL2 (x86_64)
+21:42:27 [App     ] Disk: 
+21:42:27 [App     ] SSE & AVX compatible CPU & OS detected
+21:42:27 [App     ] Command line: ReconstructMesh -i /datasets/estructura1/odm_meshing/odm_mesh.dirty.ply -o /datasets/estructura1/odm_meshing/odm_mesh.ply --archive-type 3 --remove-spikes 0 --remove-spurious 20 --smooth 0 --target-face-num 400000 -v 0
+
+Decimated faces 14248 (1.56%, 1s, ETA 1m)...
+Decimated faces 26942 (2.95%, 1s, ETA 1m)...
+Decimated faces 42948 (4.70%, 2s, ETA 40s)...
+Decimated faces 58888 (6.45%, 2s, ETA 30s)...
+Decimated faces 75046 (8.21%, 2s, ETA 24s)...
+Decimated faces 89760 (9.83%, 2s, ETA 21s)...
+Decimated faces 103542 (11.33%, 2s, ETA 18s)...
+Decimated faces 116006 (12.70%, 2s, ETA 17s)...
+Decimated faces 129148 (14.14%, 2s, ETA 15s)...
+Decimated faces 142738 (15.62%, 2s, ETA 14s)...
+Decimated faces 156666 (17.15%, 2s, ETA 13s)...
+Decimated faces 168862 (18.48%, 2s, ETA 12s)...
+Decimated faces 180566 (19.77%, 3s, ETA 12s)...
+Decimated faces 191902 (21.01%, 3s, ETA 11s)...
+Decimated faces 203571 (22.28%, 3s, ETA 11s)...
+Decimated faces 215031 (23.54%, 3s, ETA 10s)...
+Decimated faces 225747 (24.71%, 3s, ETA 10s)...
+Decimated faces 235983 (25.83%, 3s, ETA 10s)...
+Decimated faces 247323 (27.07%, 3s, ETA 9s)... 
+Decimated faces 258007 (28.24%, 3s, ETA 9s)...
+Decimated faces 269367 (29.49%, 3s, ETA 9s)...
+Decimated faces 279395 (30.58%, 3s, ETA 8s)...
+Decimated faces 289639 (31.71%, 4s, ETA 8s)...
+Decimated faces 299067 (32.74%, 4s, ETA 8s)...
+Decimated faces 307417 (33.65%, 4s, ETA 8s)...
+Decimated faces 316403 (34.64%, 4s, ETA 8s)...
+Decimated faces 324174 (35.49%, 4s, ETA 8s)...
+Decimated faces 331519 (36.29%, 4s, ETA 7s)...
+Decimated faces 338940 (37.10%, 4s, ETA 7s)...
+Decimated faces 345898 (37.86%, 4s, ETA 7s)...
+Decimated faces 352226 (38.56%, 4s, ETA 7s)...
+Decimated faces 357745 (39.16%, 4s, ETA 7s)...
+Decimated faces 362653 (39.70%, 5s, ETA 7s)...
+Decimated faces 367227 (40.20%, 5s, ETA 7s)...
+Decimated faces 370983 (40.61%, 5s, ETA 7s)...
+Decimated faces 374263 (40.97%, 5s, ETA 7s)...
+Decimated faces 377213 (41.29%, 5s, ETA 7s)...
+Decimated faces 383054 (41.93%, 5s, ETA 7s)...
+Decimated faces 391113 (42.81%, 5s, ETA 7s)...
+Decimated faces 398717 (43.65%, 5s, ETA 7s)...
+Decimated faces 400311 (43.82%, 6s, ETA 8s)...
+Decimated faces 413385 (45.25%, 6s, ETA 8s)...
+Decimated faces 427007 (46.74%, 6s, ETA 7s)...
+Decimated faces 440271 (48.19%, 6s, ETA 7s)...
+Decimated faces 453147 (49.60%, 6s, ETA 7s)...
+Decimated faces 465554 (50.96%, 7s, ETA 6s)...
+Decimated faces 478579 (52.39%, 7s, ETA 6s)...
+Decimated faces 490959 (53.74%, 7s, ETA 6s)...
+Decimated faces 501763 (54.93%, 7s, ETA 6s)...
+Decimated faces 513947 (56.26%, 7s, ETA 5s)...
+Decimated faces 525859 (57.56%, 7s, ETA 5s)...
+Decimated faces 537642 (58.85%, 7s, ETA 5s)...
+Decimated faces 548342 (60.02%, 7s, ETA 5s)...
+Decimated faces 558686 (61.16%, 7s, ETA 4s)...
+Decimated faces 569557 (62.35%, 7s, ETA 4s)...
+Decimated faces 579316 (63.42%, 8s, ETA 4s)...
+Decimated faces 589396 (64.52%, 8s, ETA 4s)...
+Decimated faces 599499 (65.62%, 8s, ETA 4s)...
+Decimated faces 609637 (66.73%, 8s, ETA 4s)...
+Decimated faces 620158 (67.89%, 8s, ETA 4s)...
+Decimated faces 630480 (69.02%, 8s, ETA 3s)...
+Decimated faces 640755 (70.14%, 8s, ETA 3s)...
+Decimated faces 651200 (71.28%, 8s, ETA 3s)...
+Decimated faces 662240 (72.49%, 8s, ETA 3s)...
+Decimated faces 671300 (73.48%, 8s, ETA 3s)...
+Decimated faces 679880 (74.42%, 9s, ETA 3s)...
+Decimated faces 688598 (75.38%, 9s, ETA 2s)...
+Decimated faces 697749 (76.38%, 9s, ETA 2s)...
+Decimated faces 706845 (77.38%, 9s, ETA 2s)...
+Decimated faces 715751 (78.35%, 9s, ETA 2s)...
+Decimated faces 725118 (79.38%, 9s, ETA 2s)...
+Decimated faces 734408 (80.39%, 9s, ETA 2s)...
+Decimated faces 743002 (81.33%, 9s, ETA 2s)...
+Decimated faces 751848 (82.30%, 9s, ETA 2s)...
+Decimated faces 752708 (82.40%, 10s, ETA 2s)...
+Decimated faces 766240 (83.88%, 10s, ETA 2s)...
+Decimated faces 778432 (85.21%, 10s, ETA 1s)...
+Decimated faces 790140 (86.49%, 10s, ETA 1s)...
+Decimated faces 802244 (87.82%, 10s, ETA 1s)...
+Decimated faces 813949 (89.10%, 10s, ETA 1s)...
+Decimated faces 825927 (90.41%, 11s, ETA 1s)...
+Decimated faces 837326 (91.66%, 11s, ETA 1s)...
+Decimated faces 848426 (92.87%, 11s, ETA 866ms)...
+Decimated faces 855607 (93.66%, 11s, ETA 771ms)...
+Decimated faces 862055 (94.37%, 11s, ETA 686ms)...
+Decimated faces 872091 (95.46%, 11s, ETA 551ms)...
+Decimated faces 881986 (96.55%, 11s, ETA 418ms)...
+Decimated faces 891613 (97.60%, 11s, ETA 289ms)...
+Decimated faces 901219 (98.65%, 11s, ETA 162ms)...
+Decimated faces 910901 (99.71%, 11s, ETA 34ms)... 
+Decimated faces 913531 (100%, 12s21ms)           
+21:42:45 [App     ] MEMORYINFO: {
+21:42:45 [App     ] 	VmPeak:	  586836 kB
+21:42:45 [App     ] 	VmSize:	  188668 kB
+21:42:45 [App     ] } ENDINFO
+[INFO]    Writing ODM 2.5D Mesh file in: /datasets/estructura1/odm_meshing/odm_25dmesh.ply
+[INFO]    ODM 2.5D DSM resolution: 0.01
+[INFO]    Created temporary directory: /datasets/estructura1/odm_meshing/tmp
+[INFO]    Creating DSM for 2.5D mesh
+[INFO]    running renderdem "/datasets/estructura1/odm_filterpoints/point_cloud.ply" --outdir "/datasets/estructura1/odm_meshing/tmp" --output-type max --radiuses 0.015707963267948967,0.022214414690791835,0.03141592653589794 --resolution 0.01 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force 
+Reading 3142436 points
+Point cloud bounds are [minx: -55.135219574, maxx: 49.8446960449, miny: -56.1449775696, maxy: 55.5082778931]
+DEM resolution is (10498, 11166), max tile size is 4096, will split DEM generation into 9 tiles
+r0.0314159_x2_y0.tif
+r0.0222144_x0_y2.tif
+r0.015708_x0_y1.tif
+r0.0222144_x2_y0.tif
+r0.015708_x0_y0.tif
+r0.0314159_x0_y0.tif
+r0.015708_x1_y2.tif
+r0.0314159_x1_y0.tif
+r0.0222144_x0_y1.tif
+r0.015708_x0_y2.tif
+r0.0314159_x0_y1.tif
+r0.015708_x2_y0.tif
+r0.0222144_x1_y2.tif
+r0.0222144_x1_y1.tif
+r0.0314159_x2_y1.tif
+r0.0314159_x1_y1.tif
+r0.0222144_x0_y0.tif
+r0.0314159_x0_y2.tif
+r0.015708_x1_y0.tif
+r0.0314159_x2_y2.tif
+r0.0222144_x2_y2.tif
+r0.015708_x2_y1.tif
+r0.0222144_x1_y0.tif
+r0.0314159_x1_y2.tif
+r0.015708_x1_y1.tif
+r0.015708_x2_y2.tif
+r0.0222144_x2_y1.tif
+[INFO]    Generated 27 tiles
+[INFO]    running gdalbuildvrt -input_file_list "/datasets/estructura1/odm_meshing/tmp/tiles_list.txt" "/datasets/estructura1/odm_meshing/tmp/tiles.vrt" 
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdal_translate -co NUM_THREADS=8 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.1% -outsize 10% 0 "/datasets/estructura1/odm_meshing/tmp/tiles.vrt" "/datasets/estructura1/odm_meshing/tmp/tiles.small.tif"
+0...10...20...30...40...50...60...70...80...90...Input file size is 10499, 11166
+0...10...20...30...40...50...60...70...80...90...100 - done in 00:00:11.
+[INFO]    running gdalbuildvrt -resolution highest -r bilinear "/datasets/estructura1/odm_meshing/tmp/merged.vrt" "/datasets/estructura1/odm_meshing/tmp/tiles.small_filled.tif" "/datasets/estructura1/odm_meshing/tmp/tiles.vrt"
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdal_translate -co NUM_THREADS=8 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.1% "/datasets/estructura1/odm_meshing/tmp/merged.vrt" "/datasets/estructura1/odm_meshing/tmp/tiles.tif"
+Input file size is 10499, 11166
+0...10...20...30...40...50...60...70...80...90...100 - done in 00:01:25.
+[INFO]    running fastrasterfilter "/datasets/estructura1/odm_meshing/tmp/tiles.tif" --output "/datasets/estructura1/odm_meshing/tmp/mesh_dsm.tif" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE 
+Input: /datasets/estructura1/odm_meshing/tmp/tiles.tif
+Size: 10499x11166
+Blocks: 420
+Smoothing...420... done
+Wrote /datasets/estructura1/odm_meshing/tmp/mesh_dsm.tif
+[INFO]    Completed smoothing to create /datasets/estructura1/odm_meshing/tmp/mesh_dsm.tif in 0:00:16.019510
+[INFO]    Completed mesh_dsm.tif in 0:02:26.953063
+[INFO]    Creating mesh from DSM: /datasets/estructura1/odm_meshing/tmp/mesh_dsm.tif
+[INFO]    running "/code/SuperBuild/install/bin/dem2mesh" -inputFile "/datasets/estructura1/odm_meshing/tmp/mesh_dsm.tif" -outputFile "/datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply" -maxTileLength 2000 -maxVertexCount 200000 -maxConcurrency 8 -edgeSwapThreshold 0.15 -verbose 
+Running with parameters:
+	-inputFile /datasets/estructura1/odm_meshing/tmp/mesh_dsm.tif
+	-outputFile /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply
+	-maxVertexCount 200000
+	-maxTileLength 2000
+	-maxConcurrency 8
+	-edgeSwapThreshold 0.150000
+	-verbose
+Raster Size is 10499x11166
+Extent is (-55.135220, 49.854780), (-56.149474, 55.510526)
+NoData value: -9999
+Description: 
+Reading raster...
+Total vertices before simplification: 117231834
+Subdivisions: 8x8
+Splitting area in 64
+Block size is 1312, 1395
+Concurrency set to 8
+Allocating 8 raster data blocks of 5252 bytes
+Scanning block (1,0)
+Scanning block (2,0)
+Scanning block (3,0)
+Scanning block (4,0)
+Scanning block (5,0)
+Scanning block (7,0)
+Scanning block (6,0)
+Scanning block (0,0)
+Scanning block (1,1)
+Scanning block (1,2)
+Scanning block (1,3)
+Scanning block (1,4)
+Scanning block (1,5)
+Scanning block (1,6)
+Scanning block (1,7)
+Scanning block (6,1)
+Scanning block (6,2)
+Scanning block (6,3)
+Scanning block (6,4)
+Scanning block (6,5)
+Scanning block (6,6)
+Scanning block (6,7)
+Scanning block (4,1)
+Scanning block (4,2)
+Scanning block (4,3)
+Scanning block (4,4)
+Scanning block (4,5)
+Scanning block (4,6)
+Scanning block (4,7)
+Scanning block (2,1)
+Scanning block (2,2)
+Scanning block (2,3)
+Scanning block (2,4)
+Scanning block (2,5)
+Scanning block (2,6)
+Scanning block (2,7)
+Scanning block (3,1)
+Scanning block (3,2)
+Scanning block (3,3)
+Scanning block (3,4)
+Scanning block (3,5)
+Scanning block (3,6)
+Scanning block (3,7)
+Scanning block (5,1)
+Scanning block (5,2)
+Scanning block (5,3)
+Scanning block (5,4)
+Scanning block (5,5)
+Scanning block (5,6)
+Scanning block (5,7)
+Scanning block (0,1)
+Scanning block (0,2)
+Scanning block (0,3)
+Scanning block (0,4)
+Scanning block (0,5)
+Scanning block (0,6)
+Scanning block (0,7)
+Scanning block (7,1)
+Scanning block (7,2)
+Scanning block (7,3)
+Scanning block (7,4)
+Scanning block (7,5)
+Scanning block (7,6)
+Scanning block (7,7)
+Empty blocks: 5
+Processing block (5,0)
+Processing block (3,0)
+Processing block (1,0)
+Processing block (2,0)
+Processing block (6,0)
+Processing block (0,0)
+Processing block (4,0)
+Processing block (7,1)
+Sampled 3657856 faces, target is 10168
+Sampled 6707 faces, target is 6707
+No simplification needed
+Processing block (0,1)
+Sampled 2816662 faces, target is 10168
+Sampled 1426612 faces, target is 10168
+Sampled 2117240 faces, target is 10168
+Sampled 3657856 faces, target is 10168
+Sampled 3653740 faces, target is 10168
+Sampled 1707175 faces, target is 10168
+Sampled 1509792 faces, target is 10168
+Triangle count: 10168
+Processing block (1,1)
+Sampled 3660480 faces, target is 10168
+Triangle count: 10168
+Processing block (0,2)
+Triangle count: 10167
+Processing block (6,1)
+Sampled 3576067 faces, target is 10168
+Sampled 3613996 faces, target is 10168
+Triangle count: 10168
+Processing block (7,2)
+Triangle count: 13223
+Processing block (2,1)
+Sampled 3660480 faces, target is 10168
+Sampled 3660480 faces, target is 10168
+Triangle count: 12776
+Processing block (5,1)
+Sampled 3660480 faces, target is 10168
+Triangle count: 16254
+Processing block (4,1)
+Triangle count: 22070
+Sampled 3660480 faces, target is 10168
+Processing block (3,1)
+Sampled 3660480 faces, target is 10168
+Triangle count: 16694
+Processing block (1,2)
+Sampled 3660480 faces, target is 10168
+Triangle count: 17921
+Processing block (6,2)
+Sampled 3660480 faces, target is 10168
+Triangle count: 14498
+Processing block (0,3)
+Sampled 3657690 faces, target is 10168
+Triangle count: 18450
+Processing block (7,3)
+Triangle count: 18208
+Triangle count: 22224
+Sampled 3660480 faces, target is 10168
+Processing block (2,2)
+Processing block (5,2)
+Sampled 3660480 faces, target is 10168
+Sampled 3660480 faces, target is 10168
+Triangle count: 25674
+Processing block (4,2)
+Sampled 3660480 faces, target is 10168
+Triangle count: 28326
+Processing block (3,2)
+Sampled 3660480 faces, target is 10168
+Triangle count: 16158
+Processing block (1,3)
+Sampled 3660480 faces, target is 10168
+Triangle count: 23658
+Processing block (6,3)
+Sampled 3660480 faces, target is 10168
+Triangle count: 23802
+Processing block (0,4)
+Sampled 3657690 faces, target is 10168
+Triangle count: 14248
+Triangle count: 18718
+Processing block (7,4)
+Processing block (2,3)
+Sampled 3403052 faces, target is 10168
+Triangle count: 26096
+Sampled 3660480 faces, target is 10168
+Processing block (5,3)
+Sampled 3660480 faces, target is 10168
+Triangle count: 20242
+Processing block (4,3)
+Sampled 3660480 faces, target is 10168
+Triangle count: 23088
+Processing block (3,3)
+Sampled 3660480 faces, target is 10168
+Triangle count: 16546
+Processing block (1,4)
+Sampled 3660480 faces, target is 10168
+Triangle count: 13374
+Processing block (0,5)
+Sampled 2793856 faces, target is 10168
+Triangle count: 19536
+Processing block (6,4)
+Triangle count: 28234
+Triangle count: 12572
+Processing block (7,5)
+Processing block (2,4)
+Sampled 3660480 faces, target is 10168
+Sampled 1898961 faces, target is 10168
+Sampled 3660480 faces, target is 10168
+Triangle count: 37806
+Processing block (5,4)
+Sampled 3660480 faces, target is 10168
+Triangle count: 18958
+Processing block (3,4)
+Sampled 3660480 faces, target is 10168
+Triangle count: 10168
+Triangle count: 24006
+Processing block (4,4)
+Triangle count: 14186
+Sampled 3660480 faces, target is 10168
+Processing block (1,5)
+Sampled 3348160 faces, target is 10168
+Triangle count: 10167
+Processing block (0,6)
+Sampled 3143410 faces, target is 10168
+Triangle count: 14550
+Processing block (6,5)
+Sampled 3002306 faces, target is 10168
+Triangle count: 52364
+Processing block (2,5)
+Sampled 3660480 faces, target is 10168
+Triangle count: 17934
+Processing block (5,5)
+Triangle count: 39192
+Sampled 3589303 faces, target is 10168
+Processing block (3,5)
+Sampled 3660480 faces, target is 10168
+Triangle count: 14134
+Processing block (1,6)
+Sampled 3660480 faces, target is 10168
+Triangle count: 10168
+Triangle count: 10167
+Processing block (0,7)
+Processing block (6,6)
+Triangle count: 20950
+Sampled 313360 faces, target is 10168
+Sampled 247602 faces, target is 10168
+Processing block (4,5)
+Sampled 3660480 faces, target is 10168
+Triangle count: 10168
+Triangle count: 10167
+Triangle count: 19826
+Processing block (2,6)
+Sampled 3264424 faces, target is 10168
+Triangle count: 15131
+Processing block (5,6)
+Sampled 2825678 faces, target is 10168
+Triangle count: 59730
+Processing block (3,6)
+Sampled 3660480 faces, target is 10168
+Triangle count: 12008
+Processing block (1,7)
+Sampled 1332281 faces, target is 10168
+Triangle count: 25514
+Processing block (4,6)
+Sampled 3079811 faces, target is 10168
+Triangle count: 10168
+Triangle count: 10167
+Triangle count: 12553
+Processing block (2,7)
+Sampled 952809 faces, target is 10168
+Triangle count: 10167
+Triangle count: 27154
+Processing block (3,7)
+Sampled 3660480 faces, target is 10168
+Triangle count: 12542
+Processing block (4,7)
+Sampled 3304219 faces, target is 10168
+Triangle count: 18510
+Triangle count: 10168
+Merge step...
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-0.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-5.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-6.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.0-7.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-0.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-5.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-6.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.1-7.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-0.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-5.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-6.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.2-7.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-0.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-5.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-6.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.3-7.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-0.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-5.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-6.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.4-7.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.5-0.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.5-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.5-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.5-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.5-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.5-5.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.5-6.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.6-0.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.6-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.6-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.6-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.6-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.6-5.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.6-6.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.7-1.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.7-2.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.7-3.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.7-4.bin
+Reading /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply.7-5.bin
+Simplifying final mesh...
+Triangle count: 400000
+Performing edge collapses...
+Writing to file...  done!
+[INFO]    running "/code/SuperBuild/install/bin/ReconstructMesh" -i "/datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply" -o "/datasets/estructura1/odm_meshing/odm_25dmesh.ply" --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0
+21:47:57 [App     ] OpenMVS x64 v2.2.0
+21:47:57 [App     ] Build date: Aug 21 2026, 13:51:51
+21:47:57 [App     ] CPU: Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz (8 cores)
+21:47:57 [App     ] RAM: 15.53GB Physical Memory 4.00GB Virtual Memory
+21:47:57 [App     ] OS: Linux 6.18.58.1-microsoft-standard-WSL2 (x86_64)
+21:47:57 [App     ] Disk: 
+21:47:57 [App     ] SSE & AVX compatible CPU & OS detected
+21:47:57 [App     ] Command line: ReconstructMesh -i /datasets/estructura1/odm_meshing/odm_25dmesh.dirty.ply -o /datasets/estructura1/odm_meshing/odm_25dmesh.ply --archive-type 3 --remove-spikes 0 --remove-spurious 0 --smooth 0 --target-face-num 400000 -v 0
+21:48:01 [App     ] MEMORYINFO: {
+21:48:01 [App     ] 	VmPeak:	  197568 kB
+21:48:01 [App     ] 	VmSize:	   84520 kB
+21:48:01 [App     ] } ENDINFO
+[INFO]    Finished odm_meshing stage
+[INFO]    Running mvs_texturing stage
+[INFO]    Writing MVS Textured file in: /datasets/estructura1/odm_texturing/odm_textured_model_geo.obj
+[INFO]    running "/code/SuperBuild/install/bin/texrecon" "/datasets/estructura1/opensfm/undistorted/reconstruction.nvm" "/datasets/estructura1/odm_meshing/odm_mesh.ply" "/datasets/estructura1/odm_texturing/odm_textured_model_geo" -d gmi -o gauss_clamping -t none --no_intermediate_results     --num_threads=8 --max_texture_size=8192 
+/code/SuperBuild/install/bin/texrecon (built on Aug 21 2026, 13:42:12)
+Load and prepare mesh: 
+Reading PLY: 136043 verts... 272160 faces... done.
+Generating texture views: 
+NVM: Loading file...
+NVM: Number of views: 76
+NVM: Number of features: 17587
+
+                                                                                
+	Loading 100%... done. (Took 1.319s)
+Building adjacency graph: 
+
+                                                                                
+	Adding edges 100%... done. (Took 0.804s)
+	408237 total edges.
+View selection:
+	Building BVH from 272160 faces... done. (Took: 383 ms)
+
+                                                                                
+	Calculating face qualities 100%... done. (Took 3.984s)
+
+                                                                                
+	Postprocessing face infos 100%... done. (Took 0.09s)
+	Maximum quality of a face within an image: 7494.95
+	Clamping qualities to 106.439 within normalization.
+	Optimizing:
+		Time[s]	Energy
+		0	275434
+		3	274579
+		3	272429
+		4	271491
+		4	271064
+		4	270824
+		5	270711
+		7	270678
+		7	270613
+		7	270578
+		8	270542
+		8	270515
+		9	270495
+	114622 faces have not been seen
+	Took: 14.077s
+Generating texture patches:
+	Running... done. (Took 1.749s)
+	3661 texture patches.
+Running global seam leveling:
+	Create matrices for optimization...  done.
+	Lhs dimensionality: 102961 x 102961
+	Calculating adjustments:
+		Color channel 1: CG took 97 iterations. Residual is 8.63911e-05
+		Color channel 0: CG took 97 iterations. Residual is 8.58976e-05
+		Color channel 2: CG took 97 iterations. Residual is 8.79933e-05
+		Took 0.519 seconds
+
+                                                                                
+	Adjusting texture patches 100%... done. (Took 0.538s)
+Running local seam leveling:
+
+                                                                                
+	Blending texture patches 100%... done. (Took 26.26s)
+Generating texture atlases:
+	Sorting texture patches... done.
+
+	Working on atlas 15 100%... done.
+	Finalizing texture atlases... done. (Took: 0s)
+Building objmodel:
+	Saving model... done.
+Whole texturing procedure took: 76.415s
+[INFO]    Writing MVS Textured file in: /datasets/estructura1/odm_texturing_25d/odm_textured_model_geo.obj
+[INFO]    running "/code/SuperBuild/install/bin/texrecon" "/datasets/estructura1/opensfm/undistorted/reconstruction.nvm" "/datasets/estructura1/odm_meshing/odm_25dmesh.ply" "/datasets/estructura1/odm_texturing_25d/odm_textured_model_geo" -d gmi -o gauss_clamping -t none --no_intermediate_results   --nadir_mode  --num_threads=8 --max_texture_size=8192 
+/code/SuperBuild/install/bin/texrecon (built on Aug 21 2026, 13:42:12)
+Load and prepare mesh: 
+Reading PLY: 140694 verts... 280930 faces... done.
+Generating texture views: 
+NVM: Loading file...
+NVM: Number of views: 76
+NVM: Number of features: 17587
+
+                                                                                
+	Loading 100%... done. (Took 0.9s)
+Building adjacency graph: 
+
+                                                                                
+	Adding edges 100%... done. (Took 0.791s)
+	421170 total edges.
+View selection:
+	Building BVH from 280930 faces... done. (Took: 304 ms)
+
+                                                                                
+	Calculating face qualities 100%... done. (Took 3.42s)
+
+                                                                                
+	Postprocessing face infos 100%... done. (Took 0.847s)
+	Maximum quality of a face within an image: 9999.81
+	Clamping qualities to 9535.77 within normalization.
+	Optimizing:
+		Time[s]	Energy
+		0	242420
+		1	238795
+		2	233615
+		2	231403
+		3	230559
+		3	230102
+		4	229789
+		4	229290
+		5	229129
+		5	228996
+		6	228940
+		6	228896
+		7	228867
+		7	228829
+	6735 faces have not been seen
+	Took: 12.94s
+Generating texture patches:
+	Running... done. (Took 0.98s)
+	3548 texture patches.
+Running global seam leveling:
+	Create matrices for optimization...  done.
+	Lhs dimensionality: 160577 x 160577
+	Calculating adjustments:
+		Color channel 1: CG took 108 iterations. Residual is 9.98383e-05
+		Color channel 2: CG took 108 iterations. Residual is 9.70978e-05
+		Color channel 0: CG took 119 iterations. Residual is 9.33896e-05
+		Took 0.642 seconds
+
+                                                                                
+	Adjusting texture patches 100%... done. (Took 1.035s)
+Running local seam leveling:
+
+                                                                                
+	Blending texture patches 100%... done. (Took 18.799s)
+Generating texture atlases:
+	Sorting texture patches... done.
+
+	Working on atlas 14 100%... done.
+	Finalizing texture atlases... done. (Took: 0s)
+Building objmodel:
+	Saving model... done.
+Whole texturing procedure took: 77.948s
+[INFO]    Finished mvs_texturing stage
+[INFO]    Running odm_georeferencing stage
+[INFO]    Georeferencing point cloud
+[INFO]    las scale calculated as the minimum of 1/10 estimated spacing or 0.001, which ever is less.
+[INFO]    running pdal translate -i "/datasets/estructura1/odm_filterpoints/point_cloud.ply" -o "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz" ferry transformation --filters.ferry.dimensions="views => UserData" --filters.transformation.matrix="1 0 0 275164.0 0 1 0 2228304.0 0 0 1 0 0 0 0 1" --writers.las.offset_x=275164.0 --writers.las.offset_y=2228304.0 --writers.las.scale_x=0.001 --writers.las.scale_y=0.001 --writers.las.scale_z=0.001 --writers.las.offset_z=0 --writers.las.a_srs="+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs"
+[INFO]    Calculating cropping area and generating bounds shapefile from point cloud
+[INFO]    running pdal translate -i "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz" -o "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.decimated.las" decimation --filters.decimation.step=40 
+[INFO]    running pdal info --boundary --filters.hexbin.edge_length=1 --filters.hexbin.threshold=1 "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.decimated.las" > "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.boundary.json"
+[INFO]    running pdal info --summary "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz" > "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.summary.json"
+[INFO]    running ogr2ogr -overwrite -f GPKG -a_srs "+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs" /datasets/estructura1/odm_georeferencing/odm_georeferenced_model.bounds.gpkg /datasets/estructura1/odm_georeferencing/odm_georeferenced_model.bounds.geojson
+[INFO]    Finished odm_georeferencing stage
+[INFO]    Running odm_dem stage
+[INFO]    Create DSM: True
+[INFO]    Create DTM: False
+[INFO]    DEM input file /datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz found: True
+[INFO]    running renderdem "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz" --outdir "/datasets/estructura1/odm_dem" --output-type max --radiuses 0.01,0.014142135623730952,0.020000000000000004 --resolution 0.05 --max-tiles 0 --decimation 1 --classification -1 --tile-size 4096 --force 
+Reading points from /datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz
+Number of points: 3142436
+Classification dimension: Classification
+Point cloud bounds are [minx: 275108.865, maxx: 275213.845, miny: 2228247.855, maxy: 2228359.508]
+DEM resolution is (2100, 2234), max tile size is 4096, will split DEM generation into 1 tiles
+r0.01_x0_y0.tif
+r0.02_x0_y0.tif
+r0.0141421_x0_y0.tif
+[INFO]    Generated 3 tiles
+[INFO]    running gdalbuildvrt -input_file_list "/datasets/estructura1/odm_dem/tiles_list.txt" "/datasets/estructura1/odm_dem/tiles.vrt" 
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdal_translate -co NUM_THREADS=8 -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.85% -outsize 10% 0 "/datasets/estructura1/odm_dem/tiles.vrt" "/datasets/estructura1/odm_dem/tiles.small.tif"
+100 - done.
+0...10...20...30...40...50...60...70...80...90...Input file size is 2100, 2234
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdalbuildvrt -resolution highest -r bilinear "/datasets/estructura1/odm_dem/merged.vrt" "/datasets/estructura1/odm_dem/tiles.small_filled.tif" "/datasets/estructura1/odm_dem/tiles.vrt"
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdal_translate -co NUM_THREADS=8 -co TILED=YES -co BIGTIFF=IF_SAFER -co COMPRESS=DEFLATE --config GDAL_CACHEMAX 44.85% "/datasets/estructura1/odm_dem/merged.vrt" "/datasets/estructura1/odm_dem/tiles.tif"
+Input file size is 2100, 2234
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running fastrasterfilter "/datasets/estructura1/odm_dem/tiles.tif" --output "/datasets/estructura1/odm_dem/dsm.tif" --window-size 512 --radius 4 --co TILED=YES --co BIGTIFF=IF_SAFER --co COMPRESS=DEFLATE 
+Input: /datasets/estructura1/odm_dem/tiles.tif
+Size: 2100x2234
+Blocks: 16
+Smoothing...16... done
+Wrote /datasets/estructura1/odm_dem/dsm.tif
+[INFO]    Completed smoothing to create /datasets/estructura1/odm_dem/dsm.tif in 0:00:01.036666
+[INFO]    Completed dsm.tif in 0:00:11.588425
+[INFO]    Cropping /datasets/estructura1/odm_dem/dsm.tif
+[INFO]    running gdalwarp -cutline /datasets/estructura1/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co BIGTIFF=IF_SAFER -co NUM_THREADS=8  /datasets/estructura1/odm_dem/dsm.original.tif /datasets/estructura1/odm_dem/dsm.tif --config GDAL_CACHEMAX 45.0%
+Creating output file that is 1728P x 1789L.
+Using internal nodata values (e.g. -9999) for image /datasets/estructura1/odm_dem/dsm.original.tif.
+Copying nodata values from source /datasets/estructura1/odm_dem/dsm.original.tif to destination /datasets/estructura1/odm_dem/dsm.tif.
+Processing dsm.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    Adding TIFFTAGs to /datasets/estructura1/odm_dem/dsm.tif
+[INFO]    Finished odm_dem stage
+[INFO]    Running odm_orthophoto stage
+[INFO]    Creating GeoTIFF
+[INFO]    running "/code/SuperBuild/install/bin/odm_orthophoto" -inputFiles /datasets/estructura1/odm_texturing_25d/odm_textured_model_geo.obj -logFile "/datasets/estructura1/odm_orthophoto/odm_orthophoto_log.txt" -outputFile "/datasets/estructura1/odm_orthophoto/odm_orthophoto.tif" -resolution 50.0 -verbose -outputCornerFile "/datasets/estructura1/odm_orthophoto/odm_orthophoto_corners.txt"   -inpaintThreshold 1.0 -utm_north_offset 2228304.0 -utm_east_offset 275164.0 -a_srs "+proj=utm +zone=14 +datum=WGS84 +units=m +no_defs +type=crs" -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=8 --config GDAL_CACHEMAX 7506804736.0 
+Inpaint threshold was set to: 1
+
+Reading mesh file... /datasets/estructura1/odm_texturing_25d/odm_textured_model_geo.obj
+Found material0000
+Loading odm_textured_model_geo_material0000_map_Kd.png
+Found material0001
+Loading odm_textured_model_geo_material0001_map_Kd.png
+Found material0002
+Loading odm_textured_model_geo_material0002_map_Kd.png
+Found material0003
+Loading odm_textured_model_geo_material0003_map_Kd.png
+Found material0004
+Loading odm_textured_model_geo_material0004_map_Kd.png
+Found material0005
+Loading odm_textured_model_geo_material0005_map_Kd.png
+Found material0006
+Loading odm_textured_model_geo_material0006_map_Kd.png
+Found material0007
+Loading odm_textured_model_geo_material0007_map_Kd.png
+Found material0008
+Loading odm_textured_model_geo_material0008_map_Kd.png
+Found material0009
+Loading odm_textured_model_geo_material0009_map_Kd.png
+Found material0010
+Loading odm_textured_model_geo_material0010_map_Kd.png
+Found material0011
+Loading odm_textured_model_geo_material0011_map_Kd.png
+Found material0012
+Loading odm_textured_model_geo_material0012_map_Kd.png
+Found material0013
+Loading odm_textured_model_geo_material0013_map_Kd.png
+Mesh file read.
+
+Boundary points:
+Point 1: -55.1352 -56.0795
+Point 2: -55.1352 55.5105
+Point 3: 49.8148 55.5105
+Point 4: 49.8148 -56.0795
+
+Model bounds x : -55.1352 -> 49.8148
+Model bounds y : -56.0795 -> 55.5105
+Model area : 11711.4m2
+Model resolution, width x height : 5248x5580
+Translating and scaling mesh...
+Rendering the ortho photo...
+Texture channels: 3
+Texture depth: 8bit
+Rendering material0000 ... done
+Rendering material0001 ... Warning: Sliver polygon found at (867, 866, 865)
+done
+Rendering material0002 ... Warning: Sliver polygon found at (47616, 47615, 47614)
+Warning: Sliver polygon found at (91681, 91685, 91689)
+done
+Rendering material0003 ... done
+Rendering material0004 ... done
+Rendering material0005 ... done
+Rendering material0006 ... done
+Rendering material0007 ... done
+Rendering material0008 ... done
+Rendering material0009 ... done
+Rendering material0010 ... done
+Rendering material0011 ... done
+Rendering material0012 ... done
+Rendering material0013 ... done
+... model rendered
+
+Edge inpainting
+Block [(3072, 4096), (2048, 3072)]
+Block [(4096, 5248), (3072, 4096)]
+Block [(2048, 3072), (4096, 5580)]
+Block [(1024, 2048), (3072, 4096)]
+Block [(4096, 5248), (0, 1024)]
+Block [(0, 1024), (0, 1024)]
+Block [(2048, 3072), (1024, 2048)]
+Block [(0, 1024), (2048, 3072)]
+Block [(1024, 2048), (0, 1024)]
+Block [(0, 1024), (1024, 2048)]
+Block [(0, 1024), (4096, 5580)]
+Block [(1024, 2048), (1024, 2048)]
+Block [(1024, 2048), (2048, 3072)]
+Block [(2048, 3072), (3072, 4096)]
+Block [(1024, 2048), (4096, 5580)]
+Block [(4096, 5248), (2048, 3072)]
+Block [(3072, 4096), (4096, 5580)]
+Block [(2048, 3072), (0, 1024)]
+Block [(3072, 4096), (1024, 2048)]
+Block [(4096, 5248), (4096, 5580)]
+Block [(0, 1024), (3072, 4096)]
+Block [(3072, 4096), (3072, 4096)]
+Block [(4096, 5248), (1024, 2048)]
+Block [(2048, 3072), (2048, 3072)]
+Block [(3072, 4096), (0, 1024)]
+
+Writing ortho photo to /datasets/estructura1/odm_orthophoto/odm_orthophoto.tif
+Set GDAL_CACHEMAX to 7506804736
+Set TILED=YES
+Set COMPRESS=DEFLATE
+Set PREDICTOR=2
+Set BIGTIFF=IF_SAFER
+Set BLOCKXSIZE=512
+Set BLOCKYSIZE=512
+Set NUM_THREADS=8
+Writing corner coordinates to /datasets/estructura1/odm_orthophoto/odm_orthophoto_corners.txt
+Orthophoto generation done.
+[INFO]    Cropping /datasets/estructura1/odm_orthophoto/odm_orthophoto.tif
+[INFO]    running gdalwarp -cutline /datasets/estructura1/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=8 -dstalpha /datasets/estructura1/odm_orthophoto/odm_orthophoto.original.tif /datasets/estructura1/odm_orthophoto/odm_orthophoto.tif --config GDAL_CACHEMAX 45.2%
+Using band 4 of source image as alpha.
+Creating output file that is 4321P x 4474L.
+Processing odm_orthophoto.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    Adding TIFFTAGs to /datasets/estructura1/odm_orthophoto/odm_orthophoto.tif
+[INFO]    Wrote /datasets/estructura1/odm_orthophoto/odm_orthophoto_extent.dxf
+[INFO]    Wrote /datasets/estructura1/odm_orthophoto/odm_orthophoto.tfw
+[INFO]    Finished odm_orthophoto stage
+[INFO]    Running odm_report stage
+[INFO]    Exporting shots.geojson
+[INFO]    Wrote /datasets/estructura1/odm_report/shots.geojson
+[INFO]    Copied /datasets/estructura1/opensfm/camera_mappings.npz --> /datasets/estructura1/odm_report/camera_mappings.npz
+[INFO]    running pdal info --dimensions "X,Y,Z" "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz" > "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.info.json"
+[INFO]    running pdal translate -i "/datasets/estructura1/odm_georeferencing/odm_georeferenced_model.laz" -o "/datasets/estructura1/opensfm/stats/overlap.tif" --writer gdal --writers.gdal.resolution=0.07975214285709496 --writers.gdal.data_type=uint8_t --writers.gdal.dimension=UserData --writers.gdal.output_type=max --writers.gdal.radius=0.11278656205682026 
+[INFO]    Cropping /datasets/estructura1/opensfm/stats/overlap.tif
+[INFO]    running gdalwarp -cutline /datasets/estructura1/odm_georeferencing/odm_georeferenced_model.bounds.gpkg -crop_to_cutline -co TILED=YES -co COMPRESS=DEFLATE -co PREDICTOR=2 -co BIGTIFF=IF_SAFER -co BLOCKXSIZE=512 -co BLOCKYSIZE=512 -co NUM_THREADS=8  /datasets/estructura1/opensfm/stats/overlap.original.tif /datasets/estructura1/opensfm/stats/overlap.tif --config GDAL_CACHEMAX 45.45%
+Creating output file that is 1083P x 1121L.
+Using internal nodata values (e.g. 255) for image /datasets/estructura1/opensfm/stats/overlap.original.tif.
+Copying nodata values from source /datasets/estructura1/opensfm/stats/overlap.original.tif to destination /datasets/estructura1/opensfm/stats/overlap.tif.
+Processing overlap.original.tif [1/1] : 0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdaldem color-relief "/datasets/estructura1/opensfm/stats/overlap.tif" "/code/opendm/report/overlap_color_map.txt" "/datasets/estructura1/opensfm/stats/overlap.png" -of PNG -alpha
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdal_translate -of png "/datasets/estructura1/odm_orthophoto/odm_orthophoto.tif" "/datasets/estructura1/opensfm/stats/ortho.png" -b 1 -b 2 -b 3 -b 4 -outsize 1400 0 -co WORLDFILE=YES --config GDAL_CACHEMAX 45.35% 
+Input file size is 4321, 4474
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdal_translate -outsize 1400 0 "/datasets/estructura1/odm_dem/dsm.tif" "/datasets/estructura1/odm_dem/dsm.preview.tif" --config GDAL_CACHEMAX 45.25%
+Input file size is 1728, 1789
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    Computing raster stats for /datasets/estructura1/odm_dem/dsm.preview.tif
+[INFO]    running gdaldem color-relief "/datasets/estructura1/odm_dem/dsm.preview.tif" "/code/opendm/tiles/color_relief.txt" "/datasets/estructura1/odm_dem/dsm.previewcolor.tif" -alpha -co ALPHA=YES
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdaldem hillshade "/datasets/estructura1/odm_dem/dsm.preview.tif" "/datasets/estructura1/odm_dem/dsm.previewhillshade.tif" -z 1.0 -s 1.0 -az 315.0 -alt 45.0
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running "/code/venv/bin/python3" "/code/opendm/tiles/hsv_merge.py" "/datasets/estructura1/odm_dem/dsm.previewcolor.tif" "/datasets/estructura1/odm_dem/dsm.previewhillshade.tif" "/datasets/estructura1/odm_dem/dsm.previewcolored_hillshade.tif"
+/code/venv/lib/python3.12/site-packages/osgeo/gdal.py:330: FutureWarning: Neither gdal.UseExceptions() nor gdal.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    running gdal_translate -outsize 1400 0 -of png "/datasets/estructura1/odm_dem/dsm.previewcolored_hillshade.tif" "/datasets/estructura1/opensfm/stats/dsm.png" --config GDAL_CACHEMAX 45.2%
+Input file size is 1400, 1449
+0...10...20...30...40...50...60...70...80...90...100 - done.
+[INFO]    Exporting report to /datasets/estructura1/odm_report/report.pdf
+[INFO]    Finished odm_report stage
+[INFO]    Running odm_postprocess stage
+[INFO]    Post Processing
+[INFO]    Finished odm_postprocess stage
+[INFO]    No more stages to run
+[INFO]    MMMMMMMMMMMNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNMMMMMMMMMMM
+[INFO]    MMMMMMdo:..---../sNMMMMMMMMMMMMMMMMMMMMMMMMMMNs/..---..:odMMMMMM
+[INFO]    MMMMy-.odNMMMMMNy/`/mMMMMMMMMMMMMMMMMMMMMMMm/`/hNMMMMMNdo.-yMMMM
+[INFO]    MMN/`sMMMMMMMMMNNMm/`yMMMMMMMMMMMMMMMMMMMMy`/mMNNMMMMMMMMNs`/MMM
+[INFO]    MM/ hMMMMMMMMNs.+MMM/ dMMMMMMMMMMMMMMMMMMh +MMM+.sNMMMMMMMMh +MM
+[INFO]    MN /MMMMMMNo/./mMMMMN :MMMMMMMMMMMMMMMMMM: NMMMMm/./oNMMMMMM: NM
+[INFO]    Mm +MMMMMN+ `/MMMMMMM`-MMMMMMMMMMMMMMMMMM-`MMMMMMM:` oNMMMMM+ mM
+[INFO]    MM..NMMNs./mNMMMMMMMy sMMMMMMMMMMMMMMMMMMo hMMMMMMMNm/.sNMMN`-MM
+[INFO]    MMd`:mMNomMMMMMMMMMy`:MMMMMMMNmmmmNMMMMMMN:`hMMMMMMMMMdoNMm-`dMM
+[INFO]    MMMm:.omMMMMMMMMNh/  sdmmho/.`..`-``-/sddh+  /hNMMMMMMMMdo.:mMMM
+[INFO]    MMMMMd+--/osss+:-:/`  ```:- .ym+ hmo``:-`   `+:-:ossso/-:+dMMMMM
+[INFO]    MMMMMMMNmhysosydmNMo   /ds`/NMM+ hMMd..dh.  sMNmdysosyhmNMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMMMs .:-:``hmmN+ yNmds -:.:`-NMMMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMMN.-mNm- //:::. -:://: +mMd`-NMMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMM+ dMMN -MMNNN+ yNNNMN :MMMs sMMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMM`.mmmy /mmmmm/ smmmmm``mmmh :MMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMM``:::- ./////. -:::::` :::: -MMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMM:`mNNd /NNNNN+ hNNNNN .NNNy +MMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMMd`/MMM.`ys+//. -/+oso +MMN.`mMMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMMMMMy /o:- `oyhd/ shys+ `-:s-`hMMMMMMMMMMMMMMMMMM
+[INFO]    MMMMMMMMNmdhhhdmNMMM`  +d+ sMMM+ hMMN:`hh-  sMMNmdhhhdmNMMMMMMMM
+[INFO]    MMMMMms:::/++//::+ho    .+- /dM+ hNh- +/`   -h+:://++/::/smMMMMM
+[INFO]    MMMN+./hmMMMMMMNds-  ./oso:.``:. :-``.:os+-  -sdNMMMMMMmy:.oNMMM
+[INFO]    MMm-.hMNhNMMMMMMMMNo`/MMMMMNdhyyyyhhdNMMMM+`oNMMMMMMMMNhNMh.-mMM
+[INFO]    MM:`mMMN/-sNNMMMMMMMo yMMMMMMMMMMMMMMMMMMy sMMMMMMMNNs-/NMMm`:MM
+[INFO]    Mm /MMMMMd/.-oMMMMMMN :MMMMMMMMMMMMMMMMMM-`MMMMMMMo-./dMMMMM/ NM
+[INFO]    Mm /MMMMMMm:-`sNMMMMN :MMMMMMMMMMMMMMMMMM-`MMMMMNs`-/NMMMMMM/ NM
+[INFO]    MM:`mMMMMMMMMd/-sMMMo yMMMMMMMMMMMMMMMMMMy sMMMs-/dMMMMMMMMd`:MM
+[INFO]    MMm-.hMMMMMMMMMdhMNo`+MMMMMMMMMMMMMMMMMMMM+`oNMhdMMMMMMMMMh.-mMM
+[INFO]    MMMNo./hmNMMMMMNms--yMMMMMMMMMMMMMMMMMMMMMMy--smNMMMMMNmy/.oNMMM
+[INFO]    MMMMMms:-:/+++/:-+hMMMMMMMMMMMMMMMMMMMMMMMMMNh+-:/+++/:-:smMMMMM
+[INFO]    MMMMMMMMNdhhyhdmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhyhhmNMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMNNNNNMMMMMMNNNNNNMMMMMMMMNNMMMMMMMNNMMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMh/-...-+dMMMm......:+hMMMMs../MMMMMo..sMMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMM/  /yhy-  sMMm  -hhy/  :NMM+   oMMMy   /MMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMy  /MMMMN`  NMm  /MMMMo  +MM: .` yMd``` :MMMMMMMMMMMM
+[INFO]    MMMMMMMMMMM+  sMMMMM:  hMm  /MMMMd  -MM- /s `h.`d- -MMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMs  +MMMMM.  mMm  /MMMMy  /MM. +M/   yM: `MMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMN-  smNm/  +MMm  :NNdo` .mMM` oMM+/yMM/  MMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMNo-    `:yMMMm      `:sNMMM` sMMMMMMM+  NMMMMMMMMMMM
+[INFO]    MMMMMMMMMMMMMMMNmmNMMMMMMMNmmmmNMMMMMMMNNMMMMMMMMMNNMMMMMMMMMMMM
+[INFO]    ODM app finished - Tue Nov 24 21:51:33  2026
+100 - done.

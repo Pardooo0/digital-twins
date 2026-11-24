@@ -4,6 +4,8 @@ carpeta_fotos: datos/fotos
 carpeta_odm: datos/odm          # salida de ODM: datos/odm/<proyecto>/odm_dem/dsm.tif, etc.
 carpeta_cajanegra: datos/cajanegra
 carpeta_salidas: salidas
+sesiones: [sesion_0027]         # sesiones de la caja negra de este proyecto (vacío = todas)
+                                # sesion_0027: prueba de campo del 2026-11-24, edificio de 2 pisos
 crs_defecto: EPSG:32614         # UTM 14N (Uriangato); se usa el CRS del ráster de ODM si existe
 hdop_max: 5.0
 humectacion:
@@ -11,3 +13,25 @@ humectacion:
   temp_min_c: 0.0               # ... y T > 0 °C
   tam_zona_m: 5.0               # lado de la celda (zona) en metros
   max_dt_s: 5.0                 # una lectura no representa más de esto (huecos y cortes)
+espesores:                      # campañas SINTÉTICAS (todavía no hay medidor de espesores)
+  n_puntos: 30                  # puntos sobre la estructura (de la nube de ODM)
+  semilla: 42                   # misma semilla = mismos resultados
+  altura_min_m: 1.0             # descarta el suelo (medido junto al camino de la caja negra)
+  altura_max_m: 15.0            # descarta puntos sueltos muy arriba (edificio de 2 pisos ≈ 7 m)
+  t_inicial_mm: 6.0             # espesor nominal de la placa
+  anios_previos: 10.0           # años de servicio antes de la campaña 1
+  dt_anios: 2.0                 # separación entre campañas
+  t_req_mm: 3.0                 # espesor mínimo requerido
+  vc_min_mm_anio: 0.05          # VC real de cada punto: uniforme en [vc_min, vc_max]
+  vc_max_mm_anio: 0.20
+  ruido_mm: 0.05                # ruido del instrumento: ±0.05 mm (uniforme)
+  niveles_ruido_mm: [0.0, 0.01, 0.05, 0.10]
+  repeticiones: 200             # repeticiones del Monte Carlo por nivel de ruido
+mapa:
+  mostrar_ortomosaico: false    # estructura1: todas las fotos a 0° (sin vista hacia abajo) → ortomosaico
+                                # inservible; queda como capa opcional y el fondo es el satélite
+visor3d:
+  max_puntos: 250000            # puntos de la nube en el HTML
+  margen_m: 8.0                 # recorte en planta: recorrido de la caja negra + este margen
+  bajo_suelo_m: 1.5             # recorte en altura: de suelo − 1.5 m ...
+  sobre_suelo_m: 15.0           # ... a suelo + 15 m (quita puntos sueltos del horizonte)

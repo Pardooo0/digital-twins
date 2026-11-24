@@ -1,0 +1,45 @@
+{
+  "crs": "EPSG:32614",
+  "suelo_m": 1899.98,
+  "esquinas_utm": [
+    [
+      275161.9,
+      2228279.0
+    ],
+    [
+      275192.02,
+      2228304.55
+    ],
+    [
+      275169.38,
+      2228331.24
+    ],
+    [
+      275139.26,
+      2228305.69
+    ]
+  ],
+  "esquinas_lat_lon": [
+    [
+      20.1386598,
+      -101.1508983
+    ],
+    [
+      20.138894,
+      -101.1506134
+    ],
+    [
+      20.1391324,
+      -101.1508332
+    ],
+    [
+      20.1388982,
+      -101.1511181
+    ]
+  ],
+  "altura_m": 7.92,
+  "largo_m": 39.5,
+  "ancho_m": 35.0,
+  "angulo_grados": 40.3,
+  "metodo": "orientación del camino de la caja negra; muros = picos exteriores de la nube entre 1.5 y 6 m sobre el suelo; altura = percentil 90 de la nube dentro de la planta"
+}

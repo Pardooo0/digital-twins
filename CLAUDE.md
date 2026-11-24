@@ -36,7 +36,8 @@ rpas-nivel2/
 ├── CLAUDE.md
 ├── docs/
 │   ├── pines_caja_negra.svg
-│   └── cableado_gps.svg        # shield GPS → Pi (jumpers, pin 2, divisor)
+│   ├── cableado_gps.svg        # shield GPS → Pi (jumpers, pin 2, divisor)
+│   └── evidencias/<fecha>/     # capturas y registros de cada prueba (para el informe)
 ├── caja-negra/                 # corre en la Raspberry Pi
 │   ├── cajanegra/
 │   │   ├── __init__.py         # __version__
@@ -70,6 +71,7 @@ rpas-nivel2/
     │   ├── odm.py              # lanza ODM con Docker y valida salidas
     │   ├── fusion.py           # CSV → puntos UTM con altura del DSM
     │   ├── humectacion.py      # tiempo de humectación (ISO 9223)
+    │   ├── nube.py             # lee la nube de ODM, mide el suelo y la recorta a la estructura
     │   ├── espesores.py        # espesores sintéticos, VC y VR
     │   ├── mapa.py             # mapa web (folium) sobre el ortomosaico
     │   └── visor3d.py          # visor 3D en HTML (plotly) con el modelo y las capas
@@ -170,13 +172,16 @@ Módulos de la sección 3, en este orden: `nmea.py` (con pruebas) → `gps.py` �
 - La caja negra va encendida en mano, recorriendo el perímetro durante el vuelo.
 - Respaldo si no hay vuelo: fotos con el celular caminando alrededor, con la ubicación de la cámara activada.
 - **Hecho cuando:** las fotos están en `gemelo/datos/fotos/<proyecto>/images/` y el CSV de la sesión en `gemelo/datos/cajanegra/`.
+- **Resultado (2026-11-24, `estructura1`, edificio de 2 pisos):** 94 fotos 4000×3000 con GPS (DJI_0254–0347), dos vueltas completas a ~25 m del centro, una a ~8 m y otra a ~1 m sobre el punto de despegue, pero **todas con la cámara a 0°** (sin fotos a −45° ni cenitales) y muy cerca de muros blancos lisos. Caja negra: sesión 27 (14:26–14:58, 1891 filas, 0 errores); con la caja quieta 20 min, el 50 % de las posiciones a ≤ 2.2 m y el 95 % a ≤ 5.0 m. **Lección:** sin fotos inclinadas o hacia abajo no hay ortomosaico ni DSM útiles; en la próxima captura incluir la órbita a −45° y la pasada cenital.
 
 ### Fase 6 — Modelo 3D con OpenDroneMap (Windows)
 ```
-docker run -ti --rm -v C:/ruta/rpas-nivel2/gemelo/datos/fotos:/datasets opendronemap/odm --project-path /datasets <proyecto> --dsm --orthophoto-resolution 2
+docker run -d --name odm_<proyecto> -v C:/odm:/datasets opendronemap/odm --project-path /datasets <proyecto> --dsm --orthophoto-resolution 2 --auto-boundary
 ```
-Salidas usadas: `odm_orthophoto/odm_orthophoto.tif`, `odm_dem/dsm.tif`, `odm_texturing/odm_textured_model_geo.obj`, `odm_georeferencing/odm_georeferenced_model.laz`. Alternativa con interfaz gráfica: WebODM. Con 8 GB de RAM, usar `--max-concurrency 2` si se queda sin memoria.
+Se procesa en `C:\odm\<proyecto>\images\` (copia de las fotos), **fuera de OneDrive**: ODM genera ~2.5 GB de temporales que OneDrive intentaría sincronizar. Al terminar se copian a `gemelo/datos/odm/<proyecto>/` solo las salidas usadas: `odm_orthophoto/odm_orthophoto.tif`, `odm_dem/dsm.tif`, `odm_texturing/` (`odm_textured_model_geo.obj` y texturas), `odm_georeferencing/odm_georeferenced_model.laz` y `odm_report/report.pdf`. Alternativa con interfaz gráfica: WebODM. Con 8 GB de RAM, usar `--max-concurrency 2` si se queda sin memoria.
+`--auto-boundary` recorta la reconstrucción a la zona de vuelo: sin él, con fotos casi horizontales la nube trae puntos del horizonte y ODM se queda sin memoria al hacer la malla (código 137). Para retomar una corrida desde una etapa: `--rerun-from <etapa>` (p. ej. `odm_filterpoints`).
 - **Hecho cuando:** existe el ortomosaico georreferenciado y el modelo texturizado abre en un visor.
+- **Resultado (2026-11-24, `estructura1`):** ODM 3.6.2 alineó 76 de 94 fotos en un solo modelo (reproyección 0.96 px, diferencia con el GPS del dron 1.15 m); nube de 3.1 M puntos con las fachadas. La 1.ª corrida falló por memoria y se resolvió con `--auto-boundary --rerun-from odm_filterpoints` (14 min). Por las fotos a 0°, el ortomosaico (2 cm/px) y el DSM salen deformados y **no sirven como mapa**; el gemelo usa el satélite como fondo y la nube de puntos para la geometría.
 
 ### Fase 7 — Gemelo digital (Python en Windows)
 Entorno: `python -m venv .venv` y `pip install numpy pandas geopandas shapely pyproj rasterio laspy scipy plotly folium pyyaml pytest`.
@@ -186,6 +191,8 @@ Entorno: `python -m venv .venv` y `pip install numpy pandas geopandas shapely py
 4. `mapa.py`: mapa web con el ortomosaico, las lecturas (temperatura, humedad, humectación) y los puntos de espesor.
 5. `visor3d.py`: modelo 3D en HTML con plotly y las capas de puntos coloreadas por variable.
 - **Hecho cuando:** `salidas/` contiene el mapa HTML, el visor 3D HTML y un CSV de resultados por punto.
+- **Entorno:** el venv va **fuera de OneDrive** (se usa `C:\Users\<usuario>\.venvs\gemelo`) con `pip install -r gemelo/requirements.txt`; `laspy[lazrs]` es necesario para leer el `.laz` de ODM. `gemelo/config.yaml` elige las sesiones del proyecto (`sesiones: [sesion_0027]`) y los parámetros de cada módulo. `nube.py` mide el suelo junto al camino de la caja negra y recorta la nube (lo usan `espesores.py` y `visor3d.py`).
+- **Resultado (2026-11-24, `estructura1`):** 26 pruebas pasan. Fusión: 1891 lecturas, 1876 con posición válida, 1884 con T/HR válidas, 9 con hora corregida. Humectación: 0.2 % del tiempo húmedo (tarde seca). Espesores sintéticos (30 puntos, Δt = 2 años, ruido ±0.05 mm): error medio de VC 14 % y de VR 17 % (2.6 años); con ±0.10 mm la VR deja de ser estimable en algunos casos. Salidas: `mapa.html`, `visor3d.html`, `lecturas_fusionadas.csv`, `humectacion_por_*.csv`, `espesores_por_punto.csv`, `espesores_ruido.csv`. Evidencias (capturas y registros) en `docs/evidencias/2026-11-24/`.
 
 ### Fase 8 — Verificación y documentación
 - Métricas: lecturas totales, válidas y descartadas por bandera; continuidad; error de posición contra puntos de control; error de VC y VR contra los valores sintéticos; masa de la caja negra.

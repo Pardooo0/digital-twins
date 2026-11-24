@@ -35,6 +35,16 @@ def test_lee_y_une_sesiones_y_descarta_la_fila_cortada(tmp_path):
     assert str(df["utc"].dt.tz) == "UTC"
 
 
+def test_lee_solo_las_sesiones_pedidas(tmp_path):
+    escribir(tmp_path / "sesion_0001.csv", [fila(1)])
+    escribir(tmp_path / "sesion_0002.csv", [fila(1, "sesion_0002"), fila(2, "sesion_0002")])
+    df = fusion.leer_sesiones(tmp_path, ["sesion_0002"])
+    assert set(df["sesion"]) == {"sesion_0002"} and len(df) == 2
+    assert len(fusion.leer_sesiones(tmp_path, [])) == 3  # vacío = todas
+    with pytest.raises(FileNotFoundError, match="sesion_0009"):
+        fusion.leer_sesiones(tmp_path, ["sesion_0009"])
+
+
 def test_falla_si_falta_una_columna_del_contrato(tmp_path):
     (tmp_path / "sesion_0001.csv").write_text("sesion,seq\nsesion_0001,1\n", encoding="utf-8")
     with pytest.raises(ValueError, match="faltan columnas"):

@@ -1,0 +1,20 @@
+Revisión de las fotos del DJI Mini 4K (prueba de campo, 2026-11-24)
+
+Fotos del 2026:11:24: 94  (de 122 en la tarjeta)
+Carpetas: {'100media': 94} | tamaños: {(4000, 3000): 94}
+Primera: dji_0254.jpg 14:24:53  Última: dji_0347.jpg 14:51:27
+Con GPS: 94 / 94
+Ángulo de cámara: {'0° a −30° (baja)': 94}
+  0° a −30° (baja): altura del dron -0–10 m (prom 4 m)
+
+Centro de todas las fotos: lat 20.138891 lon -101.150880
+
+alto (rel >= 5 m): 40 fotos, 14:24:53-14:33:39 (DJI_0254.JPG..DJI_0293.JPG)
+  altitud GPS absoluta 1905-1907 m | relativa 7.5-9.6 m
+  centro (+0, -1) m | distancia al centro 17-30 m (prom 26) | mayor hueco angular sin fotos: 28°
+  área: 56 m E-O x 59 m N-S
+
+bajo (rel < 5 m): 54 fotos, 14:38:51-14:51:27 (DJI_0294.JPG..DJI_0347.JPG)
+  altitud GPS absoluta 1903-1904 m | relativa -0.2-1.2 m
+  centro (-0, +0) m | distancia al centro 15-29 m (prom 24) | mayor hueco angular sin fotos: 17°
+  área: 51 m E-O x 57 m N-S

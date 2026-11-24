@@ -19,9 +19,17 @@ COLUMNAS = ["sesion", "seq", "t_mono_s", "utc", "fuente_hora", "lat", "lon", "al
 SALTO_RELOJ_S = 2.0  # cambio en (utc − t_mono_s) mayor que esto = el reloj se ajustó
 
 
-def leer_sesiones(carpeta):
-    """Une todos los sesion_*.csv de la carpeta. Descarta la última fila si quedó cortada por un apagón."""
+def leer_sesiones(carpeta, sesiones=None):
+    """Une los sesion_*.csv de la carpeta. Descarta la última fila si quedó cortada por un apagón.
+
+    `sesiones`: nombres a usar (p. ej. ["sesion_0027"]); vacío o None = todas las de la carpeta.
+    """
     rutas = sorted(Path(carpeta).glob("sesion_*.csv"))
+    if sesiones:
+        faltan = set(sesiones) - {r.stem for r in rutas}
+        if faltan:
+            raise FileNotFoundError(f"No están en {carpeta}: {sorted(faltan)}")
+        rutas = [r for r in rutas if r.stem in sesiones]
     if not rutas:
         raise FileNotFoundError(f"No hay archivos sesion_*.csv en {carpeta}")
     partes = []
@@ -140,7 +148,7 @@ def altura_dsm(df, ruta_dsm):
 
 def fusionar(cfg):
     """Pipeline completo a partir de la configuración."""
-    df = leer_sesiones(cfg["carpeta_cajanegra"])
+    df = leer_sesiones(cfg["carpeta_cajanegra"], cfg.get("sesiones"))
     df = corregir_hora(df)
     df = clasificar(df, cfg["hdop_max"])
     df = a_utm(df, crs_destino(cfg))

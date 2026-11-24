@@ -5,9 +5,10 @@ geopandas
 shapely
 pyproj
 rasterio
-laspy
+laspy[lazrs]          # lazrs: para leer la nube .laz de ODM
 scipy
 plotly
 folium
 pyyaml
 pytest
+trimesh               # leer el modelo texturizado (.obj) de ODM
