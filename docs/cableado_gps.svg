@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="1010" viewBox="0 0 1480 1010" font-family="Arial, Helvetica, sans-serif">
+<rect width="1480" height="1010" fill="#ffffff"/>
+<text x="40" y="52" font-size="30" font-weight="bold" fill="#14344d">Cableado del GPS · Shield Duinopeak (NEO-6M) → Raspberry Pi 3</text>
+<text x="40" y="82" font-size="16" fill="#555">Solo 3 cables: 5V, GND y la señal TX del GPS, que en este shield sale por el pin 2 (jumpers de fábrica). Verificado el 2026-11-23.</text>
+
+<!-- ===================== SHIELD (vista superior) ===================== -->
+<rect x="560" y="130" width="760" height="470" rx="18" fill="#1f4f8f"/>
+
+<!-- Conector digital (arriba), rotulado como en el shield -->
+<rect x="583" y="145" width="340" height="30" rx="3" fill="#111"/>
+<g fill="#444">
+<rect x="594" y="154" width="12" height="12"/><rect x="628" y="154" width="12" height="12"/><rect x="662" y="154" width="12" height="12"/>
+<rect x="696" y="154" width="12" height="12"/><rect x="730" y="154" width="12" height="12"/><rect x="764" y="154" width="12" height="12"/>
+<rect x="798" y="154" width="12" height="12"/><rect x="832" y="154" width="12" height="12"/><rect x="866" y="154" width="12" height="12"/>
+<rect x="900" y="154" width="12" height="12"/>
+</g>
+<g font-size="11" fill="#c8d6ea" text-anchor="middle">
+<text x="600" y="196">SCL</text><text x="634" y="196">SDA</text><text x="668" y="196">AREF</text><text x="702" y="196">GND</text>
+</g>
+<g font-size="12" fill="#fff" text-anchor="middle">
+<text x="736" y="196">13</text><text x="770" y="196">12</text><text x="804" y="196">~11</text>
+<text x="838" y="196">~10</text><text x="872" y="196">~9</text><text x="906" y="196">8</text>
+</g>
+<rect x="933" y="145" width="272" height="30" rx="3" fill="#111"/>
+<g fill="#444">
+<rect x="944" y="154" width="12" height="12"/><rect x="978" y="154" width="12" height="12"/><rect x="1012" y="154" width="12" height="12"/>
+<rect x="1046" y="154" width="12" height="12"/><rect x="1080" y="154" width="12" height="12"/><rect x="1114" y="154" width="12" height="12"/>
+<rect x="1148" y="154" width="12" height="12"/><rect x="1182" y="154" width="12" height="12"/>
+</g>
+<g font-size="12" fill="#fff" text-anchor="middle">
+<text x="950" y="196">7</text><text x="984" y="196">~6</text><text x="1018" y="196">~5</text><text x="1052" y="196">4</text>
+<text x="1086" y="196">~3</text>
+<text x="1120" y="196" fill="#7ee0d3" font-weight="bold" font-size="14">2</text><text x="1154" y="196" font-size="10">TX→1</text><text x="1190" y="196" font-size="10">RX←0</text>
+</g>
+<circle cx="1120" cy="160" r="13" fill="none" stroke="#2a9d8f" stroke-width="4"/>
+
+<!-- Bloque de jumpers: fila TX del GPS / fila D7–D0 / fila RX del GPS -->
+<rect x="933" y="212" width="272" height="100" rx="6" fill="#163a6b"/>
+<g fill="#d4af37">
+<rect x="945" y="227" width="10" height="10"/><rect x="979" y="227" width="10" height="10"/><rect x="1013" y="227" width="10" height="10"/><rect x="1047" y="227" width="10" height="10"/>
+<rect x="1081" y="227" width="10" height="10"/><rect x="1115" y="227" width="10" height="10"/><rect x="1149" y="227" width="10" height="10"/><rect x="1183" y="227" width="10" height="10"/>
+<rect x="945" y="257" width="10" height="10"/><rect x="979" y="257" width="10" height="10"/><rect x="1013" y="257" width="10" height="10"/><rect x="1047" y="257" width="10" height="10"/>
+<rect x="1081" y="257" width="10" height="10"/><rect x="1115" y="257" width="10" height="10"/><rect x="1149" y="257" width="10" height="10"/><rect x="1183" y="257" width="10" height="10"/>
+<rect x="945" y="287" width="10" height="10"/><rect x="979" y="287" width="10" height="10"/><rect x="1013" y="287" width="10" height="10"/><rect x="1047" y="287" width="10" height="10"/>
+<rect x="1081" y="287" width="10" height="10"/><rect x="1115" y="287" width="10" height="10"/><rect x="1149" y="287" width="10" height="10"/><rect x="1183" y="287" width="10" height="10"/>
+</g>
+<text x="923" y="236" font-size="13" font-weight="bold" fill="#7ee0d3" text-anchor="end">TX</text>
+<text x="923" y="266" font-size="13" fill="#c8d6ea" text-anchor="end">DIGITAL</text>
+<text x="923" y="296" font-size="13" font-weight="bold" fill="#9cc2ff" text-anchor="end">RX</text>
+<!-- Jumpers de fábrica (verificado): TX del GPS → 2, RX del GPS → 3 -->
+<rect x="1110" y="222" width="20" height="50" rx="3" fill="#f4c430" stroke="#8a6d00" stroke-width="2"/>
+<rect x="1076" y="252" width="20" height="50" rx="3" fill="#f4c430" stroke="#8a6d00" stroke-width="2"/>
+<text x="933" y="340" font-size="14" fill="#fff">Jumper TX–DIGITAL en el 2 → el GPS habla</text>
+<text x="933" y="361" font-size="14" fill="#fff">por el pin 2 del conector de arriba.</text>
+<text x="933" y="382" font-size="13" fill="#c8d6ea">Jumper RX–DIGITAL en el 3: escucha, no se usa.</text>
+
+<!-- Antena, módulo, LEDs, microSD -->
+<circle cx="600" cy="230" r="17" fill="#d4af37" stroke="#8a6d00" stroke-width="2"/>
+<circle cx="600" cy="230" r="6" fill="#8a6d00"/>
+<text x="625" y="235" font-size="13" fill="#fff">Antena (SMA)</text>
+<rect x="600" y="280" width="170" height="110" rx="6" fill="#f2f2f2" stroke="#999"/>
+<text x="685" y="320" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">u-blox</text>
+<text x="685" y="344" font-size="18" font-weight="bold" fill="#111" text-anchor="middle">NEO-6M</text>
+<text x="685" y="368" font-size="12" fill="#555" text-anchor="middle">lógica de 3.3 V</text>
+<text x="600" y="430" font-size="20" font-weight="bold" fill="#fff">GPS Shield Duinopeak</text>
+<text x="600" y="452" font-size="13" fill="#c8d6ea">vista superior</text>
+<circle cx="820" cy="470" r="13" fill="#39d353" opacity="0.35"/>
+<circle cx="820" cy="470" r="8" fill="#39d353"/>
+<text x="840" y="475" font-size="14" fill="#fff"><tspan font-weight="bold">PWR</tspan> encendido = recibe 5 V</text>
+<circle cx="820" cy="505" r="8" fill="none" stroke="#9be7a8" stroke-width="2.5"/>
+<text x="840" y="510" font-size="14" fill="#fff"><tspan font-weight="bold">TP</tspan> parpadea 1 vez/s = tiene fix</text>
+<rect x="1170" y="390" width="120" height="90" rx="6" fill="#8d99a6"/>
+<text x="1230" y="432" font-size="12" fill="#fff" text-anchor="middle">microSD</text>
+<text x="1230" y="450" font-size="12" fill="#fff" text-anchor="middle">(no se usa)</text>
+
+<!-- Conector de alimentación (abajo) y analógico -->
+<rect x="678" y="555" width="284" height="30" rx="3" fill="#111"/>
+<g fill="#444">
+<rect x="694" y="564" width="12" height="12"/><rect x="734" y="564" width="12" height="12"/><rect x="774" y="564" width="12" height="12"/>
+<rect x="814" y="564" width="12" height="12"/><rect x="854" y="564" width="12" height="12"/><rect x="894" y="564" width="12" height="12"/><rect x="934" y="564" width="12" height="12"/>
+</g>
+<g font-size="11" fill="#c8d6ea" text-anchor="middle">
+<text x="700" y="545">IOREF</text><text x="740" y="545">RST</text><text x="780" y="545">3V3</text>
+<text x="900" y="545">GND</text><text x="940" y="545">Vin</text>
+</g>
+<text x="820" y="545" font-size="13" font-weight="bold" fill="#ff8a8a" text-anchor="middle">5V</text>
+<text x="860" y="545" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">GND</text>
+<circle cx="820" cy="570" r="12" fill="none" stroke="#ff6b6b" stroke-width="3"/>
+<circle cx="860" cy="570" r="12" fill="none" stroke="#fff" stroke-width="3"/>
+<rect x="998" y="555" width="244" height="30" rx="3" fill="#111"/>
+<g fill="#444">
+<rect x="1014" y="564" width="12" height="12"/><rect x="1054" y="564" width="12" height="12"/><rect x="1094" y="564" width="12" height="12"/>
+<rect x="1134" y="564" width="12" height="12"/><rect x="1174" y="564" width="12" height="12"/><rect x="1214" y="564" width="12" height="12"/>
+</g>
+<g font-size="11" fill="#c8d6ea" text-anchor="middle">
+<text x="1020" y="545">A0</text><text x="1060" y="545">A1</text><text x="1100" y="545">A2</text>
+<text x="1140" y="545">A3</text><text x="1180" y="545">A4</text><text x="1220" y="545">A5</text>
+</g>
+
+<!-- ===================== RASPBERRY PI 3 (conector GPIO) ===================== -->
+<rect x="60" y="700" width="470" height="200" rx="14" fill="#0b6e3a"/>
+<rect x="88" y="720" width="404" height="80" rx="6" fill="#1b1b1b"/>
+<text x="80" y="835" font-size="13" fill="#fff">◄ pin 1: extremo lejos de los USB</text>
+<text x="510" y="835" font-size="13" fill="#fff" text-anchor="end">hacia los USB (21–40) ►</text>
+<text x="80" y="865" font-size="15" font-weight="bold" fill="#fff">Raspberry Pi 3 · GPIO visto desde arriba</text>
+<text x="80" y="887" font-size="12" fill="#cfe8d9">Fila de arriba = orilla de la placa (pines pares)</text>
+
+<!-- ===================== CABLES ===================== -->
+<g fill="none" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M150 740 V628 H820 V570" stroke="#d62828"/>
+<path d="M190 740 V650 H860 V570" stroke="#222222"/>
+<path d="M270 740 V676 H1390 V105 H1120 V160" stroke="#2a9d8f"/>
+</g>
+<circle cx="820" cy="570" r="6" fill="#d62828"/>
+<circle cx="860" cy="570" r="6" fill="#222222" stroke="#fff" stroke-width="1.5"/>
+<circle cx="1120" cy="160" r="6" fill="#2a9d8f"/>
+<text x="300" y="622" font-size="14" font-weight="bold" fill="#d62828">pin 4 (5V) → 5V del shield</text>
+<text x="300" y="644" font-size="14" font-weight="bold" fill="#222222">pin 6 (GND) → GND del shield</text>
+<text x="300" y="670" font-size="14" font-weight="bold" fill="#2a9d8f">pin 10 (RXD, GPIO15) ← TX del GPS (sale por el pin 2)</text>
+<rect x="1000" y="664" width="300" height="24" rx="12" fill="#fff" stroke="#2a9d8f" stroke-width="2"/>
+<text x="1150" y="681" font-size="13" font-weight="bold" fill="#2a9d8f" text-anchor="middle">Mide el pin 2: 3.3 V → directo · 5 V → divisor</text>
+
+<!-- Pines del GPIO 1–20 (fila de arriba: pares; fila de abajo: impares) -->
+<g font-size="12" font-weight="bold" text-anchor="middle">
+<circle cx="110" cy="740" r="14" fill="#d9d9d9"/><text x="110" y="744" fill="#333">2</text>
+<circle cx="150" cy="740" r="14" fill="#d62828" stroke="#fff" stroke-width="1.5"/><text x="150" y="744" fill="#fff">4</text>
+<circle cx="190" cy="740" r="14" fill="#222222" stroke="#fff" stroke-width="1.5"/><text x="190" y="744" fill="#fff">6</text>
+<circle cx="230" cy="740" r="14" fill="#d9d9d9" stroke="#3a86ff" stroke-width="2" stroke-dasharray="4 3"/><text x="230" y="744" fill="#333">8</text>
+<circle cx="270" cy="740" r="14" fill="#2a9d8f" stroke="#fff" stroke-width="1.5"/><text x="270" y="744" fill="#fff">10</text>
+<circle cx="310" cy="740" r="14" fill="#d9d9d9"/><text x="310" y="744" fill="#333">12</text>
+<circle cx="350" cy="740" r="14" fill="#7d8b99"/><text x="350" y="744" fill="#fff">14</text>
+<circle cx="390" cy="740" r="14" fill="#d9d9d9"/><text x="390" y="744" fill="#333">16</text>
+<circle cx="430" cy="740" r="14" fill="#d9d9d9"/><text x="430" y="744" fill="#333">18</text>
+<circle cx="470" cy="740" r="14" fill="#7d8b99"/><text x="470" y="744" fill="#fff">20</text>
+<circle cx="110" cy="780" r="14" fill="#7d8b99"/><text x="110" y="784" fill="#fff">1</text>
+<circle cx="150" cy="780" r="14" fill="#d9d9d9"/><text x="150" y="784" fill="#333">3</text>
+<circle cx="190" cy="780" r="14" fill="#7d8b99"/><text x="190" y="784" fill="#fff">5</text>
+<circle cx="230" cy="780" r="14" fill="#7d8b99"/><text x="230" y="784" fill="#fff">7</text>
+<circle cx="270" cy="780" r="14" fill="#7d8b99"/><text x="270" y="784" fill="#fff">9</text>
+<circle cx="310" cy="780" r="14" fill="#7d8b99"/><text x="310" y="784" fill="#fff">11</text>
+<circle cx="350" cy="780" r="14" fill="#7d8b99"/><text x="350" y="784" fill="#fff">13</text>
+<circle cx="390" cy="780" r="14" fill="#7d8b99"/><text x="390" y="784" fill="#fff">15</text>
+<circle cx="430" cy="780" r="14" fill="#d9d9d9"/><text x="430" y="784" fill="#333">17</text>
+<circle cx="470" cy="780" r="14" fill="#d9d9d9"/><text x="470" y="784" fill="#333">19</text>
+</g>
+<text x="60" y="928" font-size="13" fill="#555">Gris oscuro = ya ocupado: 1 DHT22 +, 5 botón S, 7 DHT22 datos, 9 botón −,</text>
+<text x="60" y="948" font-size="13" fill="#555">11/13/15 LED R/G/B, 14 LED −, 20 DHT22 −.</text>
+<text x="60" y="968" font-size="13" fill="#555">Pin 8 (punteado, TXD → RX del GPS): opcional, déjalo libre.</text>
+
+<!-- ===================== DIVISOR ===================== -->
+<rect x="580" y="710" width="400" height="270" rx="12" fill="#f4f8fb" stroke="#c9d6e2"/>
+<text x="600" y="740" font-size="18" font-weight="bold" fill="#14344d">Divisor (solo si el pin 2 mide 5 V)</text>
+<text x="600" y="764" font-size="13" fill="#555">El NEO-6M trabaja a 3.3 V: casi seguro va directo.</text>
+<text x="600" y="782" font-size="13" fill="#555">Con divisor, 3.3 V bajarían a 2.2 V (lectura dudosa).</text>
+<text x="600" y="835" font-size="14" font-weight="bold" fill="#2a9d8f">TX (2)</text>
+<line x1="662" y1="830" x2="700" y2="830" stroke="#333" stroke-width="3"/>
+<rect x="700" y="818" width="70" height="24" fill="#fff" stroke="#333" stroke-width="3"/>
+<text x="735" y="835" font-size="13" font-weight="bold" text-anchor="middle">1 kΩ</text>
+<line x1="770" y1="830" x2="860" y2="830" stroke="#333" stroke-width="3"/>
+<circle cx="820" cy="830" r="5" fill="#333"/>
+<text x="866" y="826" font-size="14" font-weight="bold" fill="#2a9d8f">Pin 10</text>
+<text x="866" y="844" font-size="12" fill="#555">GPIO15 RXD</text>
+<line x1="820" y1="830" x2="820" y2="862" stroke="#333" stroke-width="3"/>
+<rect x="808" y="862" width="24" height="60" fill="#fff" stroke="#333" stroke-width="3"/>
+<text x="842" y="897" font-size="13" font-weight="bold">2 kΩ</text>
+<line x1="820" y1="922" x2="820" y2="940" stroke="#333" stroke-width="3"/>
+<line x1="802" y1="940" x2="838" y2="940" stroke="#333" stroke-width="3"/>
+<line x1="808" y1="947" x2="832" y2="947" stroke="#333" stroke-width="3"/>
+<line x1="814" y1="954" x2="826" y2="954" stroke="#333" stroke-width="3"/>
+<text x="842" y="952" font-size="13" fill="#333">GND (pin 6 o 9)</text>
+<text x="600" y="964" font-size="13" fill="#333">5 V × 2k / (1k + 2k) ≈ 3.3 V</text>
+
+<!-- ===================== PASOS ===================== -->
+<rect x="1000" y="710" width="460" height="270" rx="12" fill="#fff8ef" stroke="#f0d9b5"/>
+<text x="1020" y="740" font-size="18" font-weight="bold" fill="#14344d">Cómo dejarlo funcionando</text>
+<g font-size="14" fill="#333">
+<text x="1020" y="770">1. No muevas los jumpers: el que une DIGITAL con</text>
+<text x="1038" y="790">TX marca por dónde habla el GPS (el pin 2).</text>
+<text x="1020" y="816">2. Cable del pin 10 → pin 2 del conector de arriba</text>
+<text x="1038" y="836">(no en el bloque de jumpers).</text>
+<text x="1020" y="862">3. 5V → pin 4 y GND → pin 6 (conector de abajo).</text>
+<text x="1020" y="888">4. Con el GPS encendido, mide el pin 2 contra GND.</text>
+<text x="1020" y="914">5. En la Pi: <tspan font-family="Consolas, monospace" font-weight="bold">timeout 6 cat /dev/serial0</tspan></text>
+<text x="1038" y="934">Deben salir líneas $GPGGA y $GPRMC.</text>
+<text x="1020" y="960">6. Pin 8 → RX del GPS: no hace falta, déjalo libre.</text>
+</g>
+</svg>

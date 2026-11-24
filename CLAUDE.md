@@ -35,7 +35,8 @@ El mapa de pines está en `docs/pines_caja_negra.svg`. **Nunca** conectar a un G
 rpas-nivel2/
 ├── CLAUDE.md
 ├── docs/
-│   └── pines_caja_negra.svg
+│   ├── pines_caja_negra.svg
+│   └── cableado_gps.svg        # shield GPS → Pi (jumpers, pin 2, divisor)
 ├── caja-negra/                 # corre en la Raspberry Pi
 │   ├── cajanegra/
 │   │   ├── __init__.py         # __version__
@@ -121,6 +122,7 @@ Descarga de datos: `scp -r pi@cajanegra.local:~/cajanegra/datos/* .\gemelo\datos
 ### Fase 1 — Hardware en mesa
 1. Con todo apagado, alimentar solo el shield GPS y **medir el voltaje del pin TX del GPS** respecto a GND. Si es ~5 V, armar el divisor 1 kΩ / 2 kΩ; si es ~3.3 V, conexión directa.
 2. Revisar en el shield qué pines del Arduino usan TX y RX del GPS (jumpers o interruptor). Conectar desde esos pines.
+   **Resultado (2026-11-23):** en el shield Duinopeak (u-blox NEO-6M) el bloque de jumpers tiene columnas `RX | DIGITAL | TX` y una fila por pin (7…0). De fábrica, TX–DIGITAL está en el **2** (el GPS habla por el pin 2) y RX–DIGITAL en el 3. El cable al pin 10 de la Pi sale del **pin 2** del conector digital; en el 3 no llega nada. Mapa: `docs/cableado_gps.svg`.
 3. Cablear según `docs/pines_caja_negra.svg`.
 4. Configuración de arranque (mostrar al usuario antes de aplicar). Agregar al final de `config.txt`:
    ```
@@ -133,6 +135,7 @@ Descarga de datos: `scp -r pi@cajanegra.local:~/cajanegra/datos/* .\gemelo\datos
    `disable-bt` deja el UART completo en GPIO14/15 (`/dev/serial0`) a cambio de desactivar Bluetooth, que no se usa.
 5. Pruebas por separado:
    - GPS: `cat /dev/serial0` debe mostrar líneas `$GPGGA` / `$GPRMC`. Al aire libre, el fix tarda de 1 a 5 min en arranque en frío.
+     **Resultado (2026-11-23):** primer fix al aire libre a los ~4.5 min de encender (sesión 23, fila 276): 4 satélites, HDOP 4.7, `fix 2` (diferencial SBAS); al minuto, 6 satélites y HDOP 2.6. Con fix, `fuente_hora` pasa a `gps` y la fila queda sin banderas.
    - DHT22: `cat /sys/bus/iio/devices/iio:device0/in_temp_input` (milésimas de °C) y `in_humidityrelative_input` (milésimas de %). Si da error de E/S, reintentar: es normal que alguna lectura falle.
    - LED: prueba con `gpiozero.RGBLED(17, 27, 22)`.
    - Botón: con la Pi encendida, presionar → se apaga; presionar de nuevo → enciende.
