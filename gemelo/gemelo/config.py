@@ -8,6 +8,7 @@ RUTA_DEFECTO = Path(__file__).resolve().parent.parent / "config.yaml"
 
 DEFECTOS = {
     "proyecto": "estructura1",
+    "odm_proyecto": None,  # carpeta de salida de ODM a usar (p. ej. un reproceso); None = la de `proyecto`
     "carpeta_fotos": "datos/fotos",
     "carpeta_odm": "datos/odm",
     "carpeta_cajanegra": "datos/cajanegra",
@@ -38,7 +39,7 @@ def cargar(ruta=RUTA_DEFECTO):
     for clave in CARPETAS:
         carpeta = Path(cfg[clave]).expanduser()
         cfg[clave] = carpeta if carpeta.is_absolute() else base / carpeta
-    odm = cfg["carpeta_odm"] / cfg["proyecto"]
+    odm = cfg["carpeta_odm"] / (cfg.get("odm_proyecto") or cfg["proyecto"])
     cfg["ruta_dsm"] = odm / "odm_dem" / "dsm.tif"
     cfg["ruta_ortomosaico"] = odm / "odm_orthophoto" / "odm_orthophoto.tif"
     cfg["ruta_nube"] = odm / "odm_georeferencing" / "odm_georeferenced_model.laz"

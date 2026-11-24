@@ -35,4 +35,11 @@ dron, salidas de OpenDroneMap, CSV de la caja negra y los HTML del gemelo) no se
 | `19_visor3d_malla_textura_v1.png` | Visor 3D con la malla texturizada de ODM (solo dos esquinas bien reconstruidas). |
 | `20_visor3d_volumen_lod1_malla.png` | Visor 3D con el volumen simplificado (LOD1, 39.5 × 35.0 × 7.9 m), la malla y los datos. |
 | `21_mapa_planta_lod1.png` | Planta LOD1 sobre el satélite (aproximada, ±5 m). |
-| `22_volumen_lod1.json` | Medidas del volumen LOD1 y método. |
+| `22_volumen_lod1.json` | Medidas del volumen LOD1 y método (con la 1.ª corrida). |
+| `23_odm_v2_reporte_calidad.pdf` | Reporte de calidad del reproceso v2 (ajustes para fachadas). |
+| `24_odm_v2_estadisticas.json` | Estadísticas v2: 86/94 fotos alineadas, reproyección 0.84 px. |
+| `25_odm_v2_vista_superior_camaras.png` | Vista superior de cámaras del reproceso v2. |
+| `26_odm_v2_log_completo.txt` | Registro completo del reproceso v2. |
+| `27_gemelo_v2_salida_consola.txt` | Salida del gemelo con la v2 (volumen LOD1: 37.5 × 30.0 × 5.8 m). |
+| `28_visor3d_v2_malla_lod1.png` | Visor 3D con la v2: malla de 433 mil caras (tres esquinas y muros O, N y S), volumen LOD1 y datos. |
+| `29_mapa_v2_planta_lod1.png` | Planta LOD1 de la v2 sobre el satélite: coincide con la azotea. |

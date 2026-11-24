@@ -1,5 +1,7 @@
 # Configuración del gemelo digital (PC con Windows). Rutas relativas a este archivo.
 proyecto: estructura1
+odm_proyecto: estructura1_v2    # reproceso de ODM con más detalle (86/94 fotos, malla de 433 mil caras);
+                                # la 1.ª corrida (76/94) sigue en datos/odm/estructura1
 carpeta_fotos: datos/fotos
 carpeta_odm: datos/odm          # salida de ODM: datos/odm/<proyecto>/odm_dem/dsm.tif, etc.
 carpeta_cajanegra: datos/cajanegra

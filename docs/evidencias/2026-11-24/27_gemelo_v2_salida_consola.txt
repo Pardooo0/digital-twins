@@ -1,0 +1,48 @@
+== python -m gemelo.fusion
+Sesiones: 1   lecturas: 1891
+Válidas para ambiente (T, HR): 1884
+Válidas para posición (fix, HDOP <= 5.0): 1876   con altura del DSM: 1170
+Filas con hora corregida: 9
+Motivos de descarte (una fila puede tener varios):
+  sin_fix: 15
+  dht_error: 4
+  dht_viejo: 3
+CRS: EPSG:32614
+Escrito: C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\lecturas_fusionadas.csv
+
+== python -m gemelo.humectacion
+Criterio: HR > 80.0 % y T > 0.0 °C (ISO 9223). Indicador de la sesión, no clasificación anual.
+
+     sesion  lecturas  tiempo_s  fraccion_humeda  temp_media_c  hr_media_pct  hr_max_pct
+sesion_0027      1884    1884.0           0.0016         24.44         53.76        80.8
+
+Total: 0.52 h medidas, 0.2% del tiempo húmedo
+Zonas: 48 (47 con posición)
+Escrito: C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\humectacion_por_sesion.csv, C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\humectacion_por_zona.csv
+
+== python -m gemelo.nube
+Puntos en la nube: 3,406,072   suelo (junto al camino de la caja negra): 1902.18 m
+Volumen LOD1: 37.5 m × 30.0 m en planta, altura 5.8 m, orientación 40.3°
+Escrito: C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\volumen_lod1.json
+
+== python -m gemelo.espesores
+30 puntos sobre la estructura (dentro del recorrido de la caja negra; suelo a 1902.2 m)
+Campañas separadas 2.0 años; espesor mínimo requerido 3.0 mm; ruido del instrumento ±0.05 mm
+VC: error medio 0.0170 mm/año (14.0%), máx 0.0383 mm/año
+VR: error medio 2.58 años (16.9%), máx 12.39 años; VR no estimable en 0 puntos
+
+Error según el ruido del instrumento (Monte Carlo):
+ ruido_mm  vc_error_medio_abs  vc_error_relativo_medio  vr_error_medio_abs  vr_error_relativo_medio  vr_no_estimable
+     0.00              0.0000                   0.0000              0.0000                   0.0000                0
+     0.01              0.0034                   0.0311              0.6684                   0.0341                0
+     0.05              0.0169                   0.1556              4.0243                   0.1925                0
+     0.10              0.0338                   0.3113             19.2811                   0.7478               75
+
+Escrito: C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\espesores_por_punto.csv, C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\espesores_ruido.csv
+
+== python -m gemelo.mapa
+Escrito: C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\mapa.html
+
+== python -m gemelo.visor3d
+Escrito: C:\Users\rafat\OneDrive\Escritorio\digital-twins\gemelo\salidas\visor3d.html
+
