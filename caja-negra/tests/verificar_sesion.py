@@ -85,15 +85,15 @@ def _revisar_fila(c, sesion):
         p.append(f"t_mono_s inválido: '{f['t_mono_s']}'")
     if not _es_utc(f["utc"]):
         p.append(f"utc inválido: '{f['utc']}'")
-    if f["fuente_hora"] not in ("gps", "sistema"):
+    if f["fuente_hora"] not in ("gps", "rtc", "sistema"):  # rtc: caja negra con ESP32 + DS3231
         p.append(f"fuente_hora inválida: '{f['fuente_hora']}'")
     banderas = set(f["banderas"].split(";")) - {""}
     if banderas - BANDERAS:
         p.append(f"banderas desconocidas: {sorted(banderas - BANDERAS)}")
     if ("HORA_SISTEMA" in banderas) != (f["fuente_hora"] == "sistema"):
         p.append("HORA_SISTEMA no concuerda con fuente_hora")
-    if "HORA_NO_SINC" in banderas and "HORA_SISTEMA" not in banderas:
-        p.append("HORA_NO_SINC sin HORA_SISTEMA")
+    if "HORA_NO_SINC" in banderas and f["fuente_hora"] == "gps":
+        p.append("HORA_NO_SINC con hora del GPS (solo aplica a hora del sistema o del RTC)")
 
     hay_posicion = f["lat"] != "" or f["lon"] != ""
     if ("SIN_FIX" in banderas) == hay_posicion:

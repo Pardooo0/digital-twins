@@ -1,0 +1,15 @@
+Etapa M2 de la migración a ESP32-C3 (2026-11-24): prueba de la microSD
+Conexiones: SCK→GPIO4, MISO→GPIO5, MOSI→GPIO6, CS→GPIO7, VCC→5V, GND→GND (placa sin soldar, en protoboard)
+Script: caja-negra-esp32/pruebas_hardware/prueba_sd.py (mpremote connect COM9 run ...)
+
+1.er intento:
+== Prueba de la microSD (etapa M2)
+ERROR: no responde la tarjeta: no SD card
+
+2.º intento (tras reacomodar la placa/cables en la protoboard):
+== Prueba de la microSD (etapa M2)
+Montada en /sd: capacidad 7.78 GB, libre 7.78 GB, bloque 32768 bytes
+Escritura de 200 filas con flush + sync: media 33.5 ms, mediana 30.6 ms, p95 43.2 ms, máx 125.1 ms
+Lectura: 201 líneas (encabezado + 200 filas) -> OK
+Archivo de prueba: /sd/prueba_m2.csv (23209 bytes)
+Desmontada. Resultado: OK

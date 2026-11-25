@@ -37,7 +37,8 @@ rpas-nivel2/
 ├── docs/
 │   ├── pines_caja_negra.svg
 │   ├── cableado_gps.svg        # shield GPS → Pi (jumpers, pin 2, divisor)
-│   └── evidencias/<fecha>/     # capturas y registros de cada prueba (para el informe)
+│   ├── evidencias/<fecha>/     # capturas y registros de cada prueba (para el informe)
+│   └── informe/                # paquete para redactar el informe: contexto_informe.md + figuras/
 ├── caja-negra/                 # corre en la Raspberry Pi
 │   ├── cajanegra/
 │   │   ├── __init__.py         # __version__
@@ -142,6 +143,7 @@ Descarga de datos: `scp -r pi@cajanegra.local:~/cajanegra/datos/* .\gemelo\datos
    - LED: prueba con `gpiozero.RGBLED(17, 27, 22)`.
    - Botón: con la Pi encendida, presionar → se apaga; presionar de nuevo → enciende.
 - **Hecho cuando:** los cuatro componentes responden por separado.
+- **Cerrada el 2026-11-24** con GPS y DHT22; el LED RGB y el botón no se instalaron (no se contó con las piezas).
 
 ### Fase 2 — Software de la caja negra
 Módulos de la sección 3, en este orden: `nmea.py` (con pruebas) → `gps.py` → `dht.py` → `registro.py` (con pruebas) → `led.py` → `__main__.py` → `simulado.py`.
@@ -165,6 +167,7 @@ Módulos de la sección 3, en este orden: `nmea.py` (con pruebas) → `gps.py` �
 - Carcasa en impresora 3D con ventilación lateral para el DHT22 (lejos del calor de la Pi), antena GPS con vista al cielo, LED visible y botón accesible.
 - Caminar con la caja alrededor de la estructura y pasar por 3–5 puntos de control fáciles de ubicar (esquinas, postes). Comparar con sus coordenadas en Google Earth.
 - **Hecho cuando:** se tiene el error medio de posición en metros y una sesión completa alrededor de la estructura.
+- **Cerrada el 2026-11-24 (parcial, por decisión del autor):** sesión 27 completa alrededor de `estructura1` y precisión estática del GPS (50 % ≤ 2.2 m, 95 % ≤ 5.0 m); sin carcasa y sin comparación contra puntos de control.
 
 ### Fase 5 — Captura fotográfica
 - 50–100 fotos de la estructura con el dron: dos órbitas (una más alta mirando a 45° hacia abajo y otra más baja, casi horizontal), con 70–80 % de traslape entre fotos consecutivas. Evitar contraluz y reflejos; mejor día nublado.
@@ -198,6 +201,42 @@ Entorno: `python -m venv .venv` y `pip install numpy pandas geopandas shapely py
 ### Fase 8 — Verificación y documentación
 - Métricas: lecturas totales, válidas y descartadas por bandera; continuidad; error de posición contra puntos de control; error de VC y VR contra los valores sintéticos; masa de la caja negra.
 - Capturas del mapa y del visor 3D para el informe (segundo avance).
+- **En curso (2026-11-24):** el informe se redacta con Claude en el navegador a partir del paquete `docs/informe/` (`contexto_informe.md` con todas las cifras y `figuras/` con 14 figuras). Sin medir: masa de la caja negra.
+- **Siguiente, después del informe:** migración de la caja negra a ESP32-C3 Super Mini + RTC DS3231 + adaptador microSD, manteniendo el contrato de datos (sección 7).
+
+### Fase 9 — Migración de la caja negra a ESP32-C3 (desde 2026-11-24)
+Se reemplaza solo la Raspberry Pi por un **ESP32-C3 Super Mini** + **RTC DS3231** (placa ZS-042, pila de botón) +
+**adaptador microSD (SPI)**; se conservan el shield GPS (pin 2) y el DHT22. Lenguaje: **MicroPython 1.29.0**
+(justificación y bitácora en `docs/informe/migracion_esp32.md`, que **se actualiza en cada paso** porque va al
+informe). Código nuevo en `caja-negra-esp32/` (`firmware/` se copia al ESP32 con `mpremote`; `tests/` corre en la
+PC con pytest). La versión para la Pi (`caja-negra/`) se conserva.
+- Reglas: en el ESP32 solo MicroPython y sus módulos incluidos + `sdcard.py` (micropython-lib); los módulos sin
+  hardware (parser NMEA, armado de filas y banderas) deben correr igual en CPython para probarlos con pytest
+  (equivale al `--simular` de la Pi). Cada fila con `flush()` + `os.sync()`; *watchdog* para reiniciar si se traba.
+- Pines: GPS TX → GPIO20 (UART1 RX); microSD SCK 4 · MISO 5 · MOSI 6 · CS 7 (VCC a 5 V); RTC SDA 1 · SCL 0
+  (VCC a **3.3 V**, no 5 V: la ZS-042 intenta cargar la pila); DHT22 → GPIO3; LED azul de la placa GPIO8; botón BOOT
+  GPIO9. No usar GPIO2/8/9 para módulos externos (pines de arranque).
+- Mapa de pines: `docs/pines_esp32c3.svg` (placa en protoboard; rieles de 5 V y 3.3 V separados, GND común).
+- microSD de ≤ 32 GB en FAT32 (MicroPython no lee exFAT); la del proyecto es de 8 GB, FAT32.
+- Herramientas en Windows: venv `C:\Users\<usuario>\.venvs\esp32` (esptool, mpremote, pytest); firmware y
+  `sdcard.py` en `...\.venvs\esp32\firmware\`.
+- Contrato de datos: igual, con el valor nuevo `fuente_hora = rtc`; si el DS3231 perdió la hora (bandera `OSF`), la
+  fila lleva `HORA_NO_SINC`. El gemelo debe aceptar `rtc` como hora confiable.
+- Etapas: M1 herramientas → M2 módulos por separado → M3 programa completo → M4 pruebas de mesa (1 h, 5 cortes,
+  `verificar_sesion.py`) → M5 campo y gemelo.
+- Firmware (`caja-negra-esp32/firmware/`): `main.py` (arranque, modo mantenimiento, reinicio ante fallas),
+  `hardware.py` (todo lo que usa `machine`), `bucle.py` (bucle principal; recibe el hardware), `nmea.py`
+  (coordenadas como enteros ×10⁷: MicroPython usa flotantes de precisión simple), `gps.py`, `dht_lector.py`,
+  `reloj.py` (gps > rtc > sistema), `fila.py`, `registro.py` (`/sd/datos/sesion_NNNN`, desde 1001), `tiempo.py`
+  (sin `datetime`), `led.py`, `config.py`, `ds3231.py`, `sdcard.py`. Pruebas: `python -m pytest` en
+  `caja-negra-esp32/` (153, incluye simulación del bucle completo revisada con `verificar_sesion.py`).
+- Cargar al ESP32: `.\caja-negra-esp32\scripts\cargar.ps1 [-Puerto COM9] [-Mantenimiento]` (pone modo
+  mantenimiento antes de copiar). Probar sin watchdog: `mpremote connect COM9 run
+  caja-negra-esp32/pruebas_hardware/prueba_m3.py` (60 filas). Modo mantenimiento = archivo `/mantenimiento` en la
+  flash o BOOT en los primeros 2 s; con él la placa no graba y mpremote funciona sin que el watchdog la reinicie.
+- **Estado (2026-11-25):** M1 ✅; M2: microSD ✅ y GPS ✅, DHT22 sin 3.3 V (placa sin soldar / riel) y DS3231 sin pila;
+  M3 ✅: 60 filas en 59.2 s, RAM libre 142 KB, CSV del ESP32 con 0 errores en el verificador de la Pi. La placa
+  quedó en **modo mantenimiento**. Siguiente: soldar pines, probar DHT22 y DS3231, y M4.
 
 ## 7. Contrato de datos (CSV de la caja negra)
 
@@ -209,7 +248,7 @@ Separador coma, UTF-8, una fila por segundo, encabezado en la primera línea.
 | `seq` | entero | Consecutivo desde 1 |
 | `t_mono_s` | real | Segundos desde el arranque (reloj monotónico) |
 | `utc` | texto ISO 8601 | Hora UTC |
-| `fuente_hora` | `gps` / `sistema` | Origen de `utc` |
+| `fuente_hora` | `gps` / `rtc` / `sistema` | Origen de `utc` (`rtc` = reloj DS3231 de la caja con ESP32, desde 2026-11-25) |
 | `lat`, `lon` | real (grados, WGS84) | Vacío si no hay fix |
 | `alt_m` | real | Altitud GPS |
 | `fix` | entero | Calidad del fix de GGA (0 = sin fix) |
@@ -222,7 +261,9 @@ Separador coma, UTF-8, una fila por segundo, encabezado en la primera línea.
 | `banderas` | texto | Separadas por `;`: `SIN_FIX`, `DHT_ERROR`, `DHT_VIEJO`, `HORA_SISTEMA`, `HORA_NO_SINC` (desde v0.2.0) |
 | `version` | texto | Versión del software |
 
-`HORA_NO_SINC` (v0.2.0) solo aparece junto con `HORA_SISTEMA`: el reloj del sistema no está sincronizado por NTP y su hora puede estar muy mal. La Pi no tiene RTC y al arrancar retoma la última hora guardada (en la sesión 3 del 2026-11-23 las primeras 23 filas quedaron con la hora de la noche anterior). El gemelo debe corregir esas filas con `t_mono_s`, tomando como ancla la primera fila de la sesión con hora confiable (`gps`, o `sistema` sin `HORA_NO_SINC`): `utc = utc_ancla − (t_mono_ancla − t_mono_s)`. Si ninguna fila de la sesión es confiable, su hora no sirve.
+**Cambio del 2026-11-25 (caja con ESP32-C3):** `fuente_hora` admite `rtc` (hora del DS3231, sin `HORA_SISTEMA`). `HORA_NO_SINC` aparece con cualquier hora que no sea del GPS (`sistema` o `rtc`) cuando no es confiable: en el ESP32, si el DS3231 perdió la hora (bandera `OSF`) o, sin DS3231, si aún no hubo hora GPS en la sesión. El gemelo no cambia: solo mira `HORA_NO_SINC`. Las sesiones del ESP32 se numeran desde `sesion_1001` (las de la Pi llegaron a la 0028) y su `version` empieza con `esp32-`. `tests/verificar_sesion.py` ya acepta ambas.
+
+`HORA_NO_SINC` (v0.2.0) en la Pi solo aparece junto con `HORA_SISTEMA`: el reloj del sistema no está sincronizado por NTP y su hora puede estar muy mal. La Pi no tiene RTC y al arrancar retoma la última hora guardada (en la sesión 3 del 2026-11-23 las primeras 23 filas quedaron con la hora de la noche anterior). El gemelo debe corregir esas filas con `t_mono_s`, tomando como ancla la primera fila de la sesión con hora confiable (`gps`, o `sistema` sin `HORA_NO_SINC`): `utc = utc_ancla − (t_mono_ancla − t_mono_s)`. Si ninguna fila de la sesión es confiable, su hora no sirve.
 
 Ejemplo de `config.yaml` de la caja negra:
 ```yaml

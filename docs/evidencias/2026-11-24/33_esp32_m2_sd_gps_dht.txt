@@ -1,0 +1,22 @@
+Etapa M2 (2026-11-24, 2.º intento): microSD + GPS + DHT22 cableados; reloj DS3231 sin conectar (falta la pila)
+Script: caja-negra-esp32/pruebas_hardware/diagnostico.py
+
+== 1. Reloj DS3231 (I2C: SDA=GPIO1, SCL=GPIO0)
+   Dispositivos I2C: ninguno
+   DS3231 (0x68): NO | EEPROM (0x57): NO
+== 2. DHT22 (GPIO3)
+   intento 1: sin respuesta ([Errno 116] ETIMEDOUT)
+   intento 2: sin respuesta ([Errno 116] ETIMEDOUT)
+   intento 3: sin respuesta ([Errno 116] ETIMEDOUT)
+== 3. GPS (UART1 RX=GPIO20, 9600 baudios), 3 s
+   Bytes recibidos: 784 | líneas NMEA: 22
+   $GPRMC,055938.00,V,,,,,,,251126,,,N*7C
+   $GPVTG,,,,,,,,,N*30
+   $GPGGA,055938.00,,,,,0,00,99.99,,,,,,*64
+== 4. microSD (SPI: SCK=4, MISO=5, MOSI=6, CS=7)
+   Nivel de MISO en reposo: 0 (1 = hay algo conectado que lo sube; 0 = flotando o a tierra)
+   MISO con pull-down interno: 0 (si sigue en 1, el adaptador sí está alimentado y conectado)
+   SPI a 100000 Hz: tarjeta OK, 15196160 sectores (7.78 GB)
+== Fin del diagnóstico
+
+Línea de datos del DHT22 (GPIO3): con pull-down = 0 (sin 3.3 V en el módulo o DATA sin llegar); con pull-up = 1 (sin corto a GND)

@@ -1,0 +1,14 @@
+Etapa M2 de la migración a ESP32-C3 (2026-11-24): prueba del shield GPS (NEO-6M) con los 4 módulos cableados
+Conexiones: 5V del shield → 5V; GND → GND; pin 2 del shield (TX) → GPIO20 (UART1, 9600 baudios)
+Script: caja-negra-esp32/pruebas_hardware/prueba_gps.py
+
+== Prueba del GPS (etapa M2): escuchando 15 s en GPIO20 a 9600 baudios...
+Bytes recibidos: 2358 | frases válidas: 82 | con checksum malo: 0
+Tipos de frase: {'GLL': 15, 'RMC': 15, 'VTG': 15, 'GSV': 7, 'GGA': 15, 'GSA': 15}
+Última GGA: $GPGGA,,,,,,0,00,99.99,,,,,,*48
+  hora UTC - | fix 0 | satélites 00 | HDOP 99.99
+Última RMC: estado V (A = válido, V = sin fix) | fecha -
+RESULTADO: el GPS se comunica bien con el ESP32; aún sin fix (normal bajo techo).
+
+Lectura de líneas con pull-down interno (prueba de contacto/energía):
+GPIO20 GPS TX -> 1 (conectado y alimentado) | GPIO3 DHT22, GPIO1/GPIO0 RTC -> 0 (sin 3.3 V en su riel) | GPIO4-7 microSD -> 0

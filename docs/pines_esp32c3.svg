@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1130" viewBox="0 0 1500 1130" font-family="Arial, Helvetica, sans-serif">
+<rect width="1500" height="1130" fill="#ffffff"/>
+<text x="40" y="52" font-size="30" font-weight="bold" fill="#14344d">Mapa de pines · Caja negra con ESP32-C3 Super Mini</text>
+<text x="40" y="82" font-size="16" fill="#555">Vista superior, USB-C arriba. Mismos sensores que con la Raspberry: shield GPS (pin 2) y DHT22; nuevos: RTC DS3231 y adaptador microSD. Guíate también por las etiquetas impresas en la placa.</text>
+<rect x="600" y="140" width="300" height="520" rx="18" fill="#1b1b1b"/>
+<rect x="705" y="112" width="90" height="64" rx="10" fill="#c9ccd1" stroke="#8c9096" stroke-width="2"/>
+<text x="750" y="150" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">USB-C</text>
+<rect x="650" y="190" width="44" height="30" rx="5" fill="#d9d9d9"/>
+<text x="672" y="240" font-size="11" fill="#ddd" text-anchor="middle">RST</text>
+<rect x="806" y="190" width="44" height="30" rx="5" fill="#d9d9d9"/>
+<text x="828" y="240" font-size="11" fill="#ddd" text-anchor="middle">BOOT</text>
+<rect x="712" y="380" width="76" height="76" rx="6" fill="#333" stroke="#555"/>
+<text x="750" y="414" font-size="12" fill="#ddd" text-anchor="middle">ESP32</text>
+<text x="750" y="430" font-size="12" fill="#ddd" text-anchor="middle">-C3</text>
+<rect x="725" y="560" width="50" height="60" rx="4" fill="#e63946"/>
+<text x="750" y="595" font-size="11" fill="#fff" text-anchor="middle">antena</text>
+<circle cx="630" cy="260" r="15" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="264" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">5</text>
+<text x="652" y="265" font-size="12" fill="#ddd">GPIO5</text>
+<line x1="560" y1="260" x2="615" y2="260" stroke="#1d4ed8" stroke-width="4"/>
+<rect x="427.20000000000005" y="246" width="132.79999999999998" height="28" rx="14" fill="#1d4ed8"/>
+<text x="493.6" y="265" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">microSD · MISO</text>
+<circle cx="870" cy="260" r="15" fill="#d62828" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="264" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">5V</text>
+<text x="848" y="265" font-size="12" fill="#ddd" text-anchor="end">5V</text>
+<line x1="885" y1="260" x2="940" y2="260" stroke="#d62828" stroke-width="4"/>
+<rect x="940" y="246" width="272.2" height="28" rx="14" fill="#d62828"/>
+<text x="1076.1" y="265" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Riel 5 V → microSD VCC · GPS 5V</text>
+<circle cx="630" cy="312" r="15" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="316" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">6</text>
+<text x="652" y="317" font-size="12" fill="#ddd">GPIO6</text>
+<line x1="560" y1="312" x2="615" y2="312" stroke="#1d4ed8" stroke-width="4"/>
+<rect x="427.20000000000005" y="298" width="132.79999999999998" height="28" rx="14" fill="#1d4ed8"/>
+<text x="493.6" y="317" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">microSD · MOSI</text>
+<circle cx="870" cy="312" r="15" fill="#222222" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="316" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">G</text>
+<text x="848" y="317" font-size="12" fill="#ddd" text-anchor="end">GND</text>
+<line x1="885" y1="312" x2="940" y2="312" stroke="#222222" stroke-width="4"/>
+<rect x="940" y="298" width="214.79999999999998" height="28" rx="14" fill="#222222"/>
+<text x="1047.4" y="317" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Riel GND → todos los GND</text>
+<circle cx="630" cy="364" r="15" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="368" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">7</text>
+<text x="652" y="369" font-size="12" fill="#ddd">GPIO7</text>
+<line x1="560" y1="364" x2="615" y2="364" stroke="#1d4ed8" stroke-width="4"/>
+<rect x="443.6" y="350" width="116.39999999999999" height="28" rx="14" fill="#1d4ed8"/>
+<text x="501.8" y="369" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">microSD · CS</text>
+<circle cx="870" cy="364" r="15" fill="#f77f00" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="368" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">3.3</text>
+<text x="848" y="369" font-size="12" fill="#ddd" text-anchor="end">3V3</text>
+<line x1="885" y1="364" x2="940" y2="364" stroke="#f77f00" stroke-width="4"/>
+<rect x="940" y="350" width="264.0" height="28" rx="14" fill="#f77f00"/>
+<text x="1072.0" y="369" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Riel 3.3 V → RTC VCC · DHT22 +</text>
+<circle cx="630" cy="416" r="15" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="420" font-size="11" font-weight="bold" fill="#333" text-anchor="middle">8</text>
+<text x="652" y="421" font-size="12" fill="#ddd">GPIO8</text>
+<text x="575" y="421" font-size="13" fill="#888" text-anchor="end">LED azul de la placa (no conectar)</text>
+<circle cx="870" cy="416" r="15" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="420" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">4</text>
+<text x="848" y="421" font-size="12" fill="#ddd" text-anchor="end">GPIO4</text>
+<line x1="885" y1="416" x2="940" y2="416" stroke="#1d4ed8" stroke-width="4"/>
+<rect x="940" y="402" width="124.6" height="28" rx="14" fill="#1d4ed8"/>
+<text x="1002.3" y="421" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">microSD · SCK</text>
+<circle cx="630" cy="468" r="15" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="472" font-size="11" font-weight="bold" fill="#333" text-anchor="middle">9</text>
+<text x="652" y="473" font-size="12" fill="#ddd">GPIO9</text>
+<text x="575" y="473" font-size="13" fill="#888" text-anchor="end">Botón BOOT de la placa (no conectar)</text>
+<circle cx="870" cy="468" r="15" fill="#c9a000" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="472" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">3</text>
+<text x="848" y="473" font-size="12" fill="#ddd" text-anchor="end">GPIO3</text>
+<line x1="885" y1="468" x2="940" y2="468" stroke="#c9a000" stroke-width="4"/>
+<rect x="940" y="454" width="165.6" height="28" rx="14" fill="#c9a000"/>
+<text x="1022.8" y="473" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">DHT22 · DATA (OUT)</text>
+<circle cx="630" cy="520" r="15" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="524" font-size="11" font-weight="bold" fill="#333" text-anchor="middle">10</text>
+<text x="652" y="525" font-size="12" fill="#ddd">GPIO10</text>
+<text x="575" y="525" font-size="13" fill="#888" text-anchor="end">libre</text>
+<circle cx="870" cy="520" r="15" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="524" font-size="11" font-weight="bold" fill="#333" text-anchor="middle">2</text>
+<text x="848" y="525" font-size="12" fill="#ddd" text-anchor="end">GPIO2</text>
+<text x="925" y="525" font-size="13" fill="#888">no usar (pin de arranque)</text>
+<circle cx="630" cy="572" r="15" fill="#2a9d8f" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="576" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">20</text>
+<text x="652" y="577" font-size="12" fill="#ddd">GPIO20 RX</text>
+<line x1="560" y1="572" x2="615" y2="572" stroke="#2a9d8f" stroke-width="4"/>
+<rect x="320.6" y="558" width="239.39999999999998" height="28" rx="14" fill="#2a9d8f"/>
+<text x="440.3" y="577" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">GPS · TX (pin 2 del shield)</text>
+<circle cx="870" cy="572" r="15" fill="#8338ec" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="576" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+<text x="848" y="577" font-size="12" fill="#ddd" text-anchor="end">GPIO1</text>
+<line x1="885" y1="572" x2="940" y2="572" stroke="#8338ec" stroke-width="4"/>
+<rect x="940" y="558" width="91.8" height="28" rx="14" fill="#8338ec"/>
+<text x="985.9" y="577" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">RTC · SDA</text>
+<circle cx="630" cy="624" r="15" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
+<text x="630" y="628" font-size="11" font-weight="bold" fill="#333" text-anchor="middle">21</text>
+<text x="652" y="629" font-size="12" fill="#ddd">GPIO21 TX</text>
+<text x="575" y="629" font-size="13" fill="#888" text-anchor="end">GPS · RX (no conectar)</text>
+<circle cx="870" cy="624" r="15" fill="#8338ec" stroke="#fff" stroke-width="1.5"/>
+<text x="870" y="628" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">0</text>
+<text x="848" y="629" font-size="12" fill="#ddd" text-anchor="end">GPIO0</text>
+<line x1="885" y1="624" x2="940" y2="624" stroke="#8338ec" stroke-width="4"/>
+<rect x="940" y="610" width="91.8" height="28" rx="14" fill="#8338ec"/>
+<text x="985.9" y="629" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">RTC · SCL</text>
+<circle cx="700" cy="416" r="6" fill="#4ea8ff"/>
+<text x="700" y="440" font-size="10" fill="#9cc2ff" text-anchor="middle">LED</text>
+<rect x="40" y="690" width="700" height="125" rx="12" fill="#f4f8fb" stroke="#c9d6e2"/>
+<text x="60" y="720" font-size="18" font-weight="bold" fill="#14344d">Rieles de la protoboard</text>
+<text x="60" y="748" font-size="14" fill="#f77f00">Riel de un lado: + = 3.3 V (pin 3.3)  ·  − = GND</text>
+<text x="60" y="771" font-size="14" fill="#d62828">Riel del otro lado: + = 5 V (pin 5V)  ·  − = GND</text>
+<text x="60" y="794" font-size="14" fill="#333">Une los dos rieles de GND entre sí. Nunca juntes el riel de 5 V con el de 3.3 V.</text>
+<rect x="760" y="690" width="700" height="125" rx="12" fill="#fff8ef" stroke="#f0d9b5"/>
+<text x="780" y="720" font-size="18" font-weight="bold" fill="#14344d">Antes de conectar</text>
+<text x="780" y="748" font-size="14" fill="#333">Cablea siempre con el USB desconectado.</text>
+<text x="780" y="771" font-size="14" fill="#333">Etapa M2: un módulo a la vez, en el orden ① → ④, y probar cada uno.</text>
+<text x="780" y="794" font-size="14" fill="#333">Ningún módulo externo en los pines 2, 8 y 9 (pines de arranque).</text>
+<rect x="40" y="835" width="340" height="280" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<rect x="40" y="835" width="340" height="8" rx="4" fill="#1d4ed8"/>
+<text x="58" y="873" font-size="18" font-weight="bold" fill="#14344d">① Adaptador microSD</text>
+<rect x="58" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#d62828" stroke-width="2.5"/>
+<text x="114" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">VCC</text>
+<line x1="172" y1="904" x2="196" y2="904" stroke="#d62828" stroke-width="4"/>
+<text x="202" y="909" font-size="14" font-weight="bold" fill="#d62828">5V (riel 5 V)</text>
+<rect x="58" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="114" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
+<line x1="172" y1="934" x2="196" y2="934" stroke="#222222" stroke-width="4"/>
+<text x="202" y="939" font-size="14" font-weight="bold" fill="#222222">GND</text>
+<rect x="58" y="951" width="112" height="26" rx="6" fill="#fff" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="114" y="969" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">SCK</text>
+<line x1="172" y1="964" x2="196" y2="964" stroke="#1d4ed8" stroke-width="4"/>
+<text x="202" y="969" font-size="14" font-weight="bold" fill="#1d4ed8">GPIO4</text>
+<rect x="58" y="981" width="112" height="26" rx="6" fill="#fff" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="114" y="999" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">MISO</text>
+<line x1="172" y1="994" x2="196" y2="994" stroke="#1d4ed8" stroke-width="4"/>
+<text x="202" y="999" font-size="14" font-weight="bold" fill="#1d4ed8">GPIO5</text>
+<rect x="58" y="1011" width="112" height="26" rx="6" fill="#fff" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="114" y="1029" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">MOSI</text>
+<line x1="172" y1="1024" x2="196" y2="1024" stroke="#1d4ed8" stroke-width="4"/>
+<text x="202" y="1029" font-size="14" font-weight="bold" fill="#1d4ed8">GPIO6</text>
+<rect x="58" y="1041" width="112" height="26" rx="6" fill="#fff" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="114" y="1059" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">CS</text>
+<line x1="172" y1="1054" x2="196" y2="1054" stroke="#1d4ed8" stroke-width="4"/>
+<text x="202" y="1059" font-size="14" font-weight="bold" fill="#1d4ed8">GPIO7</text>
+<text x="58" y="1099" font-size="13" fill="#555">VCC a 5 V: trae regulador propio.</text>
+<rect x="400" y="835" width="340" height="280" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<rect x="400" y="835" width="340" height="8" rx="4" fill="#8338ec"/>
+<text x="418" y="873" font-size="18" font-weight="bold" fill="#14344d">② RTC DS3231 (ZS-042)</text>
+<rect x="418" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#f77f00" stroke-width="2.5"/>
+<text x="474" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">VCC</text>
+<line x1="532" y1="904" x2="556" y2="904" stroke="#f77f00" stroke-width="4"/>
+<text x="562" y="909" font-size="14" font-weight="bold" fill="#f77f00">3.3V (riel 3.3 V)</text>
+<rect x="418" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="474" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
+<line x1="532" y1="934" x2="556" y2="934" stroke="#222222" stroke-width="4"/>
+<text x="562" y="939" font-size="14" font-weight="bold" fill="#222222">GND</text>
+<rect x="418" y="951" width="112" height="26" rx="6" fill="#fff" stroke="#8338ec" stroke-width="2.5"/>
+<text x="474" y="969" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">SDA</text>
+<line x1="532" y1="964" x2="556" y2="964" stroke="#8338ec" stroke-width="4"/>
+<text x="562" y="969" font-size="14" font-weight="bold" fill="#8338ec">GPIO1</text>
+<rect x="418" y="981" width="112" height="26" rx="6" fill="#fff" stroke="#8338ec" stroke-width="2.5"/>
+<text x="474" y="999" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">SCL</text>
+<line x1="532" y1="994" x2="556" y2="994" stroke="#8338ec" stroke-width="4"/>
+<text x="562" y="999" font-size="14" font-weight="bold" fill="#8338ec">GPIO0</text>
+<rect x="418" y="1011" width="112" height="26" rx="6" fill="#fff" stroke="#9a9a9a" stroke-width="2.5"/>
+<text x="474" y="1029" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">32K · SQW</text>
+<line x1="532" y1="1024" x2="556" y2="1024" stroke="#9a9a9a" stroke-width="4"/>
+<text x="562" y="1029" font-size="14" font-weight="bold" fill="#9a9a9a">sin conectar</text>
+<text x="418" y="1099" font-size="13" fill="#555">¡A 3.3 V, no a 5 V! (carga la pila)</text>
+<rect x="760" y="835" width="340" height="280" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<rect x="760" y="835" width="340" height="8" rx="4" fill="#c9a000"/>
+<text x="778" y="873" font-size="18" font-weight="bold" fill="#14344d">③ DHT22</text>
+<rect x="778" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#f77f00" stroke-width="2.5"/>
+<text x="834" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">+ (VCC)</text>
+<line x1="892" y1="904" x2="916" y2="904" stroke="#f77f00" stroke-width="4"/>
+<text x="922" y="909" font-size="14" font-weight="bold" fill="#f77f00">3.3V (riel 3.3 V)</text>
+<rect x="778" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#c9a000" stroke-width="2.5"/>
+<text x="834" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">OUT (DATA)</text>
+<line x1="892" y1="934" x2="916" y2="934" stroke="#c9a000" stroke-width="4"/>
+<text x="922" y="939" font-size="14" font-weight="bold" fill="#c9a000">GPIO3</text>
+<rect x="778" y="951" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="834" y="969" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">− (GND)</text>
+<line x1="892" y1="964" x2="916" y2="964" stroke="#222222" stroke-width="4"/>
+<text x="922" y="969" font-size="14" font-weight="bold" fill="#222222">GND</text>
+<text x="778" y="1099" font-size="13" fill="#555">El módulo ya trae resistencia pull-up.</text>
+<rect x="1120" y="835" width="340" height="280" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
+<rect x="1120" y="835" width="340" height="8" rx="4" fill="#2a9d8f"/>
+<text x="1138" y="873" font-size="18" font-weight="bold" fill="#14344d">④ Shield GPS (NEO-6M)</text>
+<rect x="1138" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#d62828" stroke-width="2.5"/>
+<text x="1194" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">5V</text>
+<line x1="1252" y1="904" x2="1276" y2="904" stroke="#d62828" stroke-width="4"/>
+<text x="1282" y="909" font-size="14" font-weight="bold" fill="#d62828">5V (riel 5 V)</text>
+<rect x="1138" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="1194" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
+<line x1="1252" y1="934" x2="1276" y2="934" stroke="#222222" stroke-width="4"/>
+<text x="1282" y="939" font-size="14" font-weight="bold" fill="#222222">GND</text>
+<rect x="1138" y="951" width="112" height="26" rx="6" fill="#fff" stroke="#2a9d8f" stroke-width="2.5"/>
+<text x="1194" y="969" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">pin 2 (TX)</text>
+<line x1="1252" y1="964" x2="1276" y2="964" stroke="#2a9d8f" stroke-width="4"/>
+<text x="1282" y="969" font-size="14" font-weight="bold" fill="#2a9d8f">GPIO20</text>
+<rect x="1138" y="981" width="112" height="26" rx="6" fill="#fff" stroke="#9a9a9a" stroke-width="2.5"/>
+<text x="1194" y="999" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">pin 3 (RX)</text>
+<line x1="1252" y1="994" x2="1276" y2="994" stroke="#9a9a9a" stroke-width="4"/>
+<text x="1282" y="999" font-size="14" font-weight="bold" fill="#9a9a9a">sin conectar</text>
+<text x="1138" y="1099" font-size="13" fill="#555">Jumpers del shield sin cambios.</text>
+</svg>

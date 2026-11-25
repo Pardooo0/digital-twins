@@ -43,3 +43,14 @@ dron, salidas de OpenDroneMap, CSV de la caja negra y los HTML del gemelo) no se
 | `27_gemelo_v2_salida_consola.txt` | Salida del gemelo con la v2 (volumen LOD1: 37.5 × 30.0 × 5.8 m). |
 | `28_visor3d_v2_malla_lod1.png` | Visor 3D con la v2: malla de 433 mil caras (tres esquinas y muros O, N y S), volumen LOD1 y datos. |
 | `29_mapa_v2_planta_lod1.png` | Planta LOD1 de la v2 sobre el satélite: coincide con la azotea. |
+| `30_esp32_m1_firmware_micropython.txt` | Migración, etapa M1: chip ESP32-C3 identificado, MicroPython 1.29.0 cargado, prueba del LED. |
+| `31_esp32_m2_microsd.txt` | M2: microSD en el ESP32; 200 filas con `flush` + `sync` en 33.5 ms de media. |
+| `32_esp32_m2_gps.txt` | M2: GPS en el ESP32, 82 frases NMEA válidas en 15 s; reloj y DHT22 sin 3.3 V. |
+| `33_esp32_m2_sd_gps_dht.txt` | M2: microSD y GPS funcionando; DHT22 sin alimentación. |
+
+## 2026-11-25 — Migración a ESP32-C3: programa completo (etapa M3)
+
+| Archivo | Qué muestra |
+|---|---|
+| `02_esp32_m3_programa_completo.txt` | 153 pruebas en la PC; 60 filas en 59.2 s en el ESP32; RAM libre 142 KB; CSV del ESP32 verificado con 0 errores. |
+| `sesiones_esp32/sesion_1001.csv`, `.json` | Primera sesión grabada por el ESP32 (bajo techo, sin DHT22 ni DS3231) y sus metadatos. |

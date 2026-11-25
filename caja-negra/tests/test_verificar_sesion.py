@@ -51,10 +51,23 @@ def test_avisa_salto_de_reloj(tmp_path):
     assert any("línea 4: salto de reloj" in a for a in avisos)
 
 
-def test_hora_no_sinc_exige_hora_sistema(tmp_path):
+def test_hora_no_sinc_no_va_con_hora_gps(tmp_path):
     ruta = sesion(tmp_path, [fila(1, fuente_hora="gps", banderas="SIN_FIX;HORA_NO_SINC")])
     errores, _, _ = verificar_csv(ruta)
     assert any("HORA_NO_SINC" in e for e in errores)
+
+
+def test_acepta_hora_del_rtc_con_y_sin_hora_no_sinc(tmp_path):
+    # caja negra con ESP32 + DS3231: fuente_hora = rtc, sin HORA_SISTEMA; HORA_NO_SINC si el RTC perdió la hora
+    ruta = sesion(tmp_path, [fila(1, fuente_hora="rtc", banderas="SIN_FIX;HORA_NO_SINC"),
+                             fila(2, fuente_hora="rtc", banderas="SIN_FIX")])
+    assert verificar_csv(ruta) == ([], [], 2)
+
+
+def test_rtc_con_hora_sistema_es_incoherente(tmp_path):
+    ruta = sesion(tmp_path, [fila(1, fuente_hora="rtc", banderas="SIN_FIX;HORA_SISTEMA")])
+    errores, _, _ = verificar_csv(ruta)
+    assert any("HORA_SISTEMA" in e for e in errores)
 
 
 def test_fila_corrupta_a_mitad_es_error(tmp_path):

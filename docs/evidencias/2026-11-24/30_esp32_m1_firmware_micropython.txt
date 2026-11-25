@@ -1,0 +1,19 @@
+Etapa M1 de la migración a ESP32-C3 (2026-11-24): identificación del chip, carga de MicroPython y prueba del LED
+
+== esptool flash-id (COM9)
+Chip type:          ESP32-C3 (QFN32) (revision v0.4)
+Features:           Wi-Fi, BT 5 (LE), Single Core, 160MHz, Embedded Flash 4MB (XMC)
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+Detected flash size: 4MB
+
+== Carga del firmware ESP32_GENERIC_C3-20260824-v1.29.0.bin
+Flash memory erased successfully in 15.1 seconds.
+Wrote 1754736 bytes (1052483 compressed) at 0x00000000 in 7.9 seconds (1771.1 kbit/s).
+Hash of data verified.
+
+== Prueba en MicroPython (mpremote run prueba_m1.py)
+MicroPython 3.4.0; MicroPython v1.29.0 on 2026-08-24 | ESP32C3 module with ESP32-C3
+CPU: 160 MHz | RAM libre: 171 KB
+Flash para archivos: 2048 KB, libre: 2036 KB
+Parpadeo terminado (10 veces)

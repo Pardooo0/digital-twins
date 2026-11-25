@@ -1,0 +1,17 @@
+Etapa M3 de la migración a ESP32-C3 (2026-11-25): programa completo en el ESP32
+Módulos conectados: microSD y shield GPS (DHT22 sin 3.3 V, DS3231 sin conectar). Bajo techo (sin fix).
+
+== Pruebas en la PC (pytest)
+153 passed in 1.32s
+
+== Prueba en el ESP32 (pruebas_hardware/prueba_m3.py), 1.ª corrida
+RAM libre: 171 KB al inicio, 142 KB con el programa cargado y la microSD montada
+Sesión sesion_1001: 60 filas en 59.2 s | RAM libre al final: 141 KB
+GPS: 118 frases válidas, 1 mala (línea incompleta al arrancar) | DHT22: 20 fallas de 20 (sin alimentación)
+
+== Verificación del CSV del ESP32 (sesiones_esp32/sesion_1001.csv) con tests/verificar_sesion.py de la caja con Raspberry Pi
+sesion_1001.csv: 60 filas válidas, OK, 0 avisos
+
+Total: 1 sesiones, 60 filas, 0 errores
+
+== 2.ª corrida tras ajustar el arranque del ritmo de 1 s (sesion_1002): primeras filas en t = 0.350 s y 1.368 s
