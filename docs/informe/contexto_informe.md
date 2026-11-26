@@ -286,3 +286,7 @@ evidencias en `docs/evidencias/` (índice en `docs/evidencias/README.md`), guía
 | `Fig12_visor3d_v1_malla.png` | Visor 3D con la malla de la corrida 1: solo dos esquinas reconstruidas. |
 | `Fig13_visor3d_v2_gemelo.png` | Gemelo digital en 3D (corrida 2): malla texturizada, volumen LOD1, lecturas de la caja negra y espesores. |
 | `Fig14_componentes_esp32_trabajo_futuro.jpeg` | Componentes para la migración: ESP32-C3 Super Mini, RTC DS3231 y adaptador microSD. |
+| `Fig15_mapa_pines_esp32c3.png` | Mapa de pines de la caja negra con ESP32-C3 Super Mini sobre la placa de expansión (actualizado el 2026-11-26). |
+| `Fig16_modulos_esp32_placa_expansion.jpeg` | Módulos de la caja negra con ESP32-C3: placa de expansión, DS3231, adaptador microSD, DHT22 y shield GPS. |
+
+Avance de la migración a ESP32-C3 (texto listo para el informe): `avance_esp32_informe.md`.

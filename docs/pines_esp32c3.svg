@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1130" viewBox="0 0 1500 1130" font-family="Arial, Helvetica, sans-serif">
 <rect width="1500" height="1130" fill="#ffffff"/>
 <text x="40" y="52" font-size="30" font-weight="bold" fill="#14344d">Mapa de pines · Caja negra con ESP32-C3 Super Mini</text>
-<text x="40" y="82" font-size="16" fill="#555">Vista superior, USB-C arriba. Mismos sensores que con la Raspberry: shield GPS (pin 2) y DHT22; nuevos: RTC DS3231 y adaptador microSD. Guíate también por las etiquetas impresas en la placa.</text>
+<text x="40" y="82" font-size="16" fill="#555">Vista superior, USB-C arriba. Sobre la placa de expansión (tiras S · VCC · GND). Sensores: shield GPS (pin 2), DHT22, RTC DS3231 y microSD.</text>
 <rect x="600" y="140" width="300" height="520" rx="18" fill="#1b1b1b"/>
 <rect x="705" y="112" width="90" height="64" rx="10" fill="#c9ccd1" stroke="#8c9096" stroke-width="2"/>
 <text x="750" y="150" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">USB-C</text>
@@ -25,7 +25,7 @@
 <text x="848" y="265" font-size="12" fill="#ddd" text-anchor="end">5V</text>
 <line x1="885" y1="260" x2="940" y2="260" stroke="#d62828" stroke-width="4"/>
 <rect x="940" y="246" width="272.2" height="28" rx="14" fill="#d62828"/>
-<text x="1076.1" y="265" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Riel 5 V → microSD VCC · GPS 5V</text>
+<text x="1076.1" y="265" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">5V → VCC de microSD y GPS</text>
 <circle cx="630" cy="312" r="15" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
 <text x="630" y="316" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">6</text>
 <text x="652" y="317" font-size="12" fill="#ddd">GPIO6</text>
@@ -37,7 +37,7 @@
 <text x="848" y="317" font-size="12" fill="#ddd" text-anchor="end">GND</text>
 <line x1="885" y1="312" x2="940" y2="312" stroke="#222222" stroke-width="4"/>
 <rect x="940" y="298" width="214.79999999999998" height="28" rx="14" fill="#222222"/>
-<text x="1047.4" y="317" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Riel GND → todos los GND</text>
+<text x="1047.4" y="317" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">GND → todos los GND</text>
 <circle cx="630" cy="364" r="15" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
 <text x="630" y="368" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">7</text>
 <text x="652" y="369" font-size="12" fill="#ddd">GPIO7</text>
@@ -49,7 +49,7 @@
 <text x="848" y="369" font-size="12" fill="#ddd" text-anchor="end">3V3</text>
 <line x1="885" y1="364" x2="940" y2="364" stroke="#f77f00" stroke-width="4"/>
 <rect x="940" y="350" width="264.0" height="28" rx="14" fill="#f77f00"/>
-<text x="1072.0" y="369" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Riel 3.3 V → RTC VCC · DHT22 +</text>
+<text x="1072.0" y="369" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">3.3 V → VCC de RTC y DHT22</text>
 <circle cx="630" cy="416" r="15" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
 <text x="630" y="420" font-size="11" font-weight="bold" fill="#333" text-anchor="middle">8</text>
 <text x="652" y="421" font-size="12" fill="#ddd">GPIO8</text>
@@ -69,7 +69,7 @@
 <text x="848" y="473" font-size="12" fill="#ddd" text-anchor="end">GPIO3</text>
 <line x1="885" y1="468" x2="940" y2="468" stroke="#c9a000" stroke-width="4"/>
 <rect x="940" y="454" width="165.6" height="28" rx="14" fill="#c9a000"/>
-<text x="1022.8" y="473" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">DHT22 · DATA (OUT)</text>
+<text x="1022.8" y="473" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">DHT22 · DAT</text>
 <circle cx="630" cy="520" r="15" fill="#d9d9d9" stroke="#fff" stroke-width="1.5"/>
 <text x="630" y="524" font-size="11" font-weight="bold" fill="#333" text-anchor="middle">10</text>
 <text x="652" y="525" font-size="12" fill="#ddd">GPIO10</text>
@@ -103,10 +103,10 @@
 <circle cx="700" cy="416" r="6" fill="#4ea8ff"/>
 <text x="700" y="440" font-size="10" fill="#9cc2ff" text-anchor="middle">LED</text>
 <rect x="40" y="690" width="700" height="125" rx="12" fill="#f4f8fb" stroke="#c9d6e2"/>
-<text x="60" y="720" font-size="18" font-weight="bold" fill="#14344d">Rieles de la protoboard</text>
-<text x="60" y="748" font-size="14" fill="#f77f00">Riel de un lado: + = 3.3 V (pin 3.3)  ·  − = GND</text>
-<text x="60" y="771" font-size="14" fill="#d62828">Riel del otro lado: + = 5 V (pin 5V)  ·  − = GND</text>
-<text x="60" y="794" font-size="14" fill="#333">Une los dos rieles de GND entre sí. Nunca juntes el riel de 5 V con el de 3.3 V.</text>
+<text x="60" y="720" font-size="18" font-weight="bold" fill="#14344d">Placa de expansión: cada GPIO tiene una tira S · VCC · GND</text>
+<text x="60" y="748" font-size="14" fill="#333">Amarillo = señal (GPIO) · <tspan fill="#f77f00" font-weight="bold">rojo = VCC, 3.3 V de fábrica (mídelo)</tspan> · negro = GND</text>
+<text x="60" y="771" font-size="14" fill="#333">RTC y DHT22: VCC y GND de la tira roja/negra de su pin, o del pin 3.3 de la placa.</text>
+<text x="60" y="794" font-size="14" fill="#d62828" font-weight="bold">microSD y GPS: VCC al pin 5V, NUNCA a una tira roja (3.3 V no les basta).</text>
 <rect x="760" y="690" width="700" height="125" rx="12" fill="#fff8ef" stroke="#f0d9b5"/>
 <text x="780" y="720" font-size="18" font-weight="bold" fill="#14344d">Antes de conectar</text>
 <text x="780" y="748" font-size="14" fill="#333">Cablea siempre con el USB desconectado.</text>
@@ -118,7 +118,7 @@
 <rect x="58" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#d62828" stroke-width="2.5"/>
 <text x="114" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">VCC</text>
 <line x1="172" y1="904" x2="196" y2="904" stroke="#d62828" stroke-width="4"/>
-<text x="202" y="909" font-size="14" font-weight="bold" fill="#d62828">5V (riel 5 V)</text>
+<text x="202" y="909" font-size="14" font-weight="bold" fill="#d62828">pin 5V de la placa</text>
 <rect x="58" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
 <text x="114" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
 <line x1="172" y1="934" x2="196" y2="934" stroke="#222222" stroke-width="4"/>
@@ -139,14 +139,15 @@
 <text x="114" y="1059" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">CS</text>
 <line x1="172" y1="1054" x2="196" y2="1054" stroke="#1d4ed8" stroke-width="4"/>
 <text x="202" y="1059" font-size="14" font-weight="bold" fill="#1d4ed8">GPIO7</text>
-<text x="58" y="1099" font-size="13" fill="#555">VCC a 5 V: trae regulador propio.</text>
+<text x="58" y="1086" font-size="13" fill="#555">Orden: GND · VCC · MISO · MOSI · SCK · CS</text>
+<text x="58" y="1104" font-size="13" fill="#555">VCC a 5 V: su regulador (AMS1117) baja a 3.3 V.</text>
 <rect x="400" y="835" width="340" height="280" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
 <rect x="400" y="835" width="340" height="8" rx="4" fill="#8338ec"/>
 <text x="418" y="873" font-size="18" font-weight="bold" fill="#14344d">② RTC DS3231 (ZS-042)</text>
 <rect x="418" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#f77f00" stroke-width="2.5"/>
 <text x="474" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">VCC</text>
 <line x1="532" y1="904" x2="556" y2="904" stroke="#f77f00" stroke-width="4"/>
-<text x="562" y="909" font-size="14" font-weight="bold" fill="#f77f00">3.3V (riel 3.3 V)</text>
+<text x="562" y="909" font-size="14" font-weight="bold" fill="#f77f00">3.3 V (tira roja o pin 3.3)</text>
 <rect x="418" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
 <text x="474" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
 <line x1="532" y1="934" x2="556" y2="934" stroke="#222222" stroke-width="4"/>
@@ -163,22 +164,26 @@
 <text x="474" y="1029" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">32K · SQW</text>
 <line x1="532" y1="1024" x2="556" y2="1024" stroke="#9a9a9a" stroke-width="4"/>
 <text x="562" y="1029" font-size="14" font-weight="bold" fill="#9a9a9a">sin conectar</text>
+<text x="418" y="1070" font-size="13" fill="#555">Tira de 6: GND · VCC · SDA · SCL · SQW · 32K</text>
 <text x="418" y="1099" font-size="13" fill="#555">¡A 3.3 V, no a 5 V! (carga la pila)</text>
 <rect x="760" y="835" width="340" height="280" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
 <rect x="760" y="835" width="340" height="8" rx="4" fill="#c9a000"/>
 <text x="778" y="873" font-size="18" font-weight="bold" fill="#14344d">③ DHT22</text>
-<rect x="778" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#f77f00" stroke-width="2.5"/>
-<text x="834" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">+ (VCC)</text>
-<line x1="892" y1="904" x2="916" y2="904" stroke="#f77f00" stroke-width="4"/>
-<text x="922" y="909" font-size="14" font-weight="bold" fill="#f77f00">3.3V (riel 3.3 V)</text>
-<rect x="778" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#c9a000" stroke-width="2.5"/>
-<text x="834" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">OUT (DATA)</text>
-<line x1="892" y1="934" x2="916" y2="934" stroke="#c9a000" stroke-width="4"/>
-<text x="922" y="939" font-size="14" font-weight="bold" fill="#c9a000">GPIO3</text>
-<rect x="778" y="951" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
-<text x="834" y="969" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">− (GND)</text>
-<line x1="892" y1="964" x2="916" y2="964" stroke="#222222" stroke-width="4"/>
-<text x="922" y="969" font-size="14" font-weight="bold" fill="#222222">GND</text>
+<rect x="778" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
+<text x="834" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
+<line x1="892" y1="904" x2="916" y2="904" stroke="#222222" stroke-width="4"/>
+<text x="922" y="909" font-size="14" font-weight="bold" fill="#222222">GND</text>
+<rect x="778" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#f77f00" stroke-width="2.5"/>
+<text x="834" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">VCC</text>
+<line x1="892" y1="934" x2="916" y2="934" stroke="#f77f00" stroke-width="4"/>
+<text x="922" y="939" font-size="14" font-weight="bold" fill="#f77f00">3.3 V</text>
+<rect x="778" y="951" width="112" height="26" rx="6" fill="#fff" stroke="#c9a000" stroke-width="2.5"/>
+<text x="834" y="969" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">DAT</text>
+<line x1="892" y1="964" x2="916" y2="964" stroke="#c9a000" stroke-width="4"/>
+<text x="922" y="969" font-size="14" font-weight="bold" fill="#c9a000">GPIO3</text>
+<text x="778" y="1010" font-size="13" fill="#555">Orden en el módulo rojo (izq. → der.):</text>
+<text x="778" y="1028" font-size="13" font-weight="bold" fill="#c0392b">GND · VCC · DAT</text>
+<text x="778" y="1046" font-size="13" fill="#555">(no es + · OUT · −: guíate por la serigrafía)</text>
 <text x="778" y="1099" font-size="13" fill="#555">El módulo ya trae resistencia pull-up.</text>
 <rect x="1120" y="835" width="340" height="280" rx="12" fill="#f7f7f7" stroke="#d0d0d0"/>
 <rect x="1120" y="835" width="340" height="8" rx="4" fill="#2a9d8f"/>
@@ -186,7 +191,7 @@
 <rect x="1138" y="891" width="112" height="26" rx="6" fill="#fff" stroke="#d62828" stroke-width="2.5"/>
 <text x="1194" y="909" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">5V</text>
 <line x1="1252" y1="904" x2="1276" y2="904" stroke="#d62828" stroke-width="4"/>
-<text x="1282" y="909" font-size="14" font-weight="bold" fill="#d62828">5V (riel 5 V)</text>
+<text x="1282" y="909" font-size="14" font-weight="bold" fill="#d62828">pin 5V de la placa</text>
 <rect x="1138" y="921" width="112" height="26" rx="6" fill="#fff" stroke="#222222" stroke-width="2.5"/>
 <text x="1194" y="939" font-size="13" font-weight="bold" text-anchor="middle" fill="#222">GND</text>
 <line x1="1252" y1="934" x2="1276" y2="934" stroke="#222222" stroke-width="4"/>

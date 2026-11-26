@@ -1,0 +1,44 @@
+Etapa M2/M3 — ESP32-C3 Super Mini sobre la placa de expansión «ESP32-C3 SuperMini Expansion Board», 2026-11-26
+Puerto: COM3 (PC nueva). Placa en modo mantenimiento.
+
+Corrección del cableado antes de esta prueba:
+- El DHT22 (módulo rojo) tiene los pines en orden GND · VCC · DAT; el mapa anterior mostraba + · OUT · −.
+- La placa de expansión da 3.3 V en las tiras rojas (VCC1 a la derecha, VCC2 a la izquierda); no hay 5 V en ellas.
+  microSD y GPS van al pin 5V de la Super Mini. Mapa corregido: docs/pines_esp32c3.svg.
+
+== diagnostico.py
+== 1. Reloj DS3231 (I2C: SDA=GPIO1, SCL=GPIO0)
+   Dispositivos I2C: ['0x57', '0x5f', '0x68']
+   DS3231 (0x68): SÍ | EEPROM (0x57): SÍ
+== 2. DHT22 (GPIO3)
+   Temperatura 24.9 °C, humedad 56.6 %
+== 3. GPS (UART1 RX=GPIO20, 9600 baudios), 3 s
+   Bytes recibidos: 432 | líneas NMEA: 15
+   $GPRMC,,V,,,,,,,,,,N*53
+   $GPVTG,,,,,,,,,N*30
+   $GPGGA,,,,,,0,00,99.99,,,,,,*48
+== 4. microSD (SPI: SCK=4, MISO=5, MOSI=6, CS=7)
+   SPI a 100000 Hz: tarjeta OK, 15196160 sectores (7.78 GB)
+
+== prueba_rtc.py (antes de ajustar)
+Hora del reloj: 2000-01-01 00:00:40 UTC
+¿Perdió la hora? (OSF): SÍ — hay que ajustarlo
+Temperatura interna: 31.50 °C
+== ajustar_rtc.ps1 -Puerto COM3
+Reloj ajustado a (2026, 11, 26, 23, 35, 31) UTC; perdio la hora: False
+== prueba_rtc.py (después)
+Hora del reloj: 2026-11-26 23:35:31 UTC
+¿Perdió la hora? (OSF): NO — la hora es confiable
+Hora 5 s después: 2026-11-26 23:35:36 UTC (debe haber avanzado 5 s)
+PC UTC: 2026-11-26 23:35:36
+
+== prueba_m3.py (60 filas, sin watchdog; bajo techo, sin fix)
+RAM libre: 171 KB al inicio, 143 KB con el programa cargado y la microSD montada
+Reloj DS3231: presente
+Sesión sesion_1003: 60 filas en 59.7 s | RAM libre al final: 142 KB
+Metadatos: gps_frases 119, gps_frases_malas 0, dht_fallas 0, errores_rtc 0, inicio_fuente_hora rtc,
+inicio_hora_confiable true. Todas las filas con fuente_hora = rtc y solo la bandera SIN_FIX.
+
+== verificar_sesion.py (caja-negra/tests) sobre la sesión copiada de la microSD
+sesion_1003.csv: 60 filas válidas, OK, 0 avisos
+Total: 1 sesiones, 60 filas, 0 errores

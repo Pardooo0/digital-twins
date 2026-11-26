@@ -12,3 +12,4 @@ folium
 pyyaml
 pytest
 trimesh               # leer el modelo texturizado (.obj) de ODM
+pillow                # texturas de la malla (nube.py) y ortomosaico en PNG (mapa.py)

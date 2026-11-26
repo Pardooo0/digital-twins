@@ -234,9 +234,12 @@ PC con pytest). La versión para la Pi (`caja-negra/`) se conserva.
   mantenimiento antes de copiar). Probar sin watchdog: `mpremote connect COM9 run
   caja-negra-esp32/pruebas_hardware/prueba_m3.py` (60 filas). Modo mantenimiento = archivo `/mantenimiento` en la
   flash o BOOT en los primeros 2 s; con él la placa no graba y mpremote funciona sin que el watchdog la reinicie.
-- **Estado (2026-11-25):** M1 ✅; M2: microSD ✅ y GPS ✅, DHT22 sin 3.3 V (placa sin soldar / riel) y DS3231 sin pila;
-  M3 ✅: 60 filas en 59.2 s, RAM libre 142 KB, CSV del ESP32 con 0 errores en el verificador de la Pi. La placa
-  quedó en **modo mantenimiento**. Siguiente: soldar pines, probar DHT22 y DS3231, y M4.
+- **Placa de expansión** (*ESP32-C3 SuperMini Expansion Board*): cada GPIO tiene una tira S · VCC · GND; las tiras
+  rojas dan **3.3 V** (VCC1 der., VCC2 izq.), nunca 5 V → microSD y GPS al pin 5V de la Super Mini. El módulo DHT22
+  tiene los pines en orden GND · VCC · DAT. En la PC actual el ESP32 aparece en **COM3** (usar `-Puerto COM3`).
+- **Estado (2026-11-26):** M1 ✅; M2 ✅ (los cuatro módulos responden; DS3231 ajustado con `ajustar_rtc.ps1`);
+  M3 ✅ con los cuatro módulos: sesión 1003, 60 filas, 0 fallas del DHT22, 0 errores en el verificador. La placa
+  sigue en **modo mantenimiento**. Siguiente: comprobar que el DS3231 conserva la hora sin USB (pila) y M4.
 
 ## 7. Contrato de datos (CSV de la caja negra)
 

@@ -54,3 +54,10 @@ dron, salidas de OpenDroneMap, CSV de la caja negra y los HTML del gemelo) no se
 |---|---|
 | `02_esp32_m3_programa_completo.txt` | 153 pruebas en la PC; 60 filas en 59.2 s en el ESP32; RAM libre 142 KB; CSV del ESP32 verificado con 0 errores. |
 | `sesiones_esp32/sesion_1001.csv`, `.json` | Primera sesión grabada por el ESP32 (bajo techo, sin DHT22 ni DS3231) y sus metadatos. |
+
+## 2026-11-26 — ESP32-C3 con los cuatro módulos (placa de expansión)
+
+| Archivo | Qué muestra |
+|---|---|
+| `01_esp32_m2_cuatro_modulos.txt` | Diagnóstico con DS3231, DHT22, GPS y microSD funcionando; ajuste del reloj; sesión 1003 (60 filas, 0 fallas del DHT22) y verificador con 0 errores. |
+| `sesiones_esp32/sesion_1003.csv`, `.json` | Primera sesión del ESP32 con los cuatro módulos (bajo techo, sin fix, hora del DS3231). |

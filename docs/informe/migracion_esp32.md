@@ -4,7 +4,7 @@ Bitácora técnica para el informe de residencia («Inspecciones de Nivel 2 y ge
 Se actualiza en cada etapa: decisiones y su justificación, conexiones, pruebas, problemas y resultados.
 Las cifras de la versión con Raspberry Pi están en `contexto_informe.md`.
 
-**Estado (2026-11-25):** M1 ✅ · M2 parcial (microSD ✅, GPS ✅, DHT22 y DS3231 pendientes de soldar la placa y de la pila) · M3 ✅ programa completo funcionando en el ESP32 · siguen M4 (pruebas de mesa) y M5 (campo). Inicio: 2026-11-24.
+**Estado (2026-11-26):** M1 ✅ · M2 ✅ (los cuatro módulos responden) · M3 ✅ programa completo con los cuatro módulos · siguen M4 (pruebas de mesa) y M5 (campo). Inicio: 2026-11-24.
 
 ## 1. Motivo de la migración
 
@@ -77,23 +77,27 @@ pin 2 del shield (jumper TX–DIGITAL de fábrica). Solo cambia la computadora.
 
 ## 4. Conexiones
 
-Mapa de pines: `docs/pines_esp32c3.svg` (en el informe: `figuras/Fig15_mapa_pines_esp32c3.png`). El ESP32-C3 se
-monta en una protoboard; el pin 5V y el 3.3V alimentan rieles separados (5 V y 3.3 V) con GND común.
+Mapa de pines: `docs/pines_esp32c3.svg` (en el informe: `figuras/Fig15_mapa_pines_esp32c3.png`; foto de los
+módulos: `figuras/Fig16_modulos_esp32_placa_expansion.jpeg`). Desde el 2026-11-26 el ESP32-C3 va soldado a tiras de
+pines y montado en una **placa de expansión** (*ESP32-C3 SuperMini Expansion Board*), que da a cada GPIO una tira de
+tres pines: señal (amarillo), VCC (rojo) y GND (negro). Las tiras rojas entregan **3.3 V** (VCC1 del lado de GPIO0–4,
+VCC2 del lado de GPIO5–21; un puente de soldadura las cambia a la tensión de la batería, 3.7 V) y **ninguna da 5 V**.
+La placa trae además conector y cargador para una batería LiPo de una celda.
 
 | Función | ESP32-C3 Super Mini | Módulo |
 |---|---|---|
 | GPS: datos (TX del GPS) | GPIO20 (RX de UART1) | Pin 2 del shield |
-| GPS: alimentación | 5V y GND | 5V y GND del shield |
+| GPS: alimentación | Pin 5V de la Super Mini y GND | 5V y GND del shield |
 | microSD: reloj | GPIO4 (SCK) | SCK |
 | microSD: datos de la tarjeta | GPIO5 (MISO) | MISO |
 | microSD: datos a la tarjeta | GPIO6 (MOSI) | MOSI |
 | microSD: selección | GPIO7 (CS) | CS |
-| microSD: alimentación | 5V y GND | VCC y GND (el adaptador regula a 3.3 V) |
+| microSD: alimentación | Pin 5V de la Super Mini y GND | VCC y GND (el adaptador regula a 3.3 V) |
 | RTC: datos I²C | GPIO1 (SDA) | SDA |
 | RTC: reloj I²C | GPIO0 (SCL) | SCL |
-| RTC: alimentación | **3.3V** y GND | VCC y GND |
-| DHT22: datos | GPIO3 | OUT (DATA) |
-| DHT22: alimentación | 3.3V y GND | + y − |
+| RTC: alimentación | **3.3 V** (tira roja) y GND | VCC y GND |
+| DHT22: datos | GPIO3 | DAT |
+| DHT22: alimentación | 3.3 V (tira roja) y GND | VCC y GND (orden en el módulo: GND · VCC · DAT) |
 | LED de estado | GPIO8 | LED azul de la placa |
 | Botón (cerrar sesión) | GPIO9 | Botón BOOT de la placa |
 
@@ -192,13 +196,19 @@ igual que los de la Pi.
 | 2026-11-24 | M2 | Recableado con microSD, GPS y DHT22 (reloj sin conectar: falta la pila): **microSD ✅** (tarjeta reconocida, 15 196 160 sectores = 7.78 GB) y **GPS ✅** (18 frases NMEA en 3 s). **DHT22 ❌**: su línea de datos se lee en 0 con pull-down (sin 3.3 V en el módulo o sin llegar a GPIO3) y en 1 con pull-up (sin corto a tierra). Evidencia: `docs/evidencias/2026-11-24/33_esp32_m2_sd_gps_dht.txt`. |
 | 2026-11-25 | M3 | **Programa completo escrito** (13 módulos, sección 6) y **153 pruebas en la PC** que pasan, incluida la simulación del bucle completo. Contrato de datos actualizado (`fuente_hora = rtc`) y verificador de sesiones de la Pi adaptado: sus 40 pruebas siguen pasando, así que las sesiones viejas siguen siendo válidas. |
 | 2026-11-25 | M3 | **Programa cargado al ESP32** y probado con la microSD y el GPS (DHT22 sin 3.3 V, DS3231 sin conectar, bajo techo): **60 filas en 59.2 s**; RAM libre de 171 KB al inicio a **142 KB** con el programa cargado y la microSD montada (141 KB al final); GPS: 118 frases válidas en 60 s; DHT22: 20 fallas de 20 (sin alimentación, como se esperaba). El **CSV generado por el ESP32 pasa el verificador de la caja con Pi: 60 filas válidas, 0 errores, 0 avisos**. Tras ajustar el inicio del ritmo de 1 s, la sesión 1002 grabó sus primeras filas en t = 0.35 s y 1.37 s. Evidencia: `docs/evidencias/2026-11-25/02_esp32_m3_programa_completo.txt` y `sesiones_esp32/sesion_1001.csv`. |
+| 2026-11-26 | M2 | Pines soldados y la Super Mini montada en la **placa de expansión** (*ESP32-C3 SuperMini Expansion Board*: una tira señal · VCC · GND por GPIO). Dos causas de las fallas anteriores: (1) el módulo del DHT22 tiene los pines en orden **GND · VCC · DAT**, no + · OUT · − como mostraba el mapa; (2) las tiras rojas de la placa de expansión dan **3.3 V** (VCC1 y VCC2), no 5 V, así que la microSD y el GPS se alimentan del pin 5V de la Super Mini. Mapa corregido (`docs/pines_esp32c3.svg`). Resultado: **los cuatro módulos responden** — DS3231 en 0x68 (EEPROM en 0x57), DHT22 24.9 °C / 56.6 %, GPS 15 frases NMEA en 3 s, microSD de 7.78 GB. El DS3231 había perdido la hora (OSF, año 2000); se ajustó con `ajustar_rtc.ps1` y avanza 5 s en 5 s. |
+| 2026-11-26 | M3 | Programa completo con **los cuatro módulos** (bajo techo, sin fix): sesión 1003, **60 filas en 59.7 s**, RAM libre 142 KB al final, 119 frases GPS válidas y 0 malas, **0 fallas del DHT22**, 0 errores del reloj; todas las filas con `fuente_hora = rtc`. El CSV copiado de la microSD pasa el verificador: **60 filas válidas, 0 errores**. Evidencia: `docs/evidencias/2026-11-26/01_esp32_m2_cuatro_modulos.txt` y `sesiones_esp32/sesion_1003.*`. |
 
 ## 8. Problemas y soluciones
 
 | Problema | Causa | Solución |
 |---|---|---|
 | La microSD no respondía («no SD card») | La placa **sin pines soldados** apoyada en la protoboard: sus orillas (medias perforaciones) están hechas para soldarse y el contacto es débil | Reacomodar la placa y los cables resolvió la prueba; para la caja definitiva se recomienda soldar tiras de pines, porque el contacto a presión puede fallar con vibración o al mover la caja |
-| Con todo cableado, el reloj y el DHT22 no respondían y la microSD volvió a fallar; el GPS sí | Las líneas de los dos módulos del riel de 3.3 V se leían en 0 (sin energía), mientras que la del GPS (alimentado por el pin 5V) se leía en 1. Causas probables: el pin 3.3 sin contacto en la placa sin soldar, o el riel de la protoboard partido a la mitad | Soldar pines a la placa y revisar la continuidad del riel (pendiente) |
+| Con todo cableado, el reloj y el DHT22 no respondían y la microSD volvió a fallar; el GPS sí | Las líneas de los dos módulos del riel de 3.3 V se leían en 0 (sin energía), mientras que la del GPS (alimentado por el pin 5V) se leía en 1: el pin 3.3 sin contacto en la placa sin soldar | Se soldaron tiras de pines y la placa se montó en la placa de expansión (2026-11-26) |
+| Ya soldada: GPIO0, GPIO1 y GPIO3 parecían unidos entre sí; el I²C «respondía» en casi todas las direcciones | No era un corto: el VCC común del reloj y del DHT22 quedó sin conexión, y las resistencias de pull-up de las tres líneas (hacia ese VCC) las unían y las llevaban a 0 | Revisar la alimentación de 3.3 V; con VCC firme, el reloj respondió solo en 0x68 y 0x57 |
+| El DHT22 no respondía | Causa probable: el mapa mostraba el módulo como + · OUT · −, pero el módulo usado tiene la serigrafía **GND · VCC · DAT** | Conectarlo según su serigrafía; mapa corregido. El sensor respondió sin daño (24.9 °C, 56.6 %) |
+| La microSD no respondía y el GPS no transmitía | Causa probable: el mapa suponía una protoboard con riel de 5 V, pero en la placa de expansión las tiras rojas dan 3.3 V, y el regulador AMS1117 de la microSD necesita más de 4.4 V a la entrada | Alimentar la microSD y el GPS del pin 5V de la Super Mini; mapa corregido |
+| El DS3231 marcaba el año 2000 | Bandera OSF activa: el reloj nunca se había puesto en hora (o perdió la energía sin pila) | `ajustar_rtc.ps1`; con fix del GPS el programa lo vuelve a ajustar solo |
 | Coordenadas con error de hasta ~0.5 m | MicroPython en el ESP32-C3 usa flotantes de precisión simple (24 bits de mantisa) | Convertir las coordenadas NMEA con enteros, en diezmillonésimas de grado |
 | Las pruebas detectaron una latitud de 21.426° en lugar de 20.1426° | Un factor 10 de más en la conversión de minutos a grados con enteros | Corregido antes de cargar al ESP32; las pruebas comparan contra los valores de la Pi |
 | El verificador de la Pi no se podía importar junto con el firmware | El bucle principal se llamaba `cajanegra.py`, igual que el paquete de la Pi | Se renombró a `bucle.py` |
